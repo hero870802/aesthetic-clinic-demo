@@ -57,7 +57,7 @@ const V = {
     <section class="hero"><div class="wrap hero-grid">
       <div class="hero-main" data-hero-video>
         <img src="${IMG(HERO_IMGS[S.hero])}" alt="${HERO_LABELS[S.hero]}（示意圖）" class="hero-img">
-        <div class="hero-t">${eyebrow('Dermatology · Plastic Surgery')}<h1><span class="nb">在所有改變發生之前，</span><br><span class="nb">先聽醫師把話說清楚。</span></h1><p>由整形外科與皮膚科專科醫師共同看診。治療前，我們會說明可行的選項、可能的風險與照護方式，讓你有時間考慮。</p>
+        <div class="hero-t">${eyebrow('WUYU CLINIC')}<h1 class="hero-name">霧嶼診所</h1><p>台北・皮膚科與整形外科</p>
           <div class="row">${L('treatments', '認識療程', 'btn light')}${L('contact', '預約諮詢', 'btn ghost')}</div></div>
         ${badge()}<span class="pic-tag" data-vid-label>示意圖｜${HERO_LABELS[S.hero]}</span>
       </div>
@@ -72,7 +72,7 @@ const V = {
     </div></section>
     <section class="sec alt" data-rv><div class="wrap split-intro">
       <div class="stack">${pic('about-0', '診所走廊', 'arch')}${pic('hero-2', '諮詢室', 'r11 over')}</div>
-      <div class="intro-t">${eyebrow('About Wuyu')}<h2>把每一個選項，<br>說清楚再開始。</h2><p>霧嶼診所由整形外科與皮膚科專科醫師共同看診。我們相信醫學美容應從評估開始：了解你的需求、皮膚與組織狀況，再一起討論是否需要治療、適合哪一種方式。</p>
+      <div class="intro-t">${eyebrow('About Wuyu')}<h2>關於霧嶼</h2><p>由整形外科與皮膚科專科醫師看診，療程分為光電、注射、手術與皮膚保養四類。</p>
         <ul class="checks">${ABOUT.values.map(([h, p]) => `<li><b>${h}</b>${p}</li>`).join('')}</ul>${L('about', '認識診所 ' + ARROW, 'btn line')}</div>
     </div></section>
     <section class="sec" data-rv><div class="wrap">
@@ -90,7 +90,7 @@ const V = {
       <div class="sec-h row-between"><div>${eyebrow('Physicians')}<h2>醫師團隊</h2><p>由整形外科與皮膚科專科醫師親自評估與執行。</p></div>${L('doctors', '認識醫師 ' + ARROW, 'btn line')}</div>
       <div class="grid3">${d.map(x => `<a class="dcard" href="#doctors">${pic(x.photo, x.name + '醫師', 'arch', '', '人物示意')}<div class="dcard-b"><h3>${x.name}<small>${x.title}</small></h3><p class="spec">${x.spec}</p><p>${x.skills.slice(0, 3).join('・')}</p></div></a>`).join('')}</div>
     </div></section>
-    <section class="cta-band" data-rv><img src="${IMG('hero-1')}" alt="" class="cta-bg"><div class="wrap cta-in">${eyebrow('Consultation')}<h2>從一次面對面的諮詢開始</h2><p>可以先帶著問題來，不需要當天決定。</p>${L('contact', '預約諮詢', 'btn light')}</div><span class="banner-tag">示意圖</span></section>
+    <section class="cta-band" data-rv><img src="${IMG('hero-1')}" alt="" class="cta-bg"><div class="wrap cta-in">${eyebrow('Consultation')}<h2>預約諮詢</h2><p>線上填表或來電預約，診所人員會回電確認時段。</p>${L('contact', '預約諮詢', 'btn light')}</div><span class="banner-tag">示意圖</span></section>
     <section class="sec" data-rv><div class="wrap">
       <div class="sec-h row-between"><div>${eyebrow('News')}<h2>最新消息</h2><p>門診時間異動、醫師門診調整與就醫須知。</p></div>${L('articles', '所有消息 ' + ARROW, 'btn line')}</div>
       <div class="news-grid">${aCard(ARTICLES[0])}<ul class="news-list">${ARTICLES.slice(1).map(a => `<li><a href="#a-${a.id}"><time><b>${a.date.slice(8)}</b>${a.date.slice(0, 7).replace('-', '.')}</time><span><small class="tag">${a.tag}</small>${a.title}</span>${ARROW}</a></li>`).join('')}</ul></div>
@@ -201,7 +201,7 @@ const V = {
   },
 
   backend({ toast, screens }) {
-    return banner('backend', '診所人員可以自己做的事', '正式網站採用 WordPress。以下為後台畫面示意：日常更新都是填表單與按按鈕，不需要程式背景。', [[null, '後台操作說明']]) + `
+    return banner('backend', '後台操作說明', '正式網站採用 WordPress，以下為後台畫面示意。', [[null, '後台操作說明']]) + `
     <section class="sec tight"><div class="wrap">${toast}
       <nav class="toc" aria-label="本頁內容">${screens.map(([h], i) => `<button type="button" data-jump="bk${i}">${h}</button>`).join('')}</nav>
       ${screens.map(([h, p, frame, pts, demo], i) => `<section class="bk" id="bk${i}"><div class="bk-t"><span class="n">${String(i + 1).padStart(2, '0')}</span><div><h2>${h}</h2><p>${p}</p><ul class="checks plain">${pts.map(x => `<li>${x}</li>`).join('')}</ul>${demo ? `<p class="demo-note">${demo}</p>` : ''}</div></div>${frame}</section>`).join('')}

@@ -484,6 +484,7 @@ fieldset{border:0;padding:0;margin:0;min-width:0}legend{font-weight:600;font-siz
 
 .hero h1 .nb{white-space:nowrap}
 @media (max-width:420px){.hero h1{font-size:24px}}
+.hero h1.hero-name{font-size:clamp(40px,5vw,72px);letter-spacing:.18em;font-weight:400}@media (max-width:420px){.hero h1.hero-name{font-size:36px}}
 </style>
 <div id="shell-top"></div>
 <main id="app" class="app"></main>
@@ -491,7 +492,7 @@ fieldset{border:0;padding:0;margin:0;min-width:0}legend{font-weight:600;font-siz
 <script>const OTHER_URL = "../b/";
 const CLINIC = {
   name: '霧嶼診所', en: 'WUYU CLINIC',
-  tagline: '在所有改變發生之前，先聽醫師把話說清楚。',
+  tagline: '台北・皮膚科與整形外科',
   sub: '皮膚專科與整形外科的醫學美容諮詢',
   address: '台北市大安區澄嶼街 28 號 3 樓（虛構地址）',
   phone: '02-0000-0000',
@@ -765,9 +766,9 @@ const FLOW = [
 
 const ABOUT = {
   values: [
-    ['問診在治療之前', '評估後若不建議治療，會直接說明原因與其他選擇。'],
-    ['把風險講清楚', '每個療程頁都列出副作用、不適合對象與照護方式，諮詢時也會逐項說明。'],
-    ['同一位醫師追蹤', '治療與回診由同一位醫師負責，讓評估與追蹤前後一致。']
+    ['諮詢與評估', '評估後若不建議治療，會直接說明原因與其他選擇。'],
+    ['風險說明', '每個療程頁都列出副作用、不適合對象與照護方式，諮詢時也會逐項說明。'],
+    ['回診追蹤', '治療與回診由同一位醫師負責，讓評估與追蹤前後一致。']
   ],
   facilities: [['獨立諮詢室', '一對一問診，保護隱私。', 5, 'hero-2'], ['光電治療室', '依設備分區設置，治療前後完成清潔。', 17, 'light-1'], ['注射治療室', '備有玻尿酸酶與緊急處置流程。', 31, 'care-2'], ['手術室與恢復室', '配置生理監視與急救設備。', 43, 'surgery-1']],
   permit: '使用之藥品與醫療器材皆具衛生福利部許可證，字號於正式網站填入。'
@@ -963,7 +964,7 @@ function backendHTML() {
     ['更換首頁與內頁圖片', '首頁主視覺與各內頁橫幅都在「首頁設定」裡更換。點「更換圖片」，從媒體庫選一張，按下更新就完成。', s1, ['點「更換圖片」開啟媒體庫', '選擇圖片後自動套用', '替代文字讓搜尋引擎看懂圖片'], '示範互動：試著點「更換圖片」並選一張，再回首頁看看。重新整理後還原。'],
     ['上傳與管理圖片', '所有圖片集中在媒體庫。上傳一次，首頁、療程、文章都能重複選用。', s2, ['拖曳上傳，不需另外裁切工具', '同一張圖可用在多個頁面'], ''],
     ['新增、調整、下架療程', '療程列表一眼看到每個項目的狀態。「轉為草稿」就是下架：前台立刻不顯示，但內容保留，隨時可以重新發布。', s3, ['「新增療程」建立新項目', '「轉為草稿」下架，不會刪除內容', '「移至回收桶」才是刪除，30 天內可復原'], '示範互動：試著把一個療程「轉為草稿」，再到前台療程列表看看。重新整理後還原。'],
-    ['療程內容用填表的方式編輯', '每個欄位對應前台的一個區塊，填好就會自動排版。風險、不適合對象、術後照護設為必填，固定聲明由系統帶入。', s4, ['欄位與前台區塊一一對應', '必填欄位沒填無法發布', '用詞檢查提醒可能違規的字詞'], '示範互動：在「一句話簡介」試著輸入療效承諾類的字詞，看看提醒怎麼出現。'],
+    ['編輯療程內容', '每個欄位對應前台的一個區塊，填好就會自動排版。風險、不適合對象、術後照護設為必填，固定聲明由系統帶入。', s4, ['欄位與前台區塊一一對應', '必填欄位沒填無法發布', '用詞檢查提醒可能違規的字詞'], '示範互動：在「一句話簡介」試著輸入療效承諾類的字詞，看看提醒怎麼出現。'],
     ['新增、編輯、刪除最新消息', '發公告就像用 Word：輸入標題與內文，選擇分類（門診公告、醫師門診、就醫須知），發布後自動出現在首頁與最新消息列表。', s5, ['所見即所得的編輯器', '選擇分類，前台自動歸類', '勾選相關療程，公告會顯示在療程頁'], ''],
     ['更新醫師資料', '醫師異動、新增學經歷或更換照片，都在醫師頁面填表完成，前台醫師介紹會同步更新。', s6, ['學經歷可增減與排序', '顯示順序決定前台排列'], '']
   ];
@@ -1071,7 +1072,7 @@ const V = {
     <section class="hero"><div class="wrap hero-grid">
       <div class="hero-main" data-hero-video>
         <img src="${IMG(HERO_IMGS[S.hero])}" alt="${HERO_LABELS[S.hero]}（示意圖）" class="hero-img">
-        <div class="hero-t">${eyebrow('Dermatology · Plastic Surgery')}<h1><span class="nb">在所有改變發生之前，</span><br><span class="nb">先聽醫師把話說清楚。</span></h1><p>由整形外科與皮膚科專科醫師共同看診。治療前，我們會說明可行的選項、可能的風險與照護方式，讓你有時間考慮。</p>
+        <div class="hero-t">${eyebrow('WUYU CLINIC')}<h1 class="hero-name">霧嶼診所</h1><p>台北・皮膚科與整形外科</p>
           <div class="row">${L('treatments', '認識療程', 'btn light')}${L('contact', '預約諮詢', 'btn ghost')}</div></div>
         ${badge()}<span class="pic-tag" data-vid-label>示意圖｜${HERO_LABELS[S.hero]}</span>
       </div>
@@ -1086,7 +1087,7 @@ const V = {
     </div></section>
     <section class="sec alt" data-rv><div class="wrap split-intro">
       <div class="stack">${pic('about-0', '診所走廊', 'arch')}${pic('hero-2', '諮詢室', 'r11 over')}</div>
-      <div class="intro-t">${eyebrow('About Wuyu')}<h2>把每一個選項，<br>說清楚再開始。</h2><p>霧嶼診所由整形外科與皮膚科專科醫師共同看診。我們相信醫學美容應從評估開始：了解你的需求、皮膚與組織狀況，再一起討論是否需要治療、適合哪一種方式。</p>
+      <div class="intro-t">${eyebrow('About Wuyu')}<h2>關於霧嶼</h2><p>由整形外科與皮膚科專科醫師看診，療程分為光電、注射、手術與皮膚保養四類。</p>
         <ul class="checks">${ABOUT.values.map(([h, p]) => `<li><b>${h}</b>${p}</li>`).join('')}</ul>${L('about', '認識診所 ' + ARROW, 'btn line')}</div>
     </div></section>
     <section class="sec" data-rv><div class="wrap">
@@ -1104,7 +1105,7 @@ const V = {
       <div class="sec-h row-between"><div>${eyebrow('Physicians')}<h2>醫師團隊</h2><p>由整形外科與皮膚科專科醫師親自評估與執行。</p></div>${L('doctors', '認識醫師 ' + ARROW, 'btn line')}</div>
       <div class="grid3">${d.map(x => `<a class="dcard" href="#doctors">${pic(x.photo, x.name + '醫師', 'arch', '', '人物示意')}<div class="dcard-b"><h3>${x.name}<small>${x.title}</small></h3><p class="spec">${x.spec}</p><p>${x.skills.slice(0, 3).join('・')}</p></div></a>`).join('')}</div>
     </div></section>
-    <section class="cta-band" data-rv><img src="${IMG('hero-1')}" alt="" class="cta-bg"><div class="wrap cta-in">${eyebrow('Consultation')}<h2>從一次面對面的諮詢開始</h2><p>可以先帶著問題來，不需要當天決定。</p>${L('contact', '預約諮詢', 'btn light')}</div><span class="banner-tag">示意圖</span></section>
+    <section class="cta-band" data-rv><img src="${IMG('hero-1')}" alt="" class="cta-bg"><div class="wrap cta-in">${eyebrow('Consultation')}<h2>預約諮詢</h2><p>線上填表或來電預約，診所人員會回電確認時段。</p>${L('contact', '預約諮詢', 'btn light')}</div><span class="banner-tag">示意圖</span></section>
     <section class="sec" data-rv><div class="wrap">
       <div class="sec-h row-between"><div>${eyebrow('News')}<h2>最新消息</h2><p>門診時間異動、醫師門診調整與就醫須知。</p></div>${L('articles', '所有消息 ' + ARROW, 'btn line')}</div>
       <div class="news-grid">${aCard(ARTICLES[0])}<ul class="news-list">${ARTICLES.slice(1).map(a => `<li><a href="#a-${a.id}"><time><b>${a.date.slice(8)}</b>${a.date.slice(0, 7).replace('-', '.')}</time><span><small class="tag">${a.tag}</small>${a.title}</span>${ARROW}</a></li>`).join('')}</ul></div>
@@ -1215,7 +1216,7 @@ const V = {
   },
 
   backend({ toast, screens }) {
-    return banner('backend', '診所人員可以自己做的事', '正式網站採用 WordPress。以下為後台畫面示意：日常更新都是填表單與按按鈕，不需要程式背景。', [[null, '後台操作說明']]) + `
+    return banner('backend', '後台操作說明', '正式網站採用 WordPress，以下為後台畫面示意。', [[null, '後台操作說明']]) + `
     <section class="sec tight"><div class="wrap">${toast}
       <nav class="toc" aria-label="本頁內容">${screens.map(([h], i) => `<button type="button" data-jump="bk${i}">${h}</button>`).join('')}</nav>
       ${screens.map(([h, p, frame, pts, demo], i) => `<section class="bk" id="bk${i}"><div class="bk-t"><span class="n">${String(i + 1).padStart(2, '0')}</span><div><h2>${h}</h2><p>${p}</p><ul class="checks plain">${pts.map(x => `<li>${x}</li>`).join('')}</ul>${demo ? `<p class="demo-note">${demo}</p>` : ''}</div></div>${frame}</section>`).join('')}

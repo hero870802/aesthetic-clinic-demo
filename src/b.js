@@ -1,5 +1,4 @@
 /* Version B — 精品客製設計 */
-CLINIC.tagline = '先評估，再決定。';
 const RM = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
 function rng(seed) { let a = seed * 2654435761 >>> 0; return () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
 /* contour "island" — the brand image. Each treatment / doctor gets its own seed. */
@@ -95,10 +94,10 @@ const V = {
       <div class="spot" aria-hidden="true"></div>
       <div class="hero-map" aria-hidden="true">${contour(HERO_SEEDS[S.hero], { w: 900, h: 700, n: 14, draw: true, bg: false })}</div>
       <div class="gut hero-in">
-        <h1 class="hero-v" aria-label="${CLINIC.tagline}"><span class="ln"><span data-chars>先評估，</span></span><span class="ln"><span data-chars>再決定。</span></span></h1>
+        <h1 class="hero-v" aria-label="${CLINIC.name}"><span class="ln"><span data-chars>霧嶼</span></span><span class="ln"><span data-chars>診所</span></span></h1>
         <div class="hero-side">
           <p class="hero-en">Wuyu <i>Clinic</i></p>
-          <p class="hero-p">${CLINIC.sub}。治療前，醫師會逐項說明可行的選項、可能的風險與照護方式。</p>
+          <p class="hero-p">台北・皮膚科與整形外科</p>
           <div class="hero-cta">${L('treatments', '療程索引', 'lnk')}${L('contact', '預約諮詢', 'lnk')}</div>
         </div>
         <div class="hero-photo" data-hero-video>${ph(HERO_IMGS[S.hero], HERO_LABELS[S.hero], 'tall', { eager: true, vid: true, seed: HERO_SEEDS[S.hero], n: 9, label: '示意圖｜' + HERO_LABELS[S.hero] })}</div>
@@ -113,7 +112,7 @@ const V = {
       <p class="more-row">${L('treatments', '完整療程索引', 'lnk')}</p>
     </div></section>
     <section class="blk tone" data-rv>${vlabel('流程', 'Process')}<div class="gut blk-in">
-      <div class="blk-h"><h2 data-split>從諮詢到回診</h2><p>從預約到回診的六個步驟，同意書可帶回考慮。可左右滑動瀏覽。</p></div>
+      <div class="blk-h"><h2 data-split>諮詢流程</h2><p>共六個步驟，可左右滑動瀏覽。</p></div>
       <ol class="tl" tabindex="0" aria-label="諮詢流程">${FLOW.map(([h, p], i) => `<li data-stagger><span class="tl-n">${num(i)}</span><h3>${h}</h3><p>${p}</p></li>`).join('')}</ol>
     </div></section>
     <section class="blk" data-rv>${vlabel('醫師', 'Physicians')}<div class="gut blk-in feat">
@@ -246,7 +245,7 @@ const V = {
   },
 
   backend({ toast, screens }) {
-    return `<div class="gut">${pageHead('後台', 'Backend Guide', '診所人員可以自己做的事', '正式網站採用 WordPress。以下為後台畫面示意：日常更新都是填表單與按按鈕，不需要程式背景。')}</div>
+    return `<div class="gut">${pageHead('後台', 'Backend Guide', '後台操作說明', '正式網站採用 WordPress，以下為後台畫面示意。')}</div>
     <section class="gut bk-wrap">${toast}
       <ol class="bk-toc">${screens.map(([h], i) => `<li><button type="button" data-jump="bk${i}"><span>${num(i)}</span>${h}</button></li>`).join('')}</ol>
       ${screens.map(([h, p, frame, pts, demo], i) => `<section class="bk" id="bk${i}"><div class="bk-t"><span class="bk-n">${num(i)}</span><h2>${h}</h2><p>${p}</p><ul class="ln-list">${pts.map(x => `<li>${x}</li>`).join('')}</ul>${demo ? `<p class="demo-note">${demo}</p>` : ''}</div><div class="bk-f">${frame}</div></section>`).join('')}

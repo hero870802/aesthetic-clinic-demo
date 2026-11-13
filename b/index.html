@@ -572,7 +572,7 @@ a:hover .ph img{filter:saturate(.95) contrast(1) brightness(1.03)}
 <script>const OTHER_URL = "../a/";
 const CLINIC = {
   name: '霧嶼診所', en: 'WUYU CLINIC',
-  tagline: '在所有改變發生之前，先聽醫師把話說清楚。',
+  tagline: '台北・皮膚科與整形外科',
   sub: '皮膚專科與整形外科的醫學美容諮詢',
   address: '台北市大安區澄嶼街 28 號 3 樓（虛構地址）',
   phone: '02-0000-0000',
@@ -846,9 +846,9 @@ const FLOW = [
 
 const ABOUT = {
   values: [
-    ['問診在治療之前', '評估後若不建議治療，會直接說明原因與其他選擇。'],
-    ['把風險講清楚', '每個療程頁都列出副作用、不適合對象與照護方式，諮詢時也會逐項說明。'],
-    ['同一位醫師追蹤', '治療與回診由同一位醫師負責，讓評估與追蹤前後一致。']
+    ['諮詢與評估', '評估後若不建議治療，會直接說明原因與其他選擇。'],
+    ['風險說明', '每個療程頁都列出副作用、不適合對象與照護方式，諮詢時也會逐項說明。'],
+    ['回診追蹤', '治療與回診由同一位醫師負責，讓評估與追蹤前後一致。']
   ],
   facilities: [['獨立諮詢室', '一對一問診，保護隱私。', 5, 'hero-2'], ['光電治療室', '依設備分區設置，治療前後完成清潔。', 17, 'light-1'], ['注射治療室', '備有玻尿酸酶與緊急處置流程。', 31, 'care-2'], ['手術室與恢復室', '配置生理監視與急救設備。', 43, 'surgery-1']],
   permit: '使用之藥品與醫療器材皆具衛生福利部許可證，字號於正式網站填入。'
@@ -1044,7 +1044,7 @@ function backendHTML() {
     ['更換首頁與內頁圖片', '首頁主視覺與各內頁橫幅都在「首頁設定」裡更換。點「更換圖片」，從媒體庫選一張，按下更新就完成。', s1, ['點「更換圖片」開啟媒體庫', '選擇圖片後自動套用', '替代文字讓搜尋引擎看懂圖片'], '示範互動：試著點「更換圖片」並選一張，再回首頁看看。重新整理後還原。'],
     ['上傳與管理圖片', '所有圖片集中在媒體庫。上傳一次，首頁、療程、文章都能重複選用。', s2, ['拖曳上傳，不需另外裁切工具', '同一張圖可用在多個頁面'], ''],
     ['新增、調整、下架療程', '療程列表一眼看到每個項目的狀態。「轉為草稿」就是下架：前台立刻不顯示，但內容保留，隨時可以重新發布。', s3, ['「新增療程」建立新項目', '「轉為草稿」下架，不會刪除內容', '「移至回收桶」才是刪除，30 天內可復原'], '示範互動：試著把一個療程「轉為草稿」，再到前台療程列表看看。重新整理後還原。'],
-    ['療程內容用填表的方式編輯', '每個欄位對應前台的一個區塊，填好就會自動排版。風險、不適合對象、術後照護設為必填，固定聲明由系統帶入。', s4, ['欄位與前台區塊一一對應', '必填欄位沒填無法發布', '用詞檢查提醒可能違規的字詞'], '示範互動：在「一句話簡介」試著輸入療效承諾類的字詞，看看提醒怎麼出現。'],
+    ['編輯療程內容', '每個欄位對應前台的一個區塊，填好就會自動排版。風險、不適合對象、術後照護設為必填，固定聲明由系統帶入。', s4, ['欄位與前台區塊一一對應', '必填欄位沒填無法發布', '用詞檢查提醒可能違規的字詞'], '示範互動：在「一句話簡介」試著輸入療效承諾類的字詞，看看提醒怎麼出現。'],
     ['新增、編輯、刪除最新消息', '發公告就像用 Word：輸入標題與內文，選擇分類（門診公告、醫師門診、就醫須知），發布後自動出現在首頁與最新消息列表。', s5, ['所見即所得的編輯器', '選擇分類，前台自動歸類', '勾選相關療程，公告會顯示在療程頁'], ''],
     ['更新醫師資料', '醫師異動、新增學經歷或更換照片，都在醫師頁面填表完成，前台醫師介紹會同步更新。', s6, ['學經歷可增減與排序', '顯示順序決定前台排列'], '']
   ];
@@ -1094,7 +1094,6 @@ function heroVideo(app, src, label) {
 }
 
 /* Version B — 精品客製設計 */
-CLINIC.tagline = '先評估，再決定。';
 const RM = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
 function rng(seed) { let a = seed * 2654435761 >>> 0; return () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
 /* contour "island" — the brand image. Each treatment / doctor gets its own seed. */
@@ -1190,10 +1189,10 @@ const V = {
       <div class="spot" aria-hidden="true"></div>
       <div class="hero-map" aria-hidden="true">${contour(HERO_SEEDS[S.hero], { w: 900, h: 700, n: 14, draw: true, bg: false })}</div>
       <div class="gut hero-in">
-        <h1 class="hero-v" aria-label="${CLINIC.tagline}"><span class="ln"><span data-chars>先評估，</span></span><span class="ln"><span data-chars>再決定。</span></span></h1>
+        <h1 class="hero-v" aria-label="${CLINIC.name}"><span class="ln"><span data-chars>霧嶼</span></span><span class="ln"><span data-chars>診所</span></span></h1>
         <div class="hero-side">
           <p class="hero-en">Wuyu <i>Clinic</i></p>
-          <p class="hero-p">${CLINIC.sub}。治療前，醫師會逐項說明可行的選項、可能的風險與照護方式。</p>
+          <p class="hero-p">台北・皮膚科與整形外科</p>
           <div class="hero-cta">${L('treatments', '療程索引', 'lnk')}${L('contact', '預約諮詢', 'lnk')}</div>
         </div>
         <div class="hero-photo" data-hero-video>${ph(HERO_IMGS[S.hero], HERO_LABELS[S.hero], 'tall', { eager: true, vid: true, seed: HERO_SEEDS[S.hero], n: 9, label: '示意圖｜' + HERO_LABELS[S.hero] })}</div>
@@ -1208,7 +1207,7 @@ const V = {
       <p class="more-row">${L('treatments', '完整療程索引', 'lnk')}</p>
     </div></section>
     <section class="blk tone" data-rv>${vlabel('流程', 'Process')}<div class="gut blk-in">
-      <div class="blk-h"><h2 data-split>從諮詢到回診</h2><p>從預約到回診的六個步驟，同意書可帶回考慮。可左右滑動瀏覽。</p></div>
+      <div class="blk-h"><h2 data-split>諮詢流程</h2><p>共六個步驟，可左右滑動瀏覽。</p></div>
       <ol class="tl" tabindex="0" aria-label="諮詢流程">${FLOW.map(([h, p], i) => `<li data-stagger><span class="tl-n">${num(i)}</span><h3>${h}</h3><p>${p}</p></li>`).join('')}</ol>
     </div></section>
     <section class="blk" data-rv>${vlabel('醫師', 'Physicians')}<div class="gut blk-in feat">
@@ -1341,7 +1340,7 @@ const V = {
   },
 
   backend({ toast, screens }) {
-    return `<div class="gut">${pageHead('後台', 'Backend Guide', '診所人員可以自己做的事', '正式網站採用 WordPress。以下為後台畫面示意：日常更新都是填表單與按按鈕，不需要程式背景。')}</div>
+    return `<div class="gut">${pageHead('後台', 'Backend Guide', '後台操作說明', '正式網站採用 WordPress，以下為後台畫面示意。')}</div>
     <section class="gut bk-wrap">${toast}
       <ol class="bk-toc">${screens.map(([h], i) => `<li><button type="button" data-jump="bk${i}"><span>${num(i)}</span>${h}</button></li>`).join('')}</ol>
       ${screens.map(([h, p, frame, pts, demo], i) => `<section class="bk" id="bk${i}"><div class="bk-t"><span class="bk-n">${num(i)}</span><h2>${h}</h2><p>${p}</p><ul class="ln-list">${pts.map(x => `<li>${x}</li>`).join('')}</ul>${demo ? `<p class="demo-note">${demo}</p>` : ''}</div><div class="bk-f">${frame}</div></section>`).join('')}
