@@ -29,3 +29,9 @@
 | about-1.jpg | 關於診所 | https://unsplash.com/photos/8WYkI3cEZm8 | Vitaly Gariev |
 | about-2.jpg | 關於診所、醫師橫幅 | https://unsplash.com/photos/fNSPSQAH1mQ | Nate Johnston |
 | banner-news.jpg | 最新消息橫幅 | https://unsplash.com/photos/WP5XwHP47ck | Blessing Ri |
+
+## 影片
+
+| 檔案 | 說明 |
+|---|---|
+| assets/vid/a-hero.mp4 / .webm、b-hero.mp4 / .webm | 以 hero-0.jpg（上表來源）製作的慢速推鏡循環，非實拍影片，僅為示意。正式網站替換為診所實拍。 |

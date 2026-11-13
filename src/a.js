@@ -55,11 +55,11 @@ const V = {
     const cats = Object.keys(CATS);
     return `
     <section class="hero"><div class="wrap hero-grid">
-      <div class="hero-main">
+      <div class="hero-main" data-hero-video>
         <img src="${IMG(HERO_IMGS[S.hero])}" alt="${HERO_LABELS[S.hero]}（示意圖）" class="hero-img">
         <div class="hero-t">${eyebrow('Dermatology · Plastic Surgery')}<h1>${CLINIC.tagline}</h1><p>每一項醫學美容治療，都從醫師當面問診開始。我們會說明可行的選項、可能的風險與照護方式，讓你在充分了解後再做決定。</p>
           <div class="row">${L('treatments', '認識療程', 'btn light')}${L('contact', '預約諮詢', 'btn ghost')}</div></div>
-        ${badge()}<span class="pic-tag">示意圖｜${HERO_LABELS[S.hero]}</span>
+        ${badge()}<span class="pic-tag" data-vid-label>示意圖｜${HERO_LABELS[S.hero]}</span>
       </div>
       <div class="hero-side">
         <div class="hcard hours-card"><p class="eyebrow">Opening Hours</p><h2>門診時間</h2>${hoursList()}<a class="lnk" href="#contact">線上預約 ${ARROW}</a></div>
@@ -211,6 +211,7 @@ const V = {
   },
 
   after(r, app, first) {
+    if (r.view === 'home') heroVideo(app, '../assets/vid/a-hero.mp4', HERO_LABELS[0]);
     app.querySelectorAll('[data-jump]').forEach(b => b.addEventListener('click', () => document.getElementById(b.dataset.jump).scrollIntoView({ behavior: RMa() ? 'auto' : 'smooth' })));
     app.querySelectorAll('[data-tab]').forEach(b => b.addEventListener('click', () => {
       tab = b.dataset.tab;

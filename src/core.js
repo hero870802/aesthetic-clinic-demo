@@ -202,3 +202,25 @@ function mapSVG() {
     <g transform="translate(110 188)"><rect x="-9" y="-9" width="18" height="18" rx="4" class="m-mrt"/><text y="4" class="m-mrt-t">M</text></g>
   </svg>`;
 }
+
+/* Hero video: silent slow loop over the hero photo. Skipped for reduced motion / Save-Data, and when the
+   hero image was swapped in the backend demo (so that demo stays visible). The photo is the poster. */
+function heroVideo(app, src, label) {
+  const box = app.querySelector('[data-hero-video]');
+  if (!box || S.hero !== 0) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches || (navigator.connection && navigator.connection.saveData)) return;
+  const img = box.querySelector('img');
+  const v = document.createElement('video');
+  Object.assign(v, { muted: true, loop: true, playsInline: true, autoplay: true, preload: 'auto' });
+  v.setAttribute('muted', ''); v.setAttribute('playsinline', ''); v.setAttribute('aria-hidden', 'true');
+  v.className = 'hero-vid'; if (img) v.poster = img.currentSrc || img.src; v.src = v.canPlayType('video/mp4; codecs="avc1.42E01E"') ? src : src.replace('.mp4', '.webm');
+  (img ? img.parentNode : box).insertBefore(v, img ? img.nextSibling : null);
+  const btn = document.createElement('button');
+  btn.type = 'button'; btn.className = 'vid-btn'; btn.textContent = '暫停影片'; btn.setAttribute('aria-pressed', 'false');
+  btn.addEventListener('click', () => { if (v.paused) { v.play(); btn.textContent = '暫停影片'; btn.setAttribute('aria-pressed', 'false'); } else { v.pause(); btn.textContent = '播放影片'; btn.setAttribute('aria-pressed', 'true'); } });
+  v.addEventListener('playing', () => {
+    box.classList.add('vid-on'); if (!btn.isConnected) box.appendChild(btn);
+    const lab = box.querySelector('[data-vid-label]'); if (lab) lab.textContent = '示意影片｜' + label;
+  }, { once: true });
+  const p = v.play(); if (p && p.catch) p.catch(() => {});
+}

@@ -88,6 +88,11 @@ button.wp-btn:focus-visible,.wp-link.btn:focus-visible,.wp-pick:focus-visible,.w
 .wp-thumb img,.wp-pick img{width:100%;height:100%;object-fit:cover;display:block}
 .wp-more{text-align:center;color:#646970;font-size:12px}
 
+/* hero video */
+.hero-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s ease;pointer-events:none}
+.vid-on .hero-vid{opacity:1}
+.vid-btn{position:absolute;z-index:3;font:inherit;font-size:11.5px;letter-spacing:.1em;cursor:pointer;border:1px solid rgba(255,255,255,.6);background:rgba(23,36,42,.45);color:#fff;padding:3px 10px;backdrop-filter:blur(4px)}
+
 /* A: premium template theme — warm neutrals, serif display, bento hero, arch frames */
 :root{
   --bg:#FBF9F6; --surface:#F3EEE8; --surface-2:#E9E1D8; --ink:#1E2A30; --muted:#5F6B70; --primary:#2F5B66; --primary-d:#23464F;
@@ -473,6 +478,9 @@ fieldset{border:0;padding:0;margin:0;min-width:0}legend{font-weight:600;font-siz
   *,*::before,*::after{animation:none!important;transition:none!important}
   .rv-pre{opacity:1;transform:none}
 }
+
+.hero-main .hero-vid{z-index:-2}.hero-main .vid-btn{right:16px;top:16px;border-radius:999px}
+@media (max-width:640px){.hero-main .vid-btn{right:auto;top:auto;left:16px;bottom:44px}}
 </style>
 <div id="shell-top"></div>
 <main id="app" class="app"></main>
@@ -979,6 +987,28 @@ function mapSVG() {
   </svg>`;
 }
 
+/* Hero video: silent slow loop over the hero photo. Skipped for reduced motion / Save-Data, and when the
+   hero image was swapped in the backend demo (so that demo stays visible). The photo is the poster. */
+function heroVideo(app, src, label) {
+  const box = app.querySelector('[data-hero-video]');
+  if (!box || S.hero !== 0) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches || (navigator.connection && navigator.connection.saveData)) return;
+  const img = box.querySelector('img');
+  const v = document.createElement('video');
+  Object.assign(v, { muted: true, loop: true, playsInline: true, autoplay: true, preload: 'auto' });
+  v.setAttribute('muted', ''); v.setAttribute('playsinline', ''); v.setAttribute('aria-hidden', 'true');
+  v.className = 'hero-vid'; if (img) v.poster = img.currentSrc || img.src; v.src = v.canPlayType('video/mp4; codecs="avc1.42E01E"') ? src : src.replace('.mp4', '.webm');
+  (img ? img.parentNode : box).insertBefore(v, img ? img.nextSibling : null);
+  const btn = document.createElement('button');
+  btn.type = 'button'; btn.className = 'vid-btn'; btn.textContent = '暫停影片'; btn.setAttribute('aria-pressed', 'false');
+  btn.addEventListener('click', () => { if (v.paused) { v.play(); btn.textContent = '暫停影片'; btn.setAttribute('aria-pressed', 'false'); } else { v.pause(); btn.textContent = '播放影片'; btn.setAttribute('aria-pressed', 'true'); } });
+  v.addEventListener('playing', () => {
+    box.classList.add('vid-on'); if (!btn.isConnected) box.appendChild(btn);
+    const lab = box.querySelector('[data-vid-label]'); if (lab) lab.textContent = '示意影片｜' + label;
+  }, { once: true });
+  const p = v.play(); if (p && p.catch) p.catch(() => {});
+}
+
 /* Version A — 質感模板客製 (premium template look: bento hero, arch frames, serif display, warm neutrals) */
 const RMa = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
 const pic = (key, alt, cls = '', pos = '', label = '示意圖') => `<figure class="pic ${cls}"><img src="${IMG(key)}" alt="${alt}（示意圖）" loading="lazy" decoding="async"${pos ? ` style="object-position:${pos}"` : ''}><figcaption>${label}</figcaption></figure>`;
@@ -1036,11 +1066,11 @@ const V = {
     const cats = Object.keys(CATS);
     return `
     <section class="hero"><div class="wrap hero-grid">
-      <div class="hero-main">
+      <div class="hero-main" data-hero-video>
         <img src="${IMG(HERO_IMGS[S.hero])}" alt="${HERO_LABELS[S.hero]}（示意圖）" class="hero-img">
         <div class="hero-t">${eyebrow('Dermatology · Plastic Surgery')}<h1>${CLINIC.tagline}</h1><p>每一項醫學美容治療，都從醫師當面問診開始。我們會說明可行的選項、可能的風險與照護方式，讓你在充分了解後再做決定。</p>
           <div class="row">${L('treatments', '認識療程', 'btn light')}${L('contact', '預約諮詢', 'btn ghost')}</div></div>
-        ${badge()}<span class="pic-tag">示意圖｜${HERO_LABELS[S.hero]}</span>
+        ${badge()}<span class="pic-tag" data-vid-label>示意圖｜${HERO_LABELS[S.hero]}</span>
       </div>
       <div class="hero-side">
         <div class="hcard hours-card"><p class="eyebrow">Opening Hours</p><h2>門診時間</h2>${hoursList()}<a class="lnk" href="#contact">線上預約 ${ARROW}</a></div>
@@ -1192,6 +1222,7 @@ const V = {
   },
 
   after(r, app, first) {
+    if (r.view === 'home') heroVideo(app, '../assets/vid/a-hero.mp4', HERO_LABELS[0]);
     app.querySelectorAll('[data-jump]').forEach(b => b.addEventListener('click', () => document.getElementById(b.dataset.jump).scrollIntoView({ behavior: RMa() ? 'auto' : 'smooth' })));
     app.querySelectorAll('[data-tab]').forEach(b => b.addEventListener('click', () => {
       tab = b.dataset.tab;

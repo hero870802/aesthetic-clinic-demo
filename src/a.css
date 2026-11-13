@@ -383,3 +383,6 @@ fieldset{border:0;padding:0;margin:0;min-width:0}legend{font-weight:600;font-siz
   *,*::before,*::after{animation:none!important;transition:none!important}
   .rv-pre{opacity:1;transform:none}
 }
+
+.hero-main .hero-vid{z-index:-2}.hero-main .vid-btn{right:16px;top:16px;border-radius:999px}
+@media (max-width:640px){.hero-main .vid-btn{right:auto;top:auto;left:16px;bottom:44px}}

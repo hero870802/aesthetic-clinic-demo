@@ -82,3 +82,8 @@ button.wp-btn:focus-visible,.wp-link.btn:focus-visible,.wp-pick:focus-visible,.w
 
 .wp-thumb img,.wp-pick img{width:100%;height:100%;object-fit:cover;display:block}
 .wp-more{text-align:center;color:#646970;font-size:12px}
+
+/* hero video */
+.hero-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s ease;pointer-events:none}
+.vid-on .hero-vid{opacity:1}
+.vid-btn{position:absolute;z-index:3;font:inherit;font-size:11.5px;letter-spacing:.1em;cursor:pointer;border:1px solid rgba(255,255,255,.6);background:rgba(23,36,42,.45);color:#fff;padding:3px 10px;backdrop-filter:blur(4px)}

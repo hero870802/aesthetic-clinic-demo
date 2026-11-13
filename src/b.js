@@ -21,7 +21,7 @@ function contour(seed, { w = 400, h = 300, n = 11, draw = false, bg = true, labe
   return `<svg class="contour ${draw ? 'draw' : ''}" viewBox="0 0 ${w} ${h}" preserveAspectRatio="xMidYMid slice" ${label ? `role="img" aria-label="${label}（示意圖）"` : 'aria-hidden="true"'}>${bg ? `<rect width="${w}" height="${h}" class="c-bg"/>` : ''}${paths}</svg>`;
 }
 /* photo frame: muted duotone photo + brand contour overlay + 示意 label (bottom-left) */
-const ph = (key, alt, cls = '', o = {}) => `<figure class="ph ${cls}"><div class="ph-in"><img src="${IMG(key)}" alt="${alt}（示意圖）" loading="${o.eager ? 'eager' : 'lazy'}" decoding="async"${o.pos ? ` style="object-position:${o.pos}"` : ''}></div>${o.seed != null ? contour(o.seed, { w: 400, h: 500, n: o.n || 7, bg: false }) : ''}<figcaption>${o.label ?? '示意圖'}</figcaption></figure>`;
+const ph = (key, alt, cls = '', o = {}) => `<figure class="ph ${cls}"><div class="ph-in"><img src="${IMG(key)}" alt="${alt}（示意圖）" loading="${o.eager ? 'eager' : 'lazy'}" decoding="async"${o.pos ? ` style="object-position:${o.pos}"` : ''}></div>${o.seed != null ? contour(o.seed, { w: 400, h: 500, n: o.n || 7, bg: false }) : ''}<figcaption${o.vid ? ' data-vid-label' : ''}>${o.label ?? '示意圖'}</figcaption></figure>`;
 const L = (view, text, cls = '') => `<a href="#${view}" class="${cls}">${text}</a>`;
 const num = i => String(i + 1).padStart(2, '0');
 const vlabel = (zh, en) => `<div class="vlabel" aria-hidden="true"><span class="zh">${zh}</span><span class="en">${en}</span></div>`;
@@ -100,7 +100,7 @@ const V = {
           <p class="hero-p">${CLINIC.sub}。每一項治療都從醫師當面問診開始，選項、風險與照護方式，都在你決定之前說清楚。</p>
           <div class="hero-cta">${L('treatments', '療程索引', 'lnk')}${L('contact', '預約諮詢', 'lnk')}</div>
         </div>
-        <div class="hero-photo">${ph(HERO_IMGS[S.hero], HERO_LABELS[S.hero], 'tall', { eager: true, seed: HERO_SEEDS[S.hero], n: 9, label: '示意圖｜' + HERO_LABELS[S.hero] })}</div>
+        <div class="hero-photo" data-hero-video>${ph(HERO_IMGS[S.hero], HERO_LABELS[S.hero], 'tall', { eager: true, vid: true, seed: HERO_SEEDS[S.hero], n: 9, label: '示意圖｜' + HERO_LABELS[S.hero] })}</div>
       </div>
     </section>
     <section class="blk" data-rv>${vlabel('療程', 'Treatments')}<div class="gut blk-in">
@@ -254,6 +254,7 @@ const V = {
   },
 
   after(r, app) {
+    if (r.view === 'home') heroVideo(app, '../assets/vid/b-hero.mp4', HERO_LABELS[0]);
     document.querySelector('[data-capsule]').hidden = r.view === 'contact';
     app.querySelectorAll('[data-jump]').forEach(b => b.addEventListener('click', () => document.getElementById(b.dataset.jump).scrollIntoView({ behavior: RM() ? 'auto' : 'smooth' })));
     if (r.view === 'treatments' && sessionCat) { const b = app.querySelector(`[data-filter="${sessionCat}"]`); sessionCat = null; if (b) b.click(); }
