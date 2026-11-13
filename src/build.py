@@ -4,8 +4,8 @@ src = D / 'src'
 r = lambda n: (src / n).read_text()
 urls = json.loads((D / 'urls.json').read_text()) if (D / 'urls.json').exists() else {}
 FONTS = {
-  'a': 'https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Marcellus&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@500;600&display=swap',
-  'b': 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@400;500;600&display=swap',
+  'a': 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@300;400;500&display=swap',
+  'b': 'https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@200;300;400&family=Playfair+Display:ital,wght@0,400;1,400&display=swap',
 }
 TITLE = {'a': '霧嶼診所 方案A', 'b': '霧嶼診所 方案B'}
 for v in ['a', 'b']:
