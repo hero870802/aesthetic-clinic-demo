@@ -1,4 +1,5 @@
 /* Version B — 精品客製設計 */
+CLINIC.tagline = '先評估，再決定。';
 const RM = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
 function rng(seed) { let a = seed * 2654435761 >>> 0; return () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
 /* contour "island" — the brand image. Each treatment / doctor gets its own seed. */
@@ -94,7 +95,7 @@ const V = {
       <div class="spot" aria-hidden="true"></div>
       <div class="hero-map" aria-hidden="true">${contour(HERO_SEEDS[S.hero], { w: 900, h: 700, n: 14, draw: true, bg: false })}</div>
       <div class="gut hero-in">
-        <h1 class="hero-v" aria-label="${CLINIC.tagline}"><span class="ln"><span data-chars>在所有改變發生之前</span></span><span class="ln"><span data-chars>先聽醫師</span></span><span class="ln"><span data-chars>把話說清楚</span></span></h1>
+        <h1 class="hero-v" aria-label="${CLINIC.tagline}"><span class="ln"><span data-chars>先評估，</span></span><span class="ln"><span data-chars>再決定。</span></span></h1>
         <div class="hero-side">
           <p class="hero-en">Wuyu <i>Clinic</i></p>
           <p class="hero-p">${CLINIC.sub}。治療前，醫師會逐項說明可行的選項、可能的風險與照護方式。</p>
