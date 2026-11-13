@@ -1,8 +1,8 @@
 <!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>霧嶼診所 方案A</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="霧嶼診所（虛構）官方網站示範：療程介紹、醫師團隊、衛教文章與預約諮詢。">
+<meta name="description" content="霧嶼診所（虛構）官方網站示範：療程介紹、醫師團隊、最新消息與預約諮詢。">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Marcellus&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@500;600&display=swap">
 <style>/* Shared: WordPress admin mock (fixed WP look in both versions) */
 .wp-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:6px;box-shadow:0 1px 2px rgba(0,0,0,.08),0 12px 32px -12px rgba(20,30,40,.25)}
 .wp{min-width:760px;font-family:-apple-system,"Segoe UI","Noto Sans TC",sans-serif;font-size:13px;color:#1d2327;background:#f0f0f1;line-height:1.5;text-align:left}
@@ -85,224 +85,394 @@ button.wp-btn:focus-visible,.wp-link.btn:focus-visible,.wp-pick:focus-visible,.w
 .wp-toolbar{display:flex;gap:12px;align-items:center;border:1px solid #8c8f94;border-bottom:0;padding:5px 10px;margin-top:10px;background:#f6f7f7;border-radius:4px 4px 0 0;font-size:12px;color:#3c434a}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
-/* A: standard premium clinic theme — boxed 1140 grid, header + banner + main/sidebar, cards */
+.wp-thumb img,.wp-pick img{width:100%;height:100%;object-fit:cover;display:block}
+.wp-more{text-align:center;color:#646970;font-size:12px}
+
+/* A: premium template theme — warm neutrals, serif display, bento hero, arch frames */
 :root{
-  --bg:#FFFFFF; --surface:#F2F5F7; --ink:#1F2D3A; --muted:#5A6B78; --primary:#3F6E82; --primary-d:#2F5466; --accent:#C9A49A; --line:#DCE3E7; --warn-bg:#FBF3F0;
-  --f-sans:"Manrope","Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+  --bg:#FBF9F6; --surface:#F3EEE8; --surface-2:#E9E1D8; --ink:#1E2A30; --muted:#5F6B70; --primary:#2F5B66; --primary-d:#23464F;
+  --accent:#B08D6E; --accent-text:#8A6A4C; --accent-soft:#E7D8CB; --line:#E2DAD0; --dark:#17242A; --warn-bg:#F8EFEA;
+  --r:16px; --f-sans:"Manrope","Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif; --f-serif:"Noto Serif TC","Songti TC",serif; --f-lat:"Marcellus","Noto Serif TC",serif;
   color-scheme:light;
 }
 *{box-sizing:border-box}
-body{background:var(--bg);color:var(--ink);font-family:var(--f-sans);font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-sans);font-size:16px;line-height:1.8;-webkit-font-smoothing:antialiased}
 a{color:var(--primary)}
-h1,h2,h3,h4{line-height:1.35;text-wrap:balance;margin:0;font-weight:700;letter-spacing:.01em}
+h1,h2,h3,h4{line-height:1.35;text-wrap:balance;margin:0;font-weight:600;letter-spacing:.02em}
+h1,h2{font-family:var(--f-serif);font-weight:500}
 p{margin:0}
-.wrap{max-width:1140px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+img{max-width:100%}
+.wrap{max-width:1240px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
 :focus-visible{outline:2px solid var(--primary);outline-offset:3px}
-.demobar{background:var(--ink);color:#E6ECEF;font-size:13px;padding-block:8px}
+.demobar{background:var(--dark);color:#DCE3E5;font-size:13px;padding-block:8px}
 .demobar .wrap:first-child{display:flex;flex-wrap:wrap;gap:4px 16px;justify-content:space-between}
-.demobar a{color:#fff;font-weight:600}
-.demobar .fic{opacity:.7;font-size:12px;margin-top:2px}
-.topbar{background:var(--surface);font-size:13px;color:var(--muted)}
-.topbar .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-block:6px}
+.demobar a{color:#fff;font-weight:600;display:inline-flex;gap:6px;align-items:center}
+.demobar .fic{opacity:.65;font-size:12px;margin-top:2px}
+.topbar{background:var(--surface);font-size:13px;color:var(--muted);border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-block:7px}
 .topbar span{display:inline-flex;gap:6px;align-items:center}
-.hdr{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}
+.hdr{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(251,249,246,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .2s,box-shadow .2s}
+.hdr.small{border-color:var(--line);box-shadow:0 8px 24px -18px rgba(30,42,48,.35)}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
-.hdr .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:72px}
-.logo{display:flex;flex-direction:column;text-decoration:none;color:var(--ink);line-height:1.2}
-.logo-zh{font-size:21px;font-weight:700;letter-spacing:.12em}
-.logo-en{font-size:10.5px;letter-spacing:.32em;color:var(--primary);font-weight:600}
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:84px;transition:min-height .2s}
+.hdr.small .wrap{min-height:66px}
+.logo{display:flex;flex-direction:column;text-decoration:none;color:var(--ink);line-height:1.15}
+.logo-zh{font-family:var(--f-serif);font-size:23px;font-weight:600;letter-spacing:.2em}
+.logo-en{font-family:var(--f-lat);font-size:11px;letter-spacing:.42em;color:var(--accent-text)}
 .logo.light{color:#fff}.logo.light .logo-en{color:var(--accent)}
-.nav{display:flex;align-items:center;gap:4px}
-.nav a{color:var(--ink);text-decoration:none;padding:8px 12px;font-size:15px;border-radius:6px}
-.nav a:not(.btn):hover,.nav a.is-current:not(.btn){color:var(--primary)}
-.nav a.is-current:not(.btn){box-shadow:inset 0 -2px 0 var(--accent);border-radius:0}
-.burger{display:none;background:none;border:0;width:44px;height:44px;padding:10px;cursor:pointer;flex-direction:column;justify-content:space-between}
-.burger span:not(.sr-only){display:block;height:2px;background:var(--ink);border-radius:2px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;background:var(--primary);color:#fff;text-decoration:none;border:1px solid var(--primary);padding:11px 22px;border-radius:8px;font:inherit;font-weight:600;font-size:15px;cursor:pointer;transition:background .15s}
+.nav{display:flex;align-items:center;gap:2px}
+.nav a{color:var(--ink);text-decoration:none;padding:8px 13px;font-size:15px;position:relative}
+.nav a:not(.btn)::after{content:"";position:absolute;left:13px;right:13px;bottom:2px;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .25s}
+.nav a:not(.btn):hover::after,.nav a.is-current:not(.btn)::after{transform:scaleX(1)}
+.nav a.is-current:not(.btn){color:var(--primary)}
+.burger{display:none;background:none;border:0;width:44px;height:44px;padding:12px 10px;cursor:pointer;flex-direction:column;justify-content:space-between}
+.burger span:not(.sr-only){display:block;height:1.5px;background:var(--ink);border-radius:2px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--primary);color:#fff;text-decoration:none;border:1px solid var(--primary);padding:13px 28px;border-radius:999px;font:inherit;font-weight:600;font-size:15px;letter-spacing:.04em;cursor:pointer;transition:background .2s,color .2s,border-color .2s,transform .2s}
 .btn:hover{background:var(--primary-d);border-color:var(--primary-d)}
-.btn.sm{padding:8px 16px;font-size:14px;color:#fff!important;margin-left:8px}
-.btn.line{background:transparent;color:var(--primary)}
-.btn.line:hover{background:var(--surface)}
-.btn.light{background:#fff;color:var(--primary);border-color:#fff}
+.btn.sm{padding:9px 20px;font-size:14px;color:#fff!important;margin-left:10px}
+.btn.line{background:transparent;color:var(--primary);border-color:var(--primary)}
+.btn.line:hover{background:var(--primary);color:#fff}
+.btn.light{background:#fff;color:var(--primary-d);border-color:#fff}
+.btn.light:hover{background:var(--accent-soft);border-color:var(--accent-soft)}
+.btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.6)}
+.btn.ghost:hover{background:rgba(255,255,255,.14)}
+.btn svg{transition:transform .2s}.btn:hover svg{transform:translateX(3px)}
 .row{display:flex;gap:12px;flex-wrap:wrap}
-#app{transition:opacity .15s}#app.fade{opacity:0}
-/* placeholders */
-.ph{position:relative;background-color:var(--surface);background-image:repeating-linear-gradient(135deg,rgba(63,110,130,.07) 0 1px,transparent 1px 14px);aspect-ratio:16/10;border-radius:8px;display:flex;align-items:flex-end;overflow:hidden;max-width:100%}
-.ph.v1{background-color:#EEF1F0;background-image:repeating-linear-gradient(45deg,rgba(63,110,130,.07) 0 1px,transparent 1px 14px)}
-.ph.v2{background-color:#F4EFED;background-image:repeating-linear-gradient(135deg,rgba(201,164,154,.16) 0 1px,transparent 1px 14px)}
-.ph.v3{background-color:#EDF1F5;background-image:repeating-linear-gradient(90deg,rgba(63,110,130,.06) 0 1px,transparent 1px 16px)}
-.ph span{font-size:11.5px;color:var(--muted);background:rgba(255,255,255,.85);padding:3px 8px;margin:10px;border-radius:4px}
-.ph.tall{aspect-ratio:4/3.4}.ph.portrait{aspect-ratio:4/4.4}.ph.avatar{width:56px;aspect-ratio:1;border-radius:50%;flex:none}.ph.avatar span{display:none}
-.ph.mini{border-radius:0;aspect-ratio:auto;height:100%}
+.lnk{display:inline-flex;gap:8px;align-items:center;font-weight:600;font-size:14px;color:var(--primary);text-decoration:none;margin-top:auto}
+#app{transition:opacity .16s}#app.fade{opacity:0}
+/* photo frames */
+.pic{position:relative;margin:0;overflow:hidden;border-radius:var(--r);background:var(--surface-2);aspect-ratio:4/3}
+.pic img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.pic figcaption,.pic-tag,.banner-tag{position:absolute;left:10px;bottom:10px;font-size:11px;line-height:1.4;letter-spacing:.06em;color:#fff;background:rgba(23,36,42,.55);padding:2px 8px;border-radius:4px;backdrop-filter:blur(4px);pointer-events:none;z-index:2}
+.pic figcaption:empty{display:none}
+.r43{aspect-ratio:4/3}.r54{aspect-ratio:5/4}.r169{aspect-ratio:16/9}.r34{aspect-ratio:3/4}.r11{aspect-ratio:1}
+.arch{aspect-ratio:4/5;border-radius:999px 999px var(--r) var(--r)}
+.pic.fill{position:absolute;inset:0;aspect-ratio:auto;border-radius:0}
+.pic.avatar{width:60px;aspect-ratio:1;border-radius:50%;flex:none}
+a:hover .pic img,.card:hover .pic img{transform:scale(1.04)}
+/* hero */
+.hero{padding-block:20px 0}
+.hero-grid{display:grid;grid-template-columns:minmax(0,2.1fr) minmax(0,1fr);gap:20px}
+.hero-main{position:relative;border-radius:24px;overflow:hidden;min-height:600px;display:flex;align-items:flex-end;isolation:isolate}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;animation:kb 18s ease-out both}
+.hero-main::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(23,36,42,.78) 0%,rgba(23,36,42,.45) 50%,rgba(23,36,42,.05) 100%),linear-gradient(0deg,rgba(23,36,42,.45),transparent 50%)}
+@keyframes kb{from{transform:scale(1.08)}to{transform:scale(1)}}
+.hero-t{padding:56px 56px 72px;max-width:640px;color:#fff;display:flex;flex-direction:column;gap:20px}
+.hero-t .eyebrow{color:var(--accent-soft)}
+.hero h1{font-size:clamp(36px,5vw,62px);letter-spacing:.08em;line-height:1.25}
+.hero-t>p:not(.eyebrow){color:rgba(255,255,255,.86);max-width:30em}
+.hero-t>*{animation:up .9s cubic-bezier(.2,.7,.2,1) both}.hero-t>:nth-child(2){animation-delay:.1s}.hero-t>:nth-child(3){animation-delay:.2s}.hero-t>:nth-child(4){animation-delay:.3s}
+@keyframes up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.hero-main .pic-tag{left:16px;bottom:16px}
+.badge{position:absolute;right:36px;bottom:36px;width:128px;height:128px;border-radius:50%;background:rgba(251,249,246,.94);display:grid;place-items:center;color:var(--primary-d)}
+.badge svg{position:absolute;inset:6px;width:calc(100% - 12px);height:calc(100% - 12px);animation:spin 26s linear infinite}
+.badge text{font-family:var(--f-lat);font-size:9.6px;letter-spacing:.24em;fill:var(--accent-text)}
+.badge span{font-family:var(--f-serif);font-size:15px;line-height:1.35;text-align:center;letter-spacing:.12em}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero-side{display:grid;grid-template-rows:auto 1fr;gap:20px}
+.hcard{border-radius:24px;padding:32px;position:relative;overflow:hidden}
+.hours-card{background:var(--primary);color:#fff;display:flex;flex-direction:column;gap:6px}
+.hours-card h2{font-size:26px}.hours-card .eyebrow{color:var(--accent-soft)}
+.hours-card .hours div{border-color:rgba(255,255,255,.22)}.hours-card .hours dt{color:rgba(255,255,255,.75)}
+.hours-card .lnk{color:#fff;margin-top:16px}
+.photo-card{display:flex;align-items:flex-end;min-height:260px;color:#fff;text-decoration:none;isolation:isolate}
+.photo-card .pic.fill{z-index:-1}
+.photo-card::before{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(0deg,rgba(23,36,42,.75),rgba(23,36,42,0) 65%);pointer-events:none}
+.photo-card .pic figcaption{left:auto;right:10px;bottom:auto;top:10px}
+.pc-t{position:relative;z-index:1}.pc-t h2{font-size:24px}.pc-t .eyebrow{color:var(--accent-soft)}.pc-t p:last-child{font-size:14px;opacity:.85}
+/* fact strip */
+.facts{padding-block:20px 0}
+.facts-in{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:var(--surface);border-radius:24px;padding:34px 12px}
+.facts-in>div{padding:0 28px;border-left:1px solid var(--line)}.facts-in>div:first-child{border:0}
+.fact-n{font-family:var(--f-lat);font-size:54px;line-height:1;color:var(--primary-d);display:flex;align-items:baseline;gap:8px}
+.fact-n small{font-family:var(--f-sans);font-size:15px;color:var(--ink);font-weight:600}
+.facts-in p:last-child{color:var(--muted);font-size:14px;margin-top:8px}
 /* sections */
-.sec{padding-block:72px}.sec.alt{background:var(--surface)}
-.sec-h{margin-bottom:32px;display:flex;flex-direction:column;gap:8px}
-.sec-h h2,.main h2,.split h2,.infoband h2,.handover h2{font-size:28px}
+.sec{padding-block:104px}.feat-sec{padding-top:64px}.sec.tight{padding-block:64px 96px}.sec.alt{background:var(--surface)}
+.sec-h{margin-bottom:48px;display:flex;flex-direction:column;gap:12px}
+.sec-h.center{text-align:center;align-items:center}.sec-h.center p{max-width:36em}
+.sec-h h2,.intro-t h2,.split h2,.handover h2,.cta-in h2{font-size:clamp(28px,3.4vw,42px);letter-spacing:.06em}
 .sec-h p{color:var(--muted)}
-.row-between{flex-direction:row;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px}
-.eyebrow{color:var(--primary);font-weight:600;font-size:14px;letter-spacing:.08em}
-.hero{background:linear-gradient(180deg,var(--surface),var(--bg));padding-block:56px 72px}
-.hero-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:center}
-.hero-t{display:flex;flex-direction:column;gap:18px}
-.hero h1{font-size:clamp(34px,5vw,52px);letter-spacing:.06em}
-.hero-t>p:not(.eyebrow){color:var(--muted);max-width:30em}
-.hero-i{position:relative}
-.ph-cap{position:absolute;right:12px;top:12px;font-size:12px;background:var(--bg);padding:2px 10px;border-radius:20px;color:var(--ink)}
-.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
-.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
-.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
-.card{background:var(--bg);border:1px solid var(--line);border-radius:8px;overflow:hidden;text-decoration:none;color:inherit;display:flex;flex-direction:column;transition:border-color .15s}
-a.card:hover{border-color:var(--primary)}
-.card>.ph{border-radius:0}
-.card-b{padding:20px;display:flex;flex-direction:column;gap:8px;flex:1}
-.card h3{font-size:19px}.card h3 small,.doc h2 small{font-size:14px;color:var(--muted);font-weight:500;margin-left:4px}
+.row-between{flex-direction:row;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px}
+.row-between>div{display:flex;flex-direction:column;gap:12px}
+.eyebrow{font-family:var(--f-lat);color:var(--accent-text);font-size:14px;letter-spacing:.24em;text-transform:uppercase;display:inline-flex;align-items:center;gap:12px}
+.eyebrow::before{content:"";width:28px;height:1px;background:currentColor}
+.sec-h.center .eyebrow::after{content:"";width:28px;height:1px;background:currentColor}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+/* features */
+.feat4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.f4{padding:36px 28px;border:1px solid var(--line);border-radius:var(--r);background:#fff;display:flex;flex-direction:column;gap:12px;transition:transform .3s,box-shadow .3s,border-color .3s}
+.f4:hover{transform:translateY(-4px);box-shadow:0 22px 40px -28px rgba(30,42,48,.4);border-color:var(--accent-soft)}
+.ico{width:60px;height:60px;border-radius:50%;background:var(--accent-soft);display:grid;place-items:center;color:var(--primary-d)}
+.ico svg{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.f4 h3{font-family:var(--f-serif);font-size:20px;font-weight:500}.f4 p{color:var(--muted);font-size:15px}
+/* split intro */
+.split-intro{display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:center}
+.stack{position:relative;padding:0 18% 14% 0}
+.stack .over{position:absolute;right:0;bottom:0;width:46%;border:8px solid var(--surface);border-radius:var(--r)}
+.intro-t{display:flex;flex-direction:column;gap:20px}
+.intro-t>p{color:var(--muted);font-size:17px}
+.intro-t .btn{align-self:flex-start;margin-top:8px}
+.checks,.dots{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+.checks li,.dots li{padding-left:28px;position:relative}
+.checks li::before{content:"";position:absolute;left:2px;top:.5em;width:12px;height:7px;border-left:1.5px solid var(--accent-text);border-bottom:1.5px solid var(--accent-text);transform:rotate(-45deg)}
+.checks li b{display:block;font-weight:600}
+.split-intro .checks li{color:var(--muted);font-size:15px}.split-intro .checks li b{color:var(--ink);font-size:16px}
+.dots li::before{content:"";position:absolute;left:8px;top:.72em;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+/* treatment tabs */
+.tx-tabs{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:40px}
+.tx-tabs button,.tabs button{font:inherit;font-size:15px;padding:10px 24px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;display:inline-flex;gap:8px;align-items:center;transition:all .2s}
+.tx-tabs small,.tabs small{font-family:var(--f-lat);font-size:12px;color:var(--muted)}
+.tx-tabs button[aria-selected="true"],.tabs button[aria-pressed="true"]{background:var(--primary);border-color:var(--primary);color:#fff}
+.tx-tabs button[aria-selected="true"] small,.tabs button[aria-pressed="true"] small{color:var(--accent-soft)}
+.tx-tabs button:hover,.tabs button:hover{border-color:var(--primary)}
+.tx-panel{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.tx-panel-t{display:flex;flex-direction:column;gap:16px}
+.tx-panel-t h3{font-family:var(--f-serif);font-size:30px;font-weight:500;letter-spacing:.06em}
+.tx-panel-t>p{color:var(--muted)}
+.tx-links{list-style:none;margin:8px 0;padding:0;border-top:1px solid var(--line)}
+.tx-links a{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:baseline;padding:14px 4px;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink);transition:padding .2s,color .2s}
+.tx-links a span{font-size:17px;font-weight:500}
+.tx-links small{color:var(--muted);font-size:13px;letter-spacing:.03em}
+.tx-links a svg{align-self:center;color:var(--accent-text)}
+.tx-links a:hover{padding-left:12px;color:var(--primary)}
+.tx-panel-t .btn{align-self:flex-start}
+/* steps */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.steps li{background:#fff;border-radius:var(--r);padding:32px 28px;display:flex;flex-direction:column;gap:8px;position:relative;overflow:hidden}
+.sec:not(.alt) .steps li{background:var(--surface)}
+.steps .n{font-family:var(--f-lat);font-size:44px;line-height:1;color:var(--accent);margin-bottom:6px}
+.steps h3{font-size:18px}.steps p{color:var(--muted);font-size:15px}
+/* doctor cards */
+.dcard{text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:20px}
+.dcard-b{display:flex;flex-direction:column;gap:6px;text-align:center}
+.dcard h3{font-family:var(--f-serif);font-size:24px;font-weight:500;letter-spacing:.1em}
+.dcard h3 small,.doc h2 small{font-family:var(--f-sans);font-size:14px;color:var(--muted);font-weight:500;margin-left:8px;letter-spacing:.04em}
+.dcard p{color:var(--muted);font-size:14.5px}
+.spec{color:var(--accent-text)!important;font-weight:600}
+/* CTA band */
+.cta-band{position:relative;isolation:isolate;overflow:hidden;padding-block:120px;color:#fff;text-align:center}
+.cta-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.cta-band::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(23,36,42,.66)}
+.cta-in{display:flex;flex-direction:column;align-items:center;gap:20px}
+.cta-in .eyebrow{color:var(--accent-soft)}.cta-in .eyebrow::after{content:"";width:28px;height:1px;background:currentColor}
+.cta-in p:not(.eyebrow){opacity:.88;max-width:32em}
+/* cards */
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;text-decoration:none;color:inherit;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s}
+a.card:hover{transform:translateY(-4px);box-shadow:0 24px 44px -30px rgba(30,42,48,.45)}
+.card>.pic{border-radius:0}
+.card-b{padding:24px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card h3{font-family:var(--f-serif);font-size:21px;font-weight:500}
 .card p{color:var(--muted);font-size:15px}
-.card .en{font-size:13px;letter-spacing:.04em;color:var(--primary);margin-top:-4px}
-.tag{align-self:flex-start;font-size:12px;font-weight:600;color:var(--primary);background:rgba(63,110,130,.08);padding:2px 10px;border-radius:20px}
-.more{color:var(--primary);font-weight:600;font-size:14px;margin-top:auto;text-decoration:none}
-.card.cat{padding:24px;gap:12px}
-.card.cat ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
-.card.cat li a{display:flex;justify-content:space-between;gap:8px;padding:10px 0;border-bottom:1px solid var(--line);color:var(--ink);text-decoration:none;font-weight:500}
-.card.cat li a:hover{color:var(--primary)}
-.card.cat small{color:var(--muted);font-weight:400;font-size:12.5px;text-align:right}
-.spec{color:var(--primary)!important;font-weight:600}
+.card .en{font-family:var(--f-lat);font-size:13px;letter-spacing:.08em;color:var(--accent-text);margin-top:-4px}
+.tag{align-self:flex-start;font-size:12px;font-weight:600;color:var(--primary);background:rgba(47,91,102,.08);padding:3px 12px;border-radius:999px;letter-spacing:.04em}
+.more{display:inline-flex;gap:8px;align-items:center;color:var(--primary);font-weight:600;font-size:14px;margin-top:auto;padding-top:8px}
 .meta{display:flex;gap:12px;align-items:center;font-size:13px;color:var(--muted);flex-wrap:wrap}
 .meta time{font-variant-numeric:tabular-nums}
-.byline{font-size:13px;color:var(--ink);margin-top:auto}
-.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;counter-reset:s}
-.steps.six{grid-template-columns:repeat(3,minmax(0,1fr))}
-.steps li{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:22px;display:flex;flex-direction:column;gap:6px}
-.sec.alt .steps li{border-color:transparent}
-.steps .n{width:32px;height:32px;border-radius:50%;background:var(--primary);color:#fff;display:grid;place-items:center;font-weight:700;font-size:14px}
-.steps h3{font-size:17px}.steps p{color:var(--muted);font-size:14.5px}
-.center{text-align:center;margin-top:24px}
-.infoband{background:var(--primary);color:#fff;padding-block:56px}
-.infoband .hours dt,.infoband .hours dd{color:#fff}
-.infoband p{margin-top:12px;opacity:.9}
-.cta-box{background:rgba(255,255,255,.1);border-radius:8px;padding:28px;display:flex;flex-direction:column;gap:14px;align-items:flex-start}
-.hours{margin:12px 0 0;display:flex;flex-direction:column;gap:4px}
-.hours div{display:flex;justify-content:space-between;gap:16px;border-bottom:1px dashed var(--line);padding-bottom:4px}
-.infoband .hours div{border-color:rgba(255,255,255,.3)}
+/* news */
+.news-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:40px;align-items:start}
+.news-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.news-list a{display:grid;grid-template-columns:72px 1fr auto;gap:20px;align-items:center;padding:24px 4px;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink);transition:background .2s}
+.news-list a:hover{background:var(--surface)}
+.news-list time{display:flex;flex-direction:column;font-family:var(--f-lat);color:var(--muted);font-size:12px;line-height:1.2;text-align:center}
+.news-list time b{font-size:32px;font-weight:400;color:var(--primary-d)}
+.news-list span{display:flex;flex-direction:column;gap:6px;font-size:17px;font-weight:500}
+.news-list .tag{font-size:11.5px}
+.news-list svg{color:var(--accent-text)}
+/* info cards */
+.icard{background:#fff;border-radius:var(--r);padding:32px;display:flex;flex-direction:column;gap:12px}
+.icard h3{font-family:var(--f-serif);font-size:22px;font-weight:500}
+.icard p{color:var(--muted)}
+.icard.dark{background:var(--dark);color:#fff}.icard.dark p{color:rgba(255,255,255,.8)}
+.icard.dark .btn{align-self:flex-start;margin-top:auto}
+.icard .mapsvg{margin-top:8px}
+.hours{margin:8px 0 0;display:flex;flex-direction:column;gap:6px}
+.hours div{display:flex;justify-content:space-between;gap:16px;border-bottom:1px dashed var(--line);padding-bottom:6px;font-size:15px}
 .hours dt{color:var(--muted)}.hours dd{margin:0;font-variant-numeric:tabular-nums}
-/* banner + layout */
-.banner{background:var(--surface);padding-block:40px 44px;border-bottom:1px solid var(--line)}
-.banner h1{font-size:clamp(28px,4vw,38px);margin-top:8px;letter-spacing:.04em}
-.banner p{color:var(--muted);margin-top:8px;max-width:42em}
-.crumb{font-size:13px;color:var(--muted)}.crumb a{color:var(--muted);text-decoration:none}.crumb a:hover{color:var(--primary)}
-.layout{display:grid;grid-template-columns:minmax(0,8fr) minmax(0,4fr);gap:48px;align-items:start}
-.main{display:flex;flex-direction:column;gap:16px;min-width:0}
-.main h2{font-size:23px;margin-top:20px}
-.main>p,.prose p{max-width:65ch}
-.lead{font-size:18px;color:var(--ink)}
-.side{display:flex;flex-direction:column;gap:20px;position:sticky;top:96px}
-.side-card{border:1px solid var(--line);border-radius:8px;padding:22px;display:flex;flex-direction:column;gap:10px}
-.side-card h3{font-size:16px}.side-card h3:not(:first-child){margin-top:10px}
-.side-card.cta{background:var(--surface);border-color:transparent}
-.side-card .phone{font-size:14px;color:var(--muted)}
-.links{list-style:none;margin:0;padding:0}
-.links li{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding:8px 0;font-size:15px}
-.links a{color:var(--ink);text-decoration:none}.links a:hover{color:var(--primary)}
-.doc-mini{display:flex;gap:12px;align-items:center;text-decoration:none;color:var(--ink)}
-.doc-mini span{display:flex;flex-direction:column}.doc-mini small{color:var(--muted)}
-.checks,.dots{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
-.checks li,.dots li{padding-left:24px;position:relative}
-.checks li::before{content:"";position:absolute;left:2px;top:.55em;width:10px;height:6px;border-left:2px solid var(--primary);border-bottom:2px solid var(--primary);transform:rotate(-45deg)}
-.dots li::before{content:"";position:absolute;left:6px;top:.7em;width:6px;height:6px;border-radius:50%;background:var(--accent)}
-.infogrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0}
-.infogrid div{background:var(--surface);border-radius:8px;padding:14px 16px}
-.infogrid dt{font-size:13px;color:var(--primary);font-weight:700}.infogrid dd{margin:4px 0 0;font-size:15px}
-.acc{border:1px solid var(--line);border-radius:8px;padding:4px 20px 18px}
-.acc summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;padding-block:12px}
+/* page banner */
+.banner{position:relative;isolation:isolate;overflow:hidden;color:#fff;padding-block:96px 88px;margin:20px max(20px,env(safe-area-inset-left,0px)) 0;border-radius:24px}
+.banner-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.banner::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(23,36,42,.8),rgba(23,36,42,.35))}
+.banner-in{display:flex;flex-direction:column;gap:12px}
+.banner h1{font-size:clamp(30px,4.4vw,52px);letter-spacing:.08em}
+.banner p{color:rgba(255,255,255,.86);max-width:42em}
+.banner .banner-tag{left:16px;bottom:14px}
+.crumb{font-size:13px;color:rgba(255,255,255,.7);display:flex;gap:8px;flex-wrap:wrap}.crumb a{color:rgba(255,255,255,.85);text-decoration:none}.crumb a:hover{color:#fff}
+/* filters */
+.pillbar{position:sticky;top:66px;z-index:10;background:rgba(251,249,246,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding-block:16px;margin-top:8px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap}
+.cat-group{margin-bottom:72px;scroll-margin-top:140px}
+.cat-h{display:flex;align-items:baseline;gap:24px;flex-wrap:wrap;margin-bottom:28px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.cat-h h2{font-size:32px;letter-spacing:.1em}.cat-h p{color:var(--muted)}
+/* detail layout */
+.layout{display:grid;grid-template-columns:minmax(0,8fr) minmax(0,4fr);gap:56px;align-items:start}
+.main{display:flex;flex-direction:column;gap:18px;min-width:0}
+.main h2{font-size:26px;margin-top:24px;letter-spacing:.04em}
+.main>p,.prose p{max-width:68ch}
+.lead{font-size:19px;color:var(--ink);font-family:var(--f-serif);line-height:1.75}
+.factbar{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin:8px 0 0;background:var(--surface);border-radius:var(--r);padding:22px 8px}
+.factbar div{padding:0 18px;border-left:1px solid var(--line)}.factbar div:first-child{border:0}
+.factbar dt{font-size:12.5px;color:var(--accent-text);font-weight:600;letter-spacing:.08em}.factbar dd{margin:4px 0 0;font-size:15px}
+.checks.plain li{font-size:16px}
+.acc{border:1px solid var(--line);border-radius:var(--r);padding:6px 24px 22px;background:#fff}
+.acc.risk{background:var(--warn-bg);border-color:#EAD9CF}
+.acc summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;padding-block:14px;gap:12px}
 .acc summary::-webkit-details-marker{display:none}
-.acc summary::after{content:"";width:9px;height:9px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg);transition:transform .15s;flex:none}
-.acc[open] summary::after{transform:rotate(-135deg)}
-.acc summary h2{margin:0;font-size:20px}
-.acc.sm{padding:0 14px 12px}.acc.sm summary h3{font-size:15px}
-.risks{margin:0;display:flex;flex-direction:column;gap:10px}
-.risks div{display:grid;grid-template-columns:7em 1fr;gap:12px}
-.risks dt{font-weight:700;font-size:14px;color:var(--ink)}.risks dd{margin:0}
-.extra{background:var(--surface);padding:14px 18px;border-radius:8px}
-.notice{background:var(--warn-bg);border:1px solid #EBD9D3;border-radius:8px;padding:16px 20px;display:flex;flex-direction:column;gap:4px;font-size:15px}
-.fee{margin-top:28px;font-size:14px;color:var(--muted)}
+.acc summary::after{content:"+";font-size:24px;line-height:1;color:var(--accent-text);transition:transform .2s;flex:none}
+.acc[open] summary::after{transform:rotate(45deg)}
+.acc summary h2{margin:0;font-size:21px}
+.acc.sm{padding:0 16px 14px;background:transparent}.acc.sm summary h3{font-size:15px}
+.risks{margin:0;display:flex;flex-direction:column;gap:12px}
+.risks div{display:grid;grid-template-columns:8em 1fr;gap:14px;padding-bottom:12px;border-bottom:1px solid #EAD9CF}.risks div:last-child{border:0;padding:0}
+.risks dt{font-weight:600;font-size:14.5px}.risks dd{margin:0}
+.extra{background:var(--surface);padding:16px 20px;border-radius:12px}
+.notice{background:var(--surface);border-left:3px solid var(--accent);border-radius:0 12px 12px 0;padding:18px 22px;display:flex;flex-direction:column;gap:6px;font-size:15px}
+.fee{margin-top:8px;font-size:14px;color:var(--muted)}
 .hint{font-size:13px;color:var(--muted);margin-top:16px}
-.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
-.tabs button{font:inherit;font-size:15px;padding:8px 20px;border-radius:20px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
-.tabs button[aria-pressed="true"]{background:var(--primary);border-color:var(--primary);color:#fff}
-.list{display:flex;flex-direction:column;gap:20px}
-.row-card{flex-direction:row}.row-card>.ph{width:38%;flex:none;aspect-ratio:auto}
-.row-card h2{font-size:20px;margin:0}
-.doc .card-b{gap:10px}.doc h2{font-size:22px}.doc h3{font-size:15px;margin-top:6px}
+.side{display:flex;flex-direction:column;gap:20px;position:sticky;top:96px}
+.side-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:26px;display:flex;flex-direction:column;gap:10px}
+.side-card h3{font-family:var(--f-serif);font-size:18px;font-weight:500}.side-card h3:not(:first-child){margin-top:12px}
+.side-card.cta{background:var(--primary);border-color:var(--primary);color:#fff}
+.side-card.cta p{opacity:.86}.side-card.cta .btn{background:#fff;color:var(--primary-d);border-color:#fff}
+.side-card .phone{font-size:14px}
+.links{list-style:none;margin:0;padding:0}
+.links li{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding:10px 0;font-size:15px}
+.links a{color:var(--ink);text-decoration:none;display:flex;justify-content:space-between;align-items:center;width:100%;gap:8px}.links a:hover{color:var(--primary)}
+.links a svg{color:var(--accent-text)}
+.doc-mini{display:flex;gap:14px;align-items:center;text-decoration:none;color:var(--ink)}
+.doc-mini span{display:flex;flex-direction:column}.doc-mini small{color:var(--muted)}
+/* doctors page */
+.doc-list{display:flex;flex-direction:column;gap:96px}
+.doc{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:72px;align-items:start;scroll-margin-top:100px}
+.doc:nth-child(even)>.pic{order:2}
+.doc-b{display:flex;flex-direction:column;gap:14px;padding-top:24px}
+.doc h2{font-size:36px;letter-spacing:.12em}
+.doc h3{font-size:15px;margin-top:8px;letter-spacing:.08em}
+.bio{color:var(--muted);font-size:16.5px}
+.chips{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.chips li{font-size:14px;background:var(--surface);border-radius:999px;padding:5px 14px}
 .cert{font-size:13px;color:var(--muted);margin-top:8px}
-.split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-bottom:48px}
-.split.rev>.ph{order:2}
-.split p{color:var(--muted);margin-top:10px;font-size:17px}
+/* list page */
+.list{display:flex;flex-direction:column;gap:24px}
+.row-card{flex-direction:row}.row-card>.pic{width:40%;flex:none;aspect-ratio:auto;min-height:220px}
+.row-card h2{font-size:22px;margin:0}
+/* about */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-bottom:96px}
+.split:last-child{margin-bottom:0}
+.split.rev>.pic{order:2}
+.split>div{display:flex;flex-direction:column;gap:14px}
+.split p:not(.eyebrow){color:var(--muted);font-size:17px}
+.split>.arch{max-width:460px;justify-self:center;width:100%}
+.fac{display:flex;flex-direction:column;gap:10px}
+.fac h3{font-family:var(--f-serif);font-size:19px;font-weight:500;margin-top:8px}.fac p{color:var(--muted);font-size:14.5px}
 .info{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px;font-size:14px}
-.info.dark{font-size:15px;margin-top:12px}
+.info.dark{font-size:15px;margin-top:8px}
 .narrow{max-width:720px;display:flex;flex-direction:column;gap:16px}
 /* form */
-.form{gap:18px}
-.form label{display:flex;flex-direction:column;gap:6px;font-weight:600;font-size:15px}
+.form{gap:20px;background:#fff;border-radius:24px;padding:44px}
+.form h2{margin:0 0 4px}
+.form label{display:flex;flex-direction:column;gap:8px;font-weight:600;font-size:15px}
 .form label b{font-size:12px;color:#A0524A;font-weight:600;margin-left:4px}
-.form input:not([type=radio]):not([type=checkbox]),.form select,.form textarea{font:inherit;font-weight:400;padding:11px 14px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);width:100%}
+.form input:not([type=radio]):not([type=checkbox]),.form select,.form textarea{font:inherit;font-weight:400;padding:13px 16px;border:1px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink);width:100%}
 .form input:focus,.form select:focus,.form textarea:focus{outline:2px solid var(--primary);outline-offset:0;border-color:var(--primary)}
-.f2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-fieldset{border:0;padding:0;margin:0}legend{font-weight:600;font-size:15px;margin-bottom:6px}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+fieldset{border:0;padding:0;margin:0;min-width:0}legend{font-weight:600;font-size:15px;margin-bottom:6px}
 .radios{display:flex;gap:16px;flex-wrap:wrap;padding-top:8px}
 .form label.r,.form label.chk{flex-direction:row;align-items:center;gap:8px;font-weight:400}
 .form label.chk{align-items:flex-start;font-size:14.5px}.form label.chk input{margin-top:6px}
 .form .btn{align-self:flex-start}
 .formstatus{background:var(--surface);border-left:3px solid var(--primary);padding:12px 16px;font-size:14.5px}
-.map{margin:48px 0 0}.map figcaption{font-size:13px;color:var(--muted);margin-top:8px}
-.mapsvg{width:100%;height:auto;border-radius:8px;display:block}
-.m-bg{fill:#EAF0F2}.m-road{stroke:#fff;stroke-width:8;fill:none}.m-main{stroke:#fff;stroke-width:16;fill:none}.m-river{stroke:#C7DCE4;stroke-width:14;fill:none}.m-park{fill:#DCE8DF;rx:6}
-.m-pin{fill:var(--primary)}.m-pin-halo{fill:rgba(63,110,130,.2)}.m-label{font-size:15px;font-weight:700;fill:var(--ink);font-family:var(--f-sans)}.m-label.sm{font-size:12px;fill:var(--muted);font-weight:500}.m-mrt{fill:var(--accent)}.m-mrt-t{fill:#fff;font-size:11px;font-weight:700;text-anchor:middle;font-family:var(--f-sans)}
+.map{margin:56px 0 0}.map figcaption{font-size:13px;color:var(--muted);margin-top:8px}
+.mapsvg{width:100%;height:auto;border-radius:var(--r);display:block}
+.m-bg{fill:#EEE8E1}.m-road{stroke:#fff;stroke-width:8;fill:none}.m-main{stroke:#fff;stroke-width:16;fill:none}.m-river{stroke:#CFDDE0;stroke-width:14;fill:none}.m-park{fill:#DFE6D9;rx:6}
+.m-pin{fill:var(--primary)}.m-pin-halo{fill:rgba(47,91,102,.2)}.m-label{font-size:15px;font-weight:700;fill:var(--ink);font-family:var(--f-sans)}.m-label.sm{font-size:12px;fill:var(--muted);font-weight:500}.m-mrt{fill:var(--accent)}.m-mrt-t{fill:#fff;font-size:11px;font-weight:700;text-anchor:middle;font-family:var(--f-sans)}
 /* backend */
 .toc{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:40px}
-.toc button{font:inherit;font-size:14px;border:1px solid var(--line);background:var(--bg);border-radius:20px;padding:6px 14px;cursor:pointer;color:var(--ink)}
+.toc button{font:inherit;font-size:14px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 16px;cursor:pointer;color:var(--ink)}
 .toc button:hover{border-color:var(--primary);color:var(--primary)}
-.bk{display:flex;flex-direction:column;gap:20px;padding-block:28px 44px;border-top:1px solid var(--line);scroll-margin-top:90px}
-.bk-t{display:flex;gap:16px}
-.bk-t .n{width:36px;height:36px;border-radius:50%;background:var(--primary);color:#fff;display:grid;place-items:center;font-weight:700;flex:none}
+.bk{display:flex;flex-direction:column;gap:20px;padding-block:32px 48px;border-top:1px solid var(--line);scroll-margin-top:90px}
+.bk-t{display:flex;gap:18px}
+.bk-t .n{font-family:var(--f-lat);font-size:36px;line-height:1;color:var(--accent);flex:none}
 .bk-t>div{display:flex;flex-direction:column;gap:10px;min-width:0}
-.bk h2{font-size:24px}.bk p{color:var(--muted);max-width:60ch}
+.bk h2{font-size:26px}.bk p{color:var(--muted);max-width:60ch}
 .bk .checks{flex-direction:row;flex-wrap:wrap;gap:6px 24px;font-size:14.5px}
-.demo-note{background:#FFF8E5;color:#6B5300!important;border-radius:6px;padding:8px 12px;font-size:14px;align-self:flex-start}
-.handover{background:var(--surface);border-radius:8px;padding:28px;display:flex;flex-direction:column;gap:14px}
+.demo-note{background:#FFF6E0;color:#6B5300!important;border-radius:8px;padding:8px 12px;font-size:14px;align-self:flex-start}
+.handover{background:var(--surface);border-radius:24px;padding:36px;display:flex;flex-direction:column;gap:14px}
 /* footer */
-.ftr{background:var(--ink);color:#C9D3DA;padding-block:56px 28px;font-size:14px}
-.ftr-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.4fr;gap:32px}
-.ftr h4{color:#fff;font-size:15px;margin-bottom:12px}
-.ftr p{margin-top:12px}
-.ftr ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
-.ftr a{color:#C9D3DA;text-decoration:none}.ftr a:hover{color:#fff}
-.ftr .hours div{border-color:rgba(255,255,255,.15)}.ftr .hours dt{color:#9AAAB5}
-.ftr-note{border-top:1px solid rgba(255,255,255,.12);margin-top:36px;padding-top:20px;font-size:12.5px;color:#93A3AE;display:flex;flex-direction:column;gap:4px}
+.ftr{background:var(--dark);color:#BFCACE;padding-block:24px 32px;font-size:14px;overflow:hidden}
+.ftr-word{font-family:var(--f-lat);font-size:clamp(48px,11vw,168px);line-height:1;letter-spacing:.06em;color:rgba(255,255,255,.06);white-space:nowrap;margin:0 0 40px;text-align:center}
+.ftr-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.4fr;gap:40px}
+.ftr h4{color:#fff;font-size:15px;margin-bottom:14px;font-family:var(--f-serif);font-weight:500;letter-spacing:.1em}
+.ftr h4.mt{margin-top:24px}
+.ftr p{margin-top:14px}
+.ftr ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px}
+.ftr a{color:#BFCACE;text-decoration:none}.ftr a:hover{color:#fff}
+.ftr .hours div{border-color:rgba(255,255,255,.14);font-size:13.5px}.ftr .hours dt{color:#93A3A9}
+.ftr-note{border-top:1px solid rgba(255,255,255,.12);margin-top:44px;padding-top:22px;font-size:12.5px;color:#8C9CA2;display:flex;flex-direction:column;gap:4px}
+/* reveal */
+[data-rv]{transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv-pre{opacity:0;transform:translateY(28px)}
 /* responsive */
-@media (max-width:960px){
+@media (max-width:1080px){
   .burger{display:flex}
-  .nav{position:absolute;left:0;right:0;top:100%;background:var(--bg);flex-direction:column;align-items:stretch;padding:8px max(16px,env(safe-area-inset-left,0px)) 16px;border-bottom:1px solid var(--line);display:none;box-shadow:0 12px 24px -12px rgba(0,0,0,.15)}
+  .nav{position:absolute;left:0;right:0;top:100%;background:var(--bg);flex-direction:column;align-items:stretch;padding:8px max(20px,env(safe-area-inset-left,0px)) 20px;border-bottom:1px solid var(--line);display:none;box-shadow:0 16px 28px -16px rgba(0,0,0,.18)}
   .nav.open{display:flex}
-  .nav a{padding:12px 4px;border-bottom:1px solid var(--line)}
-  .nav a.is-current:not(.btn){box-shadow:none}
-  .btn.sm{margin:12px 0 0;padding:12px}
-  .hero-grid,.layout,.split{grid-template-columns:1fr;gap:32px}
-  .split.rev>.ph{order:0}
+  .nav a{padding:13px 4px;border-bottom:1px solid var(--line)}
+  .nav a:not(.btn)::after{display:none}
+  .btn.sm{margin:14px 0 0;padding:13px}
+  .hero-grid{grid-template-columns:1fr}
+  .hero-side{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .hero-main{min-height:540px}
+  .feat4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .split-intro,.tx-panel,.layout,.split,.doc,.news-grid{grid-template-columns:1fr;gap:40px}
+  .split.rev>.pic,.doc:nth-child(even)>.pic{order:0}
+  .doc>.arch{max-width:420px}
+  .stack{max-width:560px}
   .side{position:static}
-  .grid3,.grid4{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .steps.six{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .grid3,.grid4,.steps{grid-template-columns:repeat(2,minmax(0,1fr))}
   .ftr-grid{grid-template-columns:1fr 1fr}
+  .pillbar{top:66px}
 }
 @media (max-width:640px){
   body{font-size:15.5px}
-  .sec{padding-block:48px}
-  .grid2,.grid3,.grid4,.steps,.steps.six,.f2,.infogrid,.ftr-grid{grid-template-columns:1fr}
-  .row-card{flex-direction:column}.row-card>.ph{width:100%;aspect-ratio:16/9}
+  .wrap{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+  .sec{padding-block:64px}.sec.tight{padding-block:40px 64px}
+  .hero{padding-block:12px 0}
+  .hero-main{min-height:560px;border-radius:20px}
+  .hero-main::before{background:linear-gradient(0deg,rgba(23,36,42,.86) 0%,rgba(23,36,42,.5) 60%,rgba(23,36,42,.2) 100%)}
+  .hero-t{padding:28px 22px 64px}
+  .hero h1{font-size:34px;letter-spacing:.06em}
+  .badge{width:92px;height:92px;right:14px;top:14px;bottom:auto}.badge span{font-size:12px}.badge text{font-size:9.6px}
+  .hero-side{grid-template-columns:1fr}
+  .hcard{border-radius:20px;padding:26px}
+  .facts-in{grid-template-columns:1fr 1fr;gap:24px 0;padding:26px 4px}
+  .facts-in>div{padding:0 16px}.facts-in>div:nth-child(3){border:0}
+  .fact-n{font-size:40px;flex-wrap:wrap}
+  .grid2,.grid3,.grid4,.f2,.ftr-grid{grid-template-columns:1fr}
+  .feat4,.steps{grid-template-columns:1fr 1fr;gap:12px}.f4{padding:22px 16px}.f4 h3{font-size:17px}.f4 p,.steps p{font-size:13.5px}.ico{width:48px;height:48px}.steps li{padding:22px 16px}.steps .n{font-size:34px}
+  .stack{padding:0 14% 16% 0}
+  .factbar{grid-template-columns:1fr 1fr;gap:16px 0}.factbar div:nth-child(3){border:0}
+  .row-card{flex-direction:column}.row-card>.pic{width:100%;min-height:0;aspect-ratio:16/9}
   .risks div{grid-template-columns:1fr;gap:2px}
   .topbar .wrap span:first-child{display:none}
-  .bk-t .n{width:30px;height:30px}
+  .banner{margin:12px 16px 0;border-radius:20px;padding-block:64px 56px}
+  .news-list a{grid-template-columns:56px 1fr;gap:14px}.news-list a>svg{display:none}
+  .news-list span{font-size:15.5px}
+  .tx-links a{grid-template-columns:1fr auto}.tx-links small{display:none}
+  .cat-h h2{font-size:26px}
+  .form{padding:26px 20px;border-radius:20px}
+  .doc h2{font-size:28px}
+  .acc{padding:4px 18px 18px}
+  .cta-band{padding-block:88px}
+  .pillbar .tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-inline:-16px;padding-inline:16px}
+  .pillbar .tabs button{flex:none}
 }
-@media (prefers-reduced-motion:reduce){#app,.btn,.card,.acc summary::after{transition:none}}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv-pre{opacity:1;transform:none}
+}
 </style>
 <div id="shell-top"></div>
 <main id="app" class="app"></main>
@@ -324,9 +494,11 @@ const CLINIC = {
 
 const NOTE_EFFECT = '實際效果因人而異，需經醫師評估。';
 const NOTE_FEE = '費用依衛生局核定之收費標準收取，於諮詢時由診所人員說明。';
-const NOTE_ARTICLE = '本文為一般衛教資訊，不能取代醫師當面診察。';
+const NOTE_ARTICLE = '如有疑問，歡迎於門診時間來電詢問。';
 
-const CATS = { light: '光電', inject: '注射', surgery: '手術' };
+const CATS = { light: '光電', inject: '注射', surgery: '手術', care: '皮膚保養' };
+const CAT_DESC = { light: '以雷射、脈衝光、電波或超音波等能量作用於皮膚，處理色素、膚質與鬆弛。', inject: '以注射方式放鬆肌肉、補充容積或改善皮膚含水量。', surgery: '在麻醉下進行的整形外科手術，須經完整評估與充分考慮。', care: '清潔、換膚與痤瘡治療等，以皮膚健康與日常照護為主。' };
+const NOTE_DEVICE = '使用之藥品及醫材依醫師評估，詳情請於門診諮詢。';
 
 const TREATMENTS = [
   {
@@ -338,7 +510,7 @@ const TREATMENTS = [
     risks: [['常見', '泛紅、腫脹、熱痛感、短暫麻刺感。'], ['少見', '燙傷、水泡、結痂、色素變化、局部凹陷或表面不平整、疤痕、暫時性感覺異常。']],
     contra: ['裝有心律調節器、植入式電擊器等電子裝置者', '懷孕中', '治療部位有傷口、感染或發炎性皮膚病', '治療部位有金屬植入物或近期注射填充物者（需先告知醫師評估）', '蟹足腫體質者'],
     care: ['當日以溫水清潔，一週內避免三溫暖、泡湯與去角質', '加強保濕與防曬', '出現水泡、持續疼痛或皮膚顏色改變，請儘速回診'],
-    articles: ['rf-mfu']
+    articles: []
   },
   {
     id: 'pico', name: '皮秒雷射', en: 'Picosecond Laser', cat: 'light', seed: 23, doctor: 'lan',
@@ -349,7 +521,7 @@ const TREATMENTS = [
     risks: [['常見', '泛紅、腫脹、點狀出血、結痂。'], ['色素變化', '發炎後色素沉澱（俗稱反黑）在亞洲膚色較常發生，多數於數月內漸淡，少數持續較久。'], ['少見', '色素脫失（反白）、水泡、疤痕、單純疱疹復發。'], ['刺青治療', '可能發生顏料變色或過敏反應。']],
     contra: ['懷孕中', '治療部位近期曝曬或曬黑', '光敏感體質或正在使用光敏感藥物', '治療部位有感染或疱疹發作', '近期服用口服 A 酸者（需告知醫師）', '蟹足腫體質', '未經診斷、疑似惡性的色素病灶（應先由皮膚科診察）'],
     care: ['輕柔清潔，依醫囑塗抹藥膏', '痂皮勿摳抓', '嚴格防曬至少三個月（物理遮蔽加防曬產品）', '一週內暫停酸類、A 醇與去角質產品', '反黑期間不自行使用美白藥品，依回診安排追蹤'],
-    articles: ['pico-care']
+    articles: []
   },
   {
     id: 'ulthera', name: '音波拉提', en: 'Ultherapy · MFU-V', cat: 'light', seed: 37, doctor: 'shen',
@@ -360,7 +532,7 @@ const TREATMENTS = [
     risks: [['常見', '治療中痠痛感、泛紅、腫脹、觸痛、瘀青、短暫麻木或刺痛。'], ['少見', '暫時性神經麻痺（例如嘴角活動不對稱，多於數週內恢復）、條狀紅腫、燙傷、疤痕、局部脂肪減少造成凹陷。']],
     contra: ['治療部位有開放性傷口或嚴重囊腫型痤瘡', '治療部位有金屬植入物或植入式電子裝置', '懷孕中', '凝血功能異常或使用抗凝血藥物者（需評估）', '治療部位曾注射填充物者（需告知醫師）'],
     care: ['加強保濕與防曬', '一週內避免高溫環境與用力按摩', '觸痛屬常見反應，可依醫囑服用止痛藥', '出現表情不對稱、持續麻木或皮膚破損，請儘速回診'],
-    articles: ['rf-mfu']
+    articles: []
   },
   {
     id: 'botox', name: '肉毒桿菌素注射', en: 'Botulinum Toxin Type A', cat: 'inject', seed: 41, doctor: 'shen',
@@ -382,73 +554,192 @@ const TREATMENTS = [
     risks: [['常見', '紅腫、瘀青、觸痛、暫時性硬塊或不平整。'], ['可能發生', '不對稱、表淺注射造成的泛藍（丁達爾現象）、感染、延遲性結節或肉芽腫、過敏。'], ['罕見但嚴重', '血管栓塞。填充物進入或壓迫血管，可能造成皮膚壞死、視力受損甚至失明，極少數有腦中風的報告。鼻部、眉間與額頭屬風險較高的部位。'], ['警訊', '注射後出現劇烈疼痛、皮膚發白或網狀紫斑、視力模糊，須馬上通知診所或前往急診。']],
     contra: ['懷孕或哺乳中', '對玻尿酸或局部麻醉劑過敏', '注射部位有感染或發炎', '自體免疫疾病活動期', '凝血功能異常或使用抗凝血藥物者（需評估）', '近期進行牙科治療或接種疫苗者（需告知醫師）'],
     care: ['當日避免化妝、按壓與揉捏', '一至兩週內避免三溫暖、泡湯與劇烈運動', '可冰敷減輕腫脹', '依安排於兩週後回診', '出現上述警訊不要等待觀察'],
-    articles: ['filler-safety']
+    articles: ['aftercare-contact']
   },
   {
     id: 'motiva', name: '魔滴隆乳', en: 'Motiva Breast Implants', cat: 'surgery', seed: 67, doctor: 'ko',
     summary: '以矽膠乳房植入物進行的隆乳手術，須在全身麻醉下由整形外科專科醫師施行。',
-    principle: ['醫師經乳房下緣、腋下或乳暈切口，將植入物置於乳腺下或胸大肌下（含雙平面）的腔室。', '魔滴為矽膠凝膠填充的植入物，外殼為奈米級細緻表面，凝膠可隨姿勢改變形態。切口、置放層次與尺寸，由醫師依胸廓與組織條件與當事人討論後決定。'],
+    principle: ['醫師經乳房下緣、腋下或乳暈切口，將植入物置於乳腺下或胸大肌下（含雙平面）的腔室。', '植入物為矽膠凝膠填充，表面有光滑面與細緻紋理面等類型。切口、置放層次與尺寸，由醫師依胸廓與組織條件與當事人討論後決定。'],
     indications: ['乳房發育不足', '產後或體重變化後的乳房容積流失', '兩側乳房明顯不對稱'],
     info: [['時間', '手術約 1.5–2.5 小時'], ['麻醉', '全身麻醉，由麻醉科專科醫師執行並全程監測'], ['恢復期', '術後約 1–2 週可恢復一般文書工作；4–6 週內避免上肢重訓與劇烈運動'], ['追蹤', '乳房植入物並非終身使用的裝置，日後可能需要更換或取出；術後需定期回診，並依醫囑安排超音波或磁振造影檢查']],
     risks: [['手術相關', '出血與血腫、感染、血清腫、傷口癒合不良、疤痕增生、麻醉風險。'], ['植入物相關', '莢膜攣縮（變硬、變形、疼痛）、植入物破裂、移位或旋轉、波紋感、兩側不對稱、乳頭或皮膚感覺改變。可能需要再次手術。'], ['BIA-ALCL', '乳房植入物相關間變性大細胞淋巴瘤，屬罕見的淋巴瘤，目前報告多與粗糙面植入物相關。術後多年出現單側腫脹、積液或腫塊，應回診檢查。'], ['其他', '少數人於植入後出現疲倦、關節痛等全身性症狀的報告，因果關係仍在研究中。植入物可能影響乳房攝影判讀，檢查前請告知放射人員。']],
     contra: ['未滿 18 歲', '懷孕或哺乳中', '乳房有未治療的腫瘤或感染', '身體任何部位有活動性感染', '控制不佳的糖尿病、心肺疾病或凝血異常', '無法配合術後追蹤者', '吸菸者須於術前後戒菸'],
     care: ['依醫囑穿著固定胸衣、服用藥物', '傷口保持乾燥', '依指示返診拆線與追蹤', '是否按摩依醫師指示，不自行進行', '出現發燒、單側明顯腫脹、劇痛或傷口滲液，儘速回診'],
     extra: '手術前將提供手術同意書與麻醉同意書，並保留充分的考慮時間。',
-    articles: ['breast-consult']
+    articles: ['aftercare-contact']
   }
 ];
+
+
+const RENAME = { thermage: ['rf', '單極電波', 'Monopolar Radiofrequency', []], pico: ['pico', '皮秒雷射', 'Picosecond Laser', []], ulthera: ['hifu', '聚焦超音波拉提', 'Micro-focused Ultrasound', []], botox: ['btx', '肉毒桿菌素注射', 'Botulinum Toxin Type A', []], filler: ['ha', '玻尿酸填充', 'Hyaluronic Acid Filler', ['aftercare-contact']], motiva: ['implant', '矽膠義乳隆乳', 'Breast Augmentation', ['aftercare-contact']] };
+TREATMENTS.forEach(t => { const r = RENAME[t.id]; t.id = r[0]; t.name = r[1]; t.en = r[2]; t.articles = r[3]; });
+const lst = x => x.split('；');
+const pairs = x => x.split('；').reduce((a, p) => { if (p.includes('｜')) a.push(p.split('｜')); else a[a.length - 1][1] += '；' + p; return a; }, []);
+function T(id, name, en, cat, doctor, summary, P, I, F, R, X, C, extra) {
+  TREATMENTS.push({ id, name, en, cat, doctor, summary, principle: P.split('／'), indications: lst(I), info: pairs(F), risks: R.split('／').map(p => p.split('｜')), contra: lst(X), care: lst(C), extra, articles: [], seed: 100 + TREATMENTS.length * 7 });
+}
+const SURG_EXTRA = '手術前將提供手術同意書與麻醉同意書，並保留充分的考慮時間。';
+T('ipl', '脈衝光', 'Intense Pulsed Light', 'light', 'lan', '以寬頻譜強脈衝光處理表淺色素與微血管擴張的光學治療。',
+  '儀器以濾鏡選取約 500–1200 奈米的寬頻光，由黑色素與血紅素吸收後轉為熱能，使表淺色素結痂脫落、擴張的微血管收縮。／脈衝光不是雷射，作用層次較淺；能量與濾鏡由醫師依膚色與病灶調整。',
+  '曬斑、雀斑等表淺色素斑；臉部泛紅與微血管擴張；膚色不均',
+  '時間｜約 20–30 分鐘；麻醉｜多數不需麻醉，必要時敷表面麻醉藥膏；恢復期｜泛紅多於數小時內消退，斑點處細小結痂約 5–7 日脫落；間隔｜通常需多次治療，每次間隔約 4 週',
+  '常見｜泛紅、灼熱感、斑點暫時變深並結痂。／可能發生｜發炎後色素沉澱、色素脫失、水泡。／少見｜燙傷、疤痕。／眼部｜強光可能傷及眼睛，治療全程須配戴護目裝置。',
+  '懷孕中；治療部位近期曝曬或曬黑；光敏感體質或正在使用光敏感藥物；治療部位有感染或疱疹發作；肝斑（可能加深，須經醫師評估）；未經診斷的色素病灶',
+  '可冰敷舒緩熱感；痂皮待其自然脫落；加強保濕與防曬；一週內暫停酸類與去角質產品');
+T('fractional', '飛梭雷射', 'Fractional Laser', 'light', 'lan', '以陣列式微小光束在皮膚形成柱狀微創區，引發修復與重塑的雷射治療。',
+  '雷射被分成許多微小光束，只作用於部分皮膚，保留周圍正常組織以利癒合。／分為非汽化型（如 1550 奈米，保留表皮）與汽化型（如二氧化碳雷射、鉺雅鉻雷射），作用強度與恢復期不同，由醫師依疤痕型態與膚色選擇。',
+  '痘疤凹洞；毛孔粗大；手術或外傷疤痕；細紋與膚質粗糙',
+  '時間｜雷射約 20–40 分鐘，另需敷表面麻醉藥膏約 40–60 分鐘；麻醉｜表面麻醉；恢復期｜非汽化型紅腫約 3–5 日；汽化型結痂與泛紅約 7–14 日；間隔｜通常需多次治療，每次間隔約 4–8 週',
+  '常見｜紅腫、灼熱感、結痂、脫屑、暫時性粉刺或痘痘增加。／色素變化｜發炎後色素沉澱在亞洲膚色較常發生，多數於數月內漸淡。／少見｜感染（含單純疱疹復發）、持續性紅斑、色素脫失、疤痕。',
+  '懷孕中；近期服用口服 A 酸者（需告知醫師）；蟹足腫體質；治療部位有感染或疱疹發作；治療部位近期曝曬；免疫功能低下或傷口癒合不良者',
+  '依醫囑塗抹修復藥膏，保持傷口濕潤；痂皮勿摳抓；汽化型治療後，傷口癒合前不上妝；嚴格防曬至少三個月；有疱疹病史者請事先告知，依醫囑服用預防藥物');
+T('toning', '淨膚雷射', 'Q-switched Nd:YAG Laser Toning', 'light', 'lan', '以低能量、大光斑的 1064 奈米 Q 開關銣雅鉻雷射進行的多次性色素治療。',
+  '奈秒級脈衝以低能量、大光斑方式掃過治療區，逐步擊碎黑色素顆粒，由身體代謝。／單次能量低，需累積多次治療；治療頻率與總次數由醫師控管，以降低色素脫失的風險。',
+  '膚色不均與暗沉；發炎後色素沉澱；肝斑須經醫師評估，並非人人適合雷射治療',
+  '時間｜約 15–20 分鐘；麻醉｜多數不需麻醉；恢復期｜輕微泛紅多於數小時內消退；間隔｜每次間隔約 2–4 週，次數由醫師評估',
+  '常見｜泛紅、溫熱刺感、暫時性乾燥。／色素變化｜肝斑可能復發或加深；發炎後色素沉澱。／需留意｜點狀色素脫失（俗稱反白），與治療過於頻繁或累積能量過高有關，可能持續很久且不易恢復。／少見｜水泡、點狀出血、蕁麻疹樣反應。',
+  '懷孕中；治療部位近期曝曬或曬黑；光敏感體質或正在使用光敏感藥物；治療部位有感染或發炎；未經診斷的色素病灶；已出現點狀反白者',
+  '加強保濕與防曬；一週內暫停酸類、A 醇與去角質產品；依醫師安排的間隔回診，不自行加密治療；膚色出現白色小點請儘速回診');
+T('hair', '除毛雷射', 'Laser Hair Removal', 'light', 'lan', '以雷射選擇性加熱毛囊中的黑色素，減少毛髮生長的治療。',
+  '常用波長為 755、810 與 1064 奈米。雷射能量被毛幹與毛囊的黑色素吸收後轉為熱能，破壞毛囊的生長構造。／雷射主要對生長期的毛髮起作用，因此需分次治療；白色、金色與細軟毛髮反應較差。治療後毛髮數量減少，但日後仍可能再生。',
+  '腋下、四肢、比基尼線等部位的深色毛髮；反覆發生的毛囊炎或毛髮內生（經醫師評估）',
+  '時間｜腋下約 10–15 分鐘，雙腿約 40–60 分鐘；麻醉｜以冷卻裝置降低熱感，必要時敷表面麻醉藥膏；恢復期｜毛囊周圍紅腫多於數小時至兩日內消退；間隔｜依部位約 4–8 週，需多次治療',
+  '常見｜毛囊周圍紅腫、刺熱感。／可能發生｜灼傷、水泡、色素沉澱或脫失（膚色較深或曬黑者風險較高）、毛囊炎。／少見｜疤痕；治療區周邊毛髮反而增加（反常性多毛），臉頸部較常被報告。／眼部｜治療全程須配戴護目鏡，眼眶周圍不施打。',
+  '懷孕中；治療部位近期曝曬或曬黑；正在使用光敏感藥物；治療部位有傷口、感染或刺青；治療前四週內曾拔毛或蜜蠟除毛（請改用刮除）',
+  '可冰敷舒緩；兩日內避免熱水浴、三溫暖與劇烈運動；加強防曬；毛髮約一至三週自行脫落，不要拔除');
+T('caha', '羥基磷灰石鈣注射', 'Calcium Hydroxylapatite Filler', 'inject', 'shen', '以含羥基磷灰石鈣微粒的凝膠補充容積、修飾輪廓的注射治療。',
+  '凝膠載體提供注射當下的支撐，於數月內被吸收；微粒留在組織中作為支架，引發自體膠原生成，之後逐漸分解為鈣與磷酸根離子代謝。／與玻尿酸不同，目前沒有可將它溶解的酵素，因此注射前的評估與部位選擇格外重要。',
+  '法令紋等中至深層皺摺；臉頰與下顎線的容積流失；手背容積流失；部分用途屬仿單核准適應症以外的使用，醫師會於諮詢時說明',
+  '時間｜約 20–40 分鐘；麻醉｜表面麻醉，可混合局部麻醉劑；恢復期｜腫脹與瘀青多於 3–7 日消退；間隔｜維持時間因人而異，是否補充由醫師評估',
+  '常見｜紅腫、瘀青、觸痛。／可能發生｜結節或硬塊（唇部與眼周風險較高，一般不注射於這些部位）、不對稱、感染。／罕見但嚴重｜血管栓塞，可能造成皮膚壞死、視力受損甚至失明；因無溶解酵素，處置較為困難。／警訊｜注射後出現劇烈疼痛、皮膚發白或網狀紫斑、視力模糊，須馬上通知診所或前往急診。／影像檢查｜微粒可能在 X 光或電腦斷層影像上顯影，檢查時請告知醫療人員。',
+  '懷孕或哺乳中；對產品成分過敏；注射部位有感染或發炎；自體免疫疾病活動期；凝血功能異常或使用抗凝血藥物者（需評估）；蟹足腫體質；治療部位曾注射不明填充物者（需告知醫師）',
+  '當日避免化妝、按壓與揉捏；一至兩週內避免三溫暖、泡湯與劇烈運動；可冰敷減輕腫脹；依安排回診；出現上述警訊不要等待觀察');
+T('plla', '聚左旋乳酸注射', 'Poly-L-lactic Acid', 'inject', 'shen', '注射聚左旋乳酸微粒，逐步引發自體膠原生成以補充容積的治療。',
+  '聚左旋乳酸是可被人體分解的合成聚合物。微粒注入後引起輕度組織反應，膠原於數週至數月間逐漸增生。／注射後數日的澎潤感主要來自稀釋液，會先消退；變化緩慢，通常需分次治療。目前沒有可將它溶解的酵素。',
+  '臉頰、太陽穴等部位的容積流失；較深的皺摺與凹陷',
+  '時間｜約 30–40 分鐘；麻醉｜表面麻醉，稀釋液可含局部麻醉劑；恢復期｜腫脹與瘀青多於 3–7 日消退；間隔｜每次間隔 4–6 週以上，次數由醫師評估',
+  '常見｜紅腫、瘀青、觸痛。／可能發生｜皮下結節或丘疹（可能於數週至數月後才出現，與稀釋方式、注射層次及部位有關）、肉芽腫、不對稱、感染。／罕見但嚴重｜血管栓塞，可能造成皮膚壞死或視力受損。／警訊｜注射後出現劇烈疼痛、皮膚發白或網狀紫斑、視力模糊，須馬上通知診所或前往急診。',
+  '懷孕或哺乳中；對產品成分過敏；注射部位有感染或發炎；蟹足腫體質；自體免疫疾病活動期；凝血功能異常或使用抗凝血藥物者（需評估）；眼周與唇部一般不注射',
+  '是否按摩、頻率與天數依醫師指示；當日避免化妝；一至兩週內避免三溫暖、泡湯與劇烈運動；數週後出現硬塊請回診評估');
+T('skinbooster', '水光注射', 'Intradermal Hyaluronic Acid', 'inject', 'shen', '以多點方式將玻尿酸注入真皮層，補充皮膚含水量的注射治療。',
+  '以手持針具或多針頭負壓注射儀，將低交聯或未交聯的玻尿酸少量、多點注入真皮層，藉其結合水分的特性改善乾燥。／注射內容物須為具衛生福利部許可證的產品，由醫師選擇。',
+  '皮膚乾燥、粗糙；乾燥引起的細紋；臉部、頸部與手背',
+  '時間｜注射約 20–30 分鐘，另需敷表面麻醉藥膏約 30–40 分鐘；麻醉｜表面麻醉；恢復期｜針孔紅點與小丘疹多於 1–3 日消退，瘀青可能持續約一週；間隔｜通常需多次治療，每次間隔約 4 週',
+  '常見｜針孔紅點、小丘疹、瘀青、腫脹。／可能發生｜感染（曾有非結核分枝桿菌感染的報告，多與來源不明的製劑或無菌操作不當有關）、過敏、結節。／罕見｜血管栓塞。',
+  '懷孕或哺乳中；對玻尿酸或局部麻醉劑過敏；治療部位有感染、疱疹或發炎性痤瘡；自體免疫疾病活動期；凝血功能異常或使用抗凝血藥物者（需評估）；蟹足腫體質',
+  '當日不上妝，保持治療部位清潔；三日內避免三溫暖、泳池與劇烈運動；加強保濕與防曬；紅腫熱痛持續加劇或出現膿皰，請儘速回診');
+T('eyelid', '雙眼皮手術', 'Upper Blepharoplasty', 'surgery', 'ko', '以縫線或切開方式形成上眼瞼皺摺的手術。',
+  '縫合法以縫線固定皮膚與深層組織形成皺摺；切開法則切除多餘皮膚與部分脂肪後再固定。／合併提眼瞼肌無力（眼瞼下垂）者，需另行評估是否一併矯正。方式由醫師依眼皮厚度與鬆弛程度與當事人討論後決定。',
+  '單眼皮或皺摺不明顯；上眼皮鬆弛下垂；兩側皺摺不對稱',
+  '時間｜約 40–90 分鐘；麻醉｜局部麻醉，可合併靜脈鎮靜（由麻醉科專科醫師執行）；恢復期｜明顯腫脹與瘀青約 1–2 週；切開法約 5–7 日拆線；外觀穩定需 3–6 個月；追蹤｜拆線後及術後一個月、三個月回診',
+  '常見｜腫脹、瘀青、暫時性乾眼與異物感。／可能發生｜兩側不對稱、皺摺變淺或消失（縫合法較常見）、多重皺摺、疤痕明顯、閉眼不全、感染，可能需要再次手術。／罕見但嚴重｜眼眶內出血壓迫視神經造成視力受損。術後出現劇痛、眼球突出或視力模糊，須立即就醫。',
+  '未滿 18 歲；懷孕中；眼部有感染或發炎；嚴重乾眼症；控制不佳的高血壓、糖尿病或甲狀腺眼病變；凝血功能異常或使用抗凝血藥物者（需評估）',
+  '術後 48 小時內冰敷，之後依醫囑處理；睡眠時墊高頭部；傷口保持乾燥並依醫囑塗藥；兩週內避免隱形眼鏡、眼妝與劇烈運動；術前後戒菸', '手術前將提供手術同意書，並保留充分的考慮時間。');
+T('lowerbleph', '眼袋手術', 'Lower Blepharoplasty', 'surgery', 'ko', '經結膜或睫毛下切口，處理下眼瞼突出脂肪與鬆弛皮膚的手術。',
+  '內開式由下眼瞼結膜切口移除或轉位眶隔脂肪，皮膚表面沒有切口，適合皮膚鬆弛不明顯者。／外開式由睫毛下緣切口進入，可同時處理鬆弛的皮膚與肌肉。方式由醫師依脂肪突出與皮膚鬆弛程度評估。',
+  '下眼瞼脂肪突出；合併皮膚鬆弛與皺摺；淚溝凹陷（可評估脂肪轉位）',
+  '時間｜約 60–120 分鐘；麻醉｜局部麻醉合併靜脈鎮靜或全身麻醉，由麻醉科專科醫師執行；恢復期｜腫脹與瘀青約 1–2 週；外開式約 5–7 日拆線；追蹤｜術後一週、一個月、三個月回診',
+  '常見｜腫脹、瘀青、結膜水腫、暫時性乾眼。／可能發生｜下眼瞼外翻或退縮（外開式較需留意）、凹陷或表面不平整、兩側不對稱、複視（多為暫時性）、疤痕。／罕見但嚴重｜眼眶內出血壓迫視神經造成視力受損。術後出現劇痛、眼球突出或視力模糊，須立即就醫。',
+  '未滿 18 歲；懷孕中；眼部有感染或發炎；嚴重乾眼症；下眼瞼張力明顯不足者（需評估術式）；控制不佳的高血壓或糖尿病；凝血功能異常或使用抗凝血藥物者（需評估）',
+  '術後 48 小時內冰敷；睡眠時墊高頭部；依醫囑使用眼藥水與藥膏；兩週內避免隱形眼鏡、揉眼與劇烈運動；術前後戒菸', SURG_EXTRA);
+T('rhino', '鼻整形手術', 'Rhinoplasty', 'surgery', 'ko', '以自體軟骨或植入物調整鼻樑、鼻尖與鼻翼形態的手術。',
+  '手術可採開放式（鼻小柱切口）或閉鎖式（鼻孔內切口）。鼻樑可使用植入物或自體組織；鼻尖多以耳軟骨、鼻中隔軟骨或肋軟骨塑形。／合併鼻中隔彎曲者可評估同時矯正。材料與術式由醫師依鼻部皮膚厚度、軟骨條件與當事人討論後決定。',
+  '鼻樑低平；鼻尖與鼻翼形態調整；外傷後鼻部變形；鼻中隔彎曲合併外觀問題',
+  '時間｜約 2–4 小時；麻醉｜全身麻醉或靜脈鎮靜，由麻醉科專科醫師執行並全程監測；恢復期｜鼻夾板固定約 7 日；明顯腫脹約 2–3 週；形態穩定需 6–12 個月；追蹤｜術後一週拆線，之後依醫囑定期回診',
+  '手術相關｜出血、感染、麻醉風險、疤痕。／可能發生｜鼻塞、嗅覺暫時改變、鼻尖麻木、不對稱或歪斜；形態與預期有落差時可能需要再次手術。／植入物相關｜感染、位移、外露、莢膜攣縮造成變形，可能需要取出。／少見｜皮膚血液循環不良造成壞死、鼻中隔穿孔；取用肋軟骨者可能有取用處疼痛、氣胸或軟骨日後彎曲。',
+  '未滿 18 歲；懷孕中；鼻部感染或未控制的鼻竇炎；鼻部曾注射不明填充物者（需告知醫師）；控制不佳的慢性疾病或凝血異常；吸菸者須於術前後戒菸',
+  '睡眠時墊高頭部並依醫囑冰敷；不擤鼻涕，打噴嚏時張口；避免碰撞與壓迫鼻部，配戴眼鏡的時機依醫囑；出現發燒、紅腫加劇或鼻尖皮膚顏色改變，儘速回診', SURG_EXTRA);
+T('lipo', '抽脂手術', 'Liposuction', 'surgery', 'ko', '經小切口以抽吸管移除局部皮下脂肪的手術，並非減重方法。',
+  '醫師先注入含局部麻醉劑與血管收縮劑的腫脹液，再以細管抽吸皮下脂肪，可輔以動力或超音波設備。／抽脂量較大時，須由符合資格的專科醫師施行，全身麻醉或靜脈麻醉由麻醉科專科醫師執行。',
+  '飲食與運動後仍局部堆積的皮下脂肪；腹部、腰側、大腿、手臂、下巴等部位',
+  '時間｜約 1–3 小時，依部位與範圍而定；麻醉｜靜脈鎮靜或全身麻醉，由麻醉科專科醫師執行並全程監測；恢復期｜約 1–2 週可恢復一般文書工作；腫脹與瘀青持續數週；外觀穩定需 3–6 個月；追蹤｜術後依醫囑穿著塑身衣約 1–3 個月，並定期回診',
+  '常見｜腫脹、瘀青、痠痛、麻木、暫時性硬塊。／可能發生｜表面凹凸不平、兩側不對稱、皮膚鬆弛、血清腫、色素沉澱、感染。／罕見但嚴重｜脂肪栓塞、深部靜脈栓塞與肺栓塞、局部麻醉劑中毒、體液失衡、腹腔臟器損傷、大量出血，可能危及生命。／警訊｜術後出現呼吸急促、胸痛、意識改變或單側小腿腫痛，須立即就醫。',
+  '未滿 18 歲；懷孕中；以減重為主要目的者；心肺疾病、控制不佳的糖尿病或凝血異常；使用抗凝血藥物者（需評估）；吸菸者須於術前後戒菸',
+  '依醫囑穿著塑身衣；術後儘早下床走動，以降低血栓風險；傷口滲液 1–2 日屬常見情形；四週內避免劇烈運動；出現上述警訊不要等待觀察', SURG_EXTRA);
+T('hydra', '渦流水磨淨膚', 'Hydradermabrasion', 'care', 'lan', '以負壓渦流探頭搭配溶液，進行清潔、溫和去角質與導入的非侵入式皮膚保養。',
+  '探頭以真空負壓貼附皮膚，螺旋流道帶動溶液（常含低濃度水楊酸、乳酸等成分）軟化角質與粉刺並同步吸除，之後導入保濕成分。／過程不破壞皮膚，屬保養性質，可作為其他治療前的清潔準備。',
+  '粉刺與毛孔阻塞；膚質粗糙、出油；乾燥暗沉',
+  '時間｜約 30–45 分鐘；麻醉｜不需麻醉；恢復期｜輕微泛紅多於數小時內消退；間隔｜約 2–4 週，依膚況評估',
+  '常見｜泛紅、緊繃感、短暫刺感。／可能發生｜乾燥脫屑、對溶液成分刺激或過敏、粉刺暫時增加。／少見｜負壓造成瘀點、單純疱疹復發。',
+  '治療部位有傷口、曬傷、感染或疱疹發作；發炎嚴重的痤瘡或酒糟急性期；對水楊酸等成分過敏者（對阿斯匹靈過敏請事先告知）；近期接受汽化雷射或中深層換膚者；懷孕中或服用口服 A 酸者（需告知，由醫師調整溶液成分）',
+  '當日加強保濕；三日內暫停酸類、A 醇與去角質產品；加強防曬；持續紅腫刺痛請回診');
+const PEEL_CARE = '以溫水輕柔清潔；加強保濕；脫屑勿撕除；一週內暫停酸類、A 醇與去角質產品；嚴格防曬';
+T('peel', '果酸換膚', 'Glycolic Acid Peel', 'care', 'lan', '以甘醇酸溶液進行的淺層化學換膚。',
+  '甘醇酸是分子較小的 α-羥基酸，可降低角質細胞間的連結，使老廢角質脫落。／診所使用的濃度高於一般保養品，由醫師依皮膚反應決定濃度與停留時間，再以中和劑終止反應。',
+  '粉刺與輕度痤瘡；表淺色素不均；膚質粗糙；毛孔角化',
+  '時間｜約 15–20 分鐘；麻醉｜不需麻醉；恢復期｜泛紅與刺感多於數小時內消退，之後 2–5 日可能輕微脫屑；間隔｜約 2–4 週，通常需多次',
+  '常見｜刺痛、泛紅、乾燥脫屑。／可能發生｜結痂、發炎後色素沉澱、痘痘短暫增加。／少見｜化學灼傷、疤痕、色素脫失、單純疱疹復發、接觸性皮膚炎。',
+  '治療部位有傷口、濕疹、曬傷或疱疹發作；近期服用口服 A 酸者（需告知醫師）；一週內使用外用 A 酸、去角質或做過除毛者；蟹足腫體質；懷孕或哺乳中（請先告知，由醫師評估）；無法配合防曬者', PEEL_CARE);
+T('mandelic', '杏仁酸換膚', 'Mandelic Acid Peel', 'care', 'lan', '以杏仁酸溶液進行的淺層化學換膚，刺激感相對較低。',
+  '杏仁酸是分子較大、具親脂性的 α-羥基酸，滲透速度較慢，刺激感通常低於甘醇酸。／文獻指出它具輕度抑菌特性，常用於容易長粉刺或較敏感的膚質；濃度與停留時間由醫師決定。',
+  '粉刺與輕度痤瘡；出油與毛孔阻塞；發炎後色素沉澱；較敏感、不耐甘醇酸的膚質（經醫師評估）',
+  '時間｜約 15–20 分鐘；麻醉｜不需麻醉；恢復期｜輕微泛紅多於數小時內消退，脫屑通常不明顯；間隔｜約 2–4 週，通常需多次',
+  '常見｜輕微刺感、泛紅、乾燥。／可能發生｜脫屑、發炎後色素沉澱、痘痘短暫增加。／少見｜化學灼傷、接觸性皮膚炎、單純疱疹復發。',
+  '對杏仁酸過敏；治療部位有傷口、濕疹、曬傷或疱疹發作；近期服用口服 A 酸者（需告知醫師）；一週內使用外用 A 酸或去角質產品者；懷孕或哺乳中（請先告知，由醫師評估）', PEEL_CARE);
+T('acne', '痤瘡治療', 'Acne Treatment', 'care', 'lan', '由皮膚科醫師診斷痤瘡的類型與嚴重度後，安排藥物與處置的門診治療。',
+  '痤瘡（青春痘）與皮脂分泌、毛囊角化異常、痤瘡桿菌及發炎反應有關。／醫師依嚴重度選擇外用藥、口服藥，必要時合併粉刺清除、化學換膚或光電治療。多數治療需持續數週才看得出變化。',
+  '粉刺；發炎性丘疹與膿皰；結節與囊腫型痤瘡；反覆發作、有留疤風險者',
+  '時間｜初診問診與檢查約 20–30 分鐘；療程｜外用與口服藥通常需連續使用 8–12 週後評估；處置｜粉刺清除、病灶內注射等，依醫師評估安排；回診｜約每 2–4 週',
+  '外用藥｜乾燥、脫屑、刺激感，部分藥物會增加光敏感。／口服抗生素｜腸胃不適、光敏感；為降低抗藥性，不宜長期單獨使用。／口服 A 酸｜具致畸胎性，用藥前、用藥期間與停藥後一段時間須嚴格避孕；可能有唇部與眼睛乾燥、肝功能與血脂異常、情緒改變，需定期抽血追蹤。／處置相關｜粉刺清除後紅腫與色素沉澱；病灶內類固醇注射可能造成局部凹陷。',
+  '懷孕、哺乳或計畫懷孕者（口服 A 酸與部分藥物不可使用）；肝腎功能異常者（需評估）；有藥物過敏史者；正在使用其他藥物者（請告知醫師）',
+  '每日以溫和產品清潔兩次；不自行擠壓；使用不易致粉刺的保濕與防曬產品；依醫囑用藥，不自行停藥或加量；出現嚴重不適請儘速回診');
+T('skincare', '皮膚保養諮詢', 'Skin Care Consultation', 'care', 'shen', '由皮膚科醫師檢視皮膚狀況與目前的保養方式，提供日常照護建議的門診。',
+  '醫師透過問診（保養品、用藥與生活習慣）與視診，必要時輔以皮膚鏡檢查，先區分是保養方式的問題還是需要治療的皮膚疾病。／之後說明清潔、保濕與防曬的原則，以及目前保養品是否需要調整。',
+  '皮膚敏感、乾燥或出油；療程前後的保養安排；不確定是否需要治療者',
+  '時間｜約 20–30 分鐘；準備｜請攜帶目前使用的保養品或成分清單，當日儘量不上妝；內容｜問診、視診，必要時皮膚鏡檢查；後續｜若診斷為皮膚疾病，另行說明治療選項',
+  '諮詢本身｜不涉及侵入性處置。／更換保養品｜新產品可能引起刺激或過敏，建議先於小範圍試用。／需要治療時｜相關風險於安排治療前另行說明。',
+  '無特定限制；皮膚有急性感染或嚴重發炎者，將優先安排診療',
+  '依建議逐項調整保養品，不一次全部更換；每日防曬；出現紅、癢、刺痛請停用新產品並回診');
+const ORDER = ['rf', 'pico', 'hifu', 'ipl', 'fractional', 'toning', 'hair', 'btx', 'ha', 'caha', 'plla', 'skinbooster', 'implant', 'eyelid', 'lowerbleph', 'rhino', 'lipo', 'hydra', 'peel', 'mandelic', 'acne', 'skincare'];
+TREATMENTS.sort((a, b) => ORDER.indexOf(a.id) - ORDER.indexOf(b.id));
+/* photos */
+const IMG = k => '../assets/img/' + k + '.jpg';
+const POOL = { light: ['light-0', 'light-1', 'light-2'], inject: ['inject-0', 'inject-1', 'inject-2'], surgery: ['surgery-0', 'surgery-1'], care: ['care-2', 'care-1'] };
+const POS = ['50% 50%', '30% 40%', '70% 60%', '50% 25%', '40% 75%'];
+{ const n = {}; TREATMENTS.forEach(t => { const k = n[t.cat] = (n[t.cat] || 0); n[t.cat]++; t.photo = t.id === 'hair' ? 'hair' : POOL[t.cat][k % POOL[t.cat].length]; t.pos = POS[Math.floor(k / POOL[t.cat].length) % POS.length]; }); }
 
 const DOCTORS = [
   { id: 'ko', name: '柯硯廷', title: '院長', spec: '整形外科專科醫師', certs: ['外科專科醫師', '整形外科專科醫師'], cert: '整外專醫字第 000000 號（示意）',
     edu: ['國立大學醫學系畢業', '醫學中心外科部住院醫師', '醫學中心整形外科總醫師', '醫學中心整形外科主治醫師', '台灣整形外科醫學會會員'],
-    skills: ['乳房整形手術', '眼周手術', '術後疤痕照護'], bio: '負責本院手術項目的術前評估、手術執行與術後追蹤。', seed: 71 },
+    skills: ['乳房整形手術', '眼周手術', '鼻整形手術', '抽脂手術', '術後疤痕照護'], bio: '負責本院手術項目的術前評估、手術執行與術後追蹤。', seed: 71, photo: 'doc-ko' },
   { id: 'shen', name: '沈以澄', title: '醫師', spec: '皮膚科專科醫師', certs: ['皮膚科專科醫師'], cert: '皮專醫字第 000000 號（示意）',
     edu: ['醫學大學醫學系畢業', '醫學中心皮膚部住院醫師、總醫師', '區域醫院皮膚科主治醫師', '臺灣皮膚科醫學會會員'],
-    skills: ['注射治療（肉毒桿菌素、玻尿酸）', '電波與音波治療', '一般皮膚科診療'], bio: '負責注射與緊緻類治療的評估與執行。', seed: 83 },
+    skills: ['注射治療（肉毒桿菌素、玻尿酸）', '電波與音波治療', '一般皮膚科診療'], bio: '負責注射與緊緻類治療的評估與執行。', seed: 83, photo: 'doc-shen' },
   { id: 'lan', name: '藍予禾', title: '醫師', spec: '皮膚科專科醫師', certs: ['皮膚科專科醫師'], cert: '皮專醫字第 000000 號（示意）',
     edu: ['醫學大學醫學系畢業', '醫學中心皮膚部住院醫師', '醫學中心雷射治療門診主治醫師', '臺灣皮膚科醫學會會員'],
-    skills: ['色素性病灶診斷與雷射治療', '痤瘡與痘疤', '雷射術後照護'], bio: '負責色素與膚質相關雷射門診。', seed: 97 }
+    skills: ['色素性病灶診斷與雷射治療', '痤瘡與痘疤', '化學換膚', '雷射術後照護'], bio: '負責色素與膚質相關雷射門診與皮膚保養療程。', seed: 97, photo: 'doc-lan' }
 ];
 
 const ARTICLES = [
-  { id: 'rf-mfu', title: '電波與音波拉提的差別：能量形式與作用深度', author: 'shen', date: '2026-09-18', tag: '光電', treatments: ['thermage', 'ulthera'], seed: 13,
-    excerpt: '兩者都是非侵入式的緊緻治療，但能量形式與作用深度不同，適合評估的狀況也不一樣。',
+  { id: 'lunar-new-year', photo: 'news-0', title: '2027 年春節門診時間公告', by: '霧嶼診所', date: '2026-11-10', tag: '門診公告', treatments: [], seed: 13,
+    excerpt: '春節期間門診時間調整如下。休診期間原有的預約，診所人員將另行聯繫確認。',
     body: [
-      ['兩種能量', ['電波是電流在組織內產生的體積式加熱，熱能分布在一個範圍內；音波則是把超音波聚焦成點狀，在特定深度形成微小的熱凝固點。']],
-      ['作用深度', ['電波主要加熱真皮層與皮下纖維中隔。音波可設定 1.5、3.0、4.5 毫米等深度，能作用到筋膜層（SMAS），治療時並可用超音波影像確認層次。']],
-      ['各自適合評估的狀況', ['皮膚偏薄、以鬆弛與細紋為主，或是以輪廓下垂為主，醫師會依組織厚度與鬆弛型態給出建議。兩者並非互相取代，有時會分次搭配。']],
-      ['共同的限制', ['兩種治療的變化都需要數月才會逐步出現，幅度因人而異。鬆弛程度較嚴重時，非侵入式治療的改變有限，可能需要與醫師討論手術選項。']],
-      ['治療前該告知醫師的事', ['體內是否有植入物或電子裝置、過去的填充物注射史，以及目前使用的藥物，都會影響是否適合治療與能量設定。']]
+      ['休診日期', ['2027 年 2 月 5 日（週五）至 2 月 10 日（週三）休診。']],
+      ['恢復門診', ['2 月 11 日（週四）起恢復正常門診時間。']],
+      ['已預約者', ['休診期間的原有預約，診所人員將於 1 月 29 日前以電話聯繫改期。']],
+      ['休診期間的術後問題', ['請依術後衛教單上的聯絡方式聯繫。如出現劇烈疼痛、發燒、視力模糊等緊急狀況，請直接前往鄰近醫院急診。']]
     ] },
-  { id: 'pico-care', title: '皮秒雷射後的照護：認識發炎後色素沉澱', author: 'lan', date: '2026-10-02', tag: '光電', treatments: ['pico'], seed: 29,
-    excerpt: '反黑是亞洲膚色在雷射後較常見的變化。了解它出現的時間與照護方式，能降低發生的機會。',
+  { id: 'doctor-schedule', photo: 'news-1', title: '沈以澄醫師 12 月門診時段調整', by: '霧嶼診所', doctor: 'shen', date: '2026-11-04', tag: '醫師門診', treatments: ['btx', 'ha'], seed: 29,
+    excerpt: '因參加學術研討會，沈以澄醫師 12 月部分晚診時段暫停。',
     body: [
-      ['術後一週的正常變化', ['治療後數小時至兩日內常見泛紅；除斑部位可能形成細小痂皮，約 5–7 日自然脫落。這段期間請輕柔清潔、依醫囑擦藥。']],
-      ['什麼是反黑', ['皮膚受到刺激發炎後，黑色素細胞增加製造色素，稱為發炎後色素沉澱。亞洲膚色較常發生，通常於術後二至四週出現，多數在數月內漸淡。']],
-      ['降低機會的做法', ['嚴格防曬、不摳痂皮、暫停酸類與 A 醇等刺激性保養，治療前也避免曝曬。']],
-      ['何時該回診', ['出現水泡、滲液、疼痛加劇，或顏色持續加深時，請儘速回診，由醫師判斷是否需要處置。']],
-      ['為什麼治療需要間隔', ['皮膚修復需要時間。過於密集的治療會增加色素變化的風險，因此每次間隔通常為 4–8 週，由醫師依恢復狀況安排。']]
+      ['調整時段', ['2026 年 12 月 9 日（週三）、12 月 10 日（週四）晚診暫停，其他時段照常。']],
+      ['已預約者', ['診所人員將主動聯繫，協助改約至其他時段。']],
+      ['其他醫師門診', ['柯硯廷醫師、藍予禾醫師門診時間不變。']]
     ] },
-  { id: 'filler-safety', title: '玻尿酸注射前應了解的風險：血管栓塞的警訊', author: 'shen', date: '2026-10-23', tag: '注射', treatments: ['filler'], seed: 47,
-    excerpt: '血管栓塞罕見但後果嚴重。認識警訊、知道該如何反應，是注射前應有的準備。',
+  { id: 'first-visit', photo: 'news-2', title: '初診須知：諮詢當天請準備的資料', by: '霧嶼診所', date: '2026-10-20', tag: '就醫須知', treatments: [], seed: 47,
+    excerpt: '初次諮詢前先準備好這些資料，能讓醫師更完整地評估。',
     body: [
-      ['常見且會自行緩解的反應', ['紅腫、瘀青、觸痛與暫時性的硬塊，多數在一至兩週內緩解。']],
-      ['什麼是血管栓塞', ['填充物進入血管或從外側壓迫血管，造成血流受阻。鼻部、眉間與額頭的血管分布較複雜，屬風險較高的部位。']],
-      ['警訊與處置', ['注射後出現劇烈疼痛、皮膚發白或網狀紫斑、視力模糊時，應馬上聯絡施打院所或前往急診。處置包含注射玻尿酸酶等，時間是關鍵。']],
-      ['選擇院所時可確認的事', ['是否由醫師親自注射；產品是否具衛生福利部醫療器材許可證，並可當場核對包裝；院內是否備有玻尿酸酶與緊急處置流程。']],
-      ['注射前應告知的病史與用藥', ['過敏史、自體免疫疾病、抗凝血藥物或保健食品、近期牙科治療或疫苗接種。']]
+      ['請攜帶', ['健保卡或身分證件、目前使用中的藥物與保健食品清單，以及過去在其他院所接受醫學美容治療的紀錄（項目、時間、使用產品）。']],
+      ['當天流程', ['填寫病史問卷後由醫師問診評估，諮詢約 30–40 分鐘。療程是否適合、何時進行，皆於評估後討論，不需當日決定。']],
+      ['未成年者', ['未滿 18 歲者諮詢，須由法定代理人陪同。']],
+      ['取消或改期', ['如需取消或改期，請於前一日門診時間內來電告知。']]
     ] },
-  { id: 'breast-consult', title: '考慮隆乳手術前，諮詢時可以問的七件事', author: 'ko', date: '2026-11-06', tag: '手術', treatments: ['motiva'], seed: 61,
-    excerpt: '手術是需要時間考慮的決定。帶著這份問題清單去諮詢，能幫助你和醫師把細節談清楚。',
+  { id: 'aftercare-contact', photo: 'news-3', title: '治療後有疑問時的聯絡方式', by: '霧嶼診所', date: '2026-09-30', tag: '就醫須知', treatments: ['ha', 'implant'], seed: 61,
+    excerpt: '治療後若有疑問或不適，請依以下方式聯繫；緊急狀況請直接就醫。',
     body: [
-      ['一、執刀與麻醉', ['執刀醫師是否為整形外科專科醫師，麻醉由誰執行、如何監測。']],
-      ['二、手術場所', ['手術室的設備與急救配置，以及術後恢復室的照護安排。']],
-      ['三、切口與置放層次', ['乳房下緣、腋下、乳暈切口與乳腺下、胸大肌下、雙平面各自的考量。']],
-      ['四、植入物如何決定', ['植入物的種類、表面與尺寸，依胸廓與組織條件如何選擇。']],
-      ['五、可能的併發症', ['莢膜攣縮、植入物破裂、BIA-ALCL，以及日後再次手術的可能。']],
-      ['六、術後追蹤', ['回診頻率與超音波或磁振造影檢查的安排。乳房植入物並非終身使用的裝置。']],
-      ['七、生活上的影響', ['對哺乳與乳房攝影檢查的影響，以及檢查前需要告知的事項。']],
-      ['結語', ['帶著問題清單諮詢，把疑問都談清楚，並給自己充分的時間考慮。']]
+      ['門診時間內', ['請撥打診所電話，由護理人員初步了解狀況並安排回診。']],
+      ['非門診時間', ['請參考術後衛教單上的聯絡方式。手術個案另有聯絡專線，由值班人員回覆。']],
+      ['請直接前往急診的狀況', ['注射後出現劇烈疼痛、皮膚發白或網狀紫斑、視力模糊；手術後發燒、單側明顯腫脹或傷口持續出血。']]
     ] }
 ];
 
@@ -467,22 +758,27 @@ const ABOUT = {
     ['把風險講清楚', '每個療程頁都列出副作用、不適合對象與照護方式，諮詢時也會逐項說明。'],
     ['同一位醫師追蹤', '治療與回診由同一位醫師負責，讓評估與追蹤前後一致。']
   ],
-  facilities: [['獨立諮詢室', '一對一問診，保護隱私。', 5], ['光電治療室', '依設備分區設置，治療前後完成清潔。', 17], ['注射治療室', '備有玻尿酸酶與緊急處置流程。', 31], ['手術室與恢復室', '配置生理監視與急救設備。', 43]],
+  facilities: [['獨立諮詢室', '一對一問診，保護隱私。', 5, 'hero-2'], ['光電治療室', '依設備分區設置，治療前後完成清潔。', 17, 'light-1'], ['注射治療室', '備有玻尿酸酶與緊急處置流程。', 31, 'care-2'], ['手術室與恢復室', '配置生理監視與急救設備。', 43, 'surgery-1']],
   permit: '使用之藥品與醫療器材皆具衛生福利部許可證，字號於正式網站填入。'
 };
 
+const HERO_IMGS = ['hero-0', 'hero-1', 'hero-2'];
+const HERO_LABELS = ['診所接待大廳', '候診休息空間', '一對一諮詢室'];
+const ABOUT_IMGS = ['about-0', 'about-1', 'about-2'];
+const BANNERS = { treatments: 'light-0', doctors: 'about-2', articles: 'banner-news', about: 'hero-1', contact: 'hero-0', backend: 'hero-2' };
 const BANNED = ['最','保證','永久','零風險','無風險','無痛','不痛','無副作用','百分之百','100%','根治','徹底','完全','立即見效','馬上見效','一次見效','有效率','成功率','零恢復期','免開刀','第一','唯一','首選','首創','獨家','領先','頂尖','頂級','權威','名醫','專家','大師','神醫','推薦','口碑','人氣','熱門','明星','網紅','完美','神奇','奇蹟','回春','逆齡','凍齡','童顏','女神','見證','心得','術前術後','前後對比','優惠','折扣','特價','免費','限時','限量','體驗價','專案價','團購','買一送一'];
 
 const tById = id => TREATMENTS.find(t => t.id === id);
 const dById = id => DOCTORS.find(d => d.id === id);
 const aById = id => ARTICLES.find(a => a.id === id);
+const byName = a => a.by;
 const fmtDate = d => d.replace(/-/g, '.');
 
 /* Shared router, state and backend mock. Each version defines window.V (renderer). */
 const S = { pub: Object.fromEntries(TREATMENTS.map(t => [t.id, true])), hero: 0, picker: false, toast: '' };
 const pubT = () => TREATMENTS.filter(t => S.pub[t.id]);
 const ROUTES = ['home', 'treatments', 'doctors', 'articles', 'about', 'contact', 'backend'];
-const PAGE_NAMES = { home: '首頁', treatments: '療程項目', doctors: '醫師團隊', articles: '衛教文章', about: '關於診所', contact: '預約諮詢', backend: '後台操作說明' };
+const PAGE_NAMES = { home: '首頁', treatments: '療程項目', doctors: '醫師團隊', articles: '最新消息', about: '關於診所', contact: '預約諮詢', backend: '後台操作說明' };
 const NAV = ['treatments', 'doctors', 'articles', 'about', 'contact'];
 
 function parseRoute() {
@@ -574,7 +870,7 @@ const ICON = {
 };
 
 function wpFrame(active, title, body, url) {
-  const menu = [['dash', '控制台'], ['treat', '療程'], ['doc', '醫師'], ['post', '衛教文章'], ['media', '媒體庫'], ['home', '首頁設定'], ['form', '聯絡表單紀錄']];
+  const menu = [['dash', '控制台'], ['treat', '療程'], ['doc', '醫師'], ['post', '最新消息'], ['media', '媒體庫'], ['home', '首頁設定'], ['form', '聯絡表單紀錄']];
   return `<div class="wp-scroll"><div class="wp" role="img" aria-label="WordPress 後台示意畫面：${title}">
     <div class="wp-bar"><span class="wp-logo">W</span><span>${CLINIC.name}（示意）</span><span class="wp-bar-r">嗨，診所管理員</span></div>
     <div class="wp-body">
@@ -586,8 +882,8 @@ function wpFrame(active, title, body, url) {
 function backendHTML() {
   const toast = S.toast ? `<div class="wp-toast" role="status">${S.toast}</div>` : '';
   S.toast = '';
-  const heroThumb = V.thumb(S.hero, 'hero');
-  const pickers = [0, 1, 2].map(i => `<button type="button" class="wp-pick ${i === S.hero ? 'sel' : ''}" data-pick="${i}" aria-label="選用圖片 ${i + 1}">${V.thumb(i, 'hero')}<span>hero-${['entrance', 'lounge', 'consult'][i]}.jpg</span></button>`).join('');
+  const heroThumb = wpImg(HERO_IMGS[S.hero]);
+  const pickers = [0, 1, 2].map(i => `<button type="button" class="wp-pick ${i === S.hero ? 'sel' : ''}" data-pick="${i}" aria-label="選用圖片 ${i + 1}">${wpImg(HERO_IMGS[i])}<span>${HERO_IMGS[i]}.jpg</span></button>`).join('');
 
   const s1 = wpFrame('home', '首頁設定', `
     <div class="wp-card">
@@ -599,21 +895,21 @@ function backendHTML() {
       ${S.picker ? `<div class="wp-picker"><div class="wp-label sm">從媒體庫選擇圖片</div><div class="wp-pickgrid">${pickers}</div></div>` : ''}
     </div>
     <div class="wp-card"><div class="wp-label">各內頁橫幅</div>
-      <div class="wp-banners">${['療程項目', '醫師團隊', '衛教文章', '關於診所'].map((l, i) => `<div><div class="wp-thumb sm">${V.thumb(i + 3, 'banner')}</div><span>${l}</span><span class="wp-link">更換</span></div>`).join('')}</div>
+      <div class="wp-banners">${['療程項目', '醫師團隊', '最新消息', '關於診所'].map((l, i) => `<div><div class="wp-thumb sm">${wpImg([BANNERS.treatments, BANNERS.doctors, BANNERS.articles, BANNERS.about][i])}</div><span>${l}</span><span class="wp-link">更換</span></div>`).join('')}</div>
     </div>`);
 
   const s2 = wpFrame('media', '媒體庫', `
     <div class="wp-drop">${ICON.img}<span>將檔案拖曳到這裡，或 <u>選擇檔案</u> 上傳</span></div>
-    <div class="wp-media">${[0, 1, 2, 3, 4, 5, 6, 7].map(i => `<div class="wp-thumb ${i === 1 ? 'sel' : ''}">${V.thumb(i, 'media')}</div>`).join('')}</div>
+    <div class="wp-media">${['hero-0', 'light-0', 'inject-1', 'care-1', 'surgery-1', 'news-0', 'about-0', 'hero-2'].map((k, i) => `<div class="wp-thumb ${i === 1 ? 'sel' : ''}">${wpImg(k)}</div>`).join('')}</div>
     <div class="wp-row end"><span class="wp-hint">已選取 1 張</span><span class="wp-btn">選用這張圖片</span></div>`);
 
-  const rows = TREATMENTS.map(t => `<tr class="${S.pub[t.id] ? '' : 'draft'}"><td><strong>${t.name}</strong><div class="wp-rowact"><span class="wp-link">編輯</span><span class="wp-link">快速編輯</span><button type="button" class="wp-link btn" data-toggle-pub="${t.id}">${S.pub[t.id] ? '轉為草稿（下架）' : '重新發布'}</button><span class="wp-link danger">移至回收桶</span></div></td><td>${CATS[t.cat]}</td><td><span class="wp-status ${S.pub[t.id] ? 'pub' : 'dr'}">${S.pub[t.id] ? '已發布' : '草稿'}</span></td><td class="num">2026.11.0${(t.seed % 9) + 1}</td></tr>`).join('');
+  const rows = TREATMENTS.slice(0, 8).map(t => `<tr class="${S.pub[t.id] ? '' : 'draft'}"><td><strong>${t.name}</strong><div class="wp-rowact"><span class="wp-link">編輯</span><span class="wp-link">快速編輯</span><button type="button" class="wp-link btn" data-toggle-pub="${t.id}">${S.pub[t.id] ? '轉為草稿（下架）' : '重新發布'}</button><span class="wp-link danger">移至回收桶</span></div></td><td>${CATS[t.cat]}</td><td><span class="wp-status ${S.pub[t.id] ? 'pub' : 'dr'}">${S.pub[t.id] ? '已發布' : '草稿'}</span></td><td class="num">2026.11.0${(t.seed % 9) + 1}</td></tr>`).join('') + `<tr><td colspan="4" class="wp-more">…共 ${TREATMENTS.length} 項，第 1 頁／共 3 頁</td></tr>`;
   const s3 = wpFrame('treat', '療程', `
     <div class="wp-row"><span class="wp-btn">新增療程</span><span class="wp-hint">全部 (${TREATMENTS.length})｜已發布 (${pubT().length})｜草稿 (${TREATMENTS.length - pubT().length})</span></div>
     <table class="wp-table"><thead><tr><th>名稱</th><th>分類</th><th>狀態</th><th>修改日期</th></tr></thead><tbody>${rows}</tbody></table>`);
 
   const t = TREATMENTS[0];
-  const s4 = wpFrame('treat', '編輯療程：鳳凰電波', `
+  const s4 = wpFrame('treat', '編輯療程：' + t.name, `
     <div class="wp-notice">發布前自動檢查：內容含有不建議使用的詞語時，會以底色標示並提醒修改。</div>
     <div class="wp-edit"><div class="wp-fields">
       <div class="wp-input lg">${t.name}</div>
@@ -626,23 +922,23 @@ function backendHTML() {
       ${t.indications.map(i => `<div class="wp-input rep">${i}<span>−</span></div>`).join('')}<span class="wp-link">＋ 新增一列</span>
       <div class="wp-label">療程資訊</div><div class="wp-grid4">${t.info.map(([k, v]) => `<div><span class="wp-hint">${k}</span><div class="wp-input">${v.slice(0, 14)}…</div></div>`).join('')}</div>
       <div class="wp-label">可能的副作用與風險 <b class="req">必填</b></div><div class="wp-input tall">${t.risks[0][1]}</div><div class="wp-hint">未填寫無法發布</div>
-      <div class="wp-label">不適合對象 <b class="req">必填</b>　術後照護 <b class="req">必填</b></div><div class="wp-input">已填寫 5 項／3 項</div>
-      <div class="wp-label">固定聲明 ${ICON.lock}</div><div class="wp-input locked">${ICON.lock} ${NOTE_EFFECT}</div><div class="wp-hint">由系統自動帶入每個療程頁，無法刪除</div>
-      <div class="wp-label">療程主圖</div><div class="wp-row"><div class="wp-thumb xs">${V.thumb(5, 'media')}</div><span class="wp-hint">請勿上傳術前術後比較照片</span></div>
+      <div class="wp-label">不適合對象 <b class="req">必填</b>　術後照護 <b class="req">必填</b></div><div class="wp-input">已填寫 ${t.contra.length} 項／${t.care.length} 項</div>
+      <div class="wp-label">固定聲明 ${ICON.lock}</div><div class="wp-input locked">${ICON.lock} ${NOTE_EFFECT}${NOTE_DEVICE}</div><div class="wp-hint">由系統自動帶入每個療程頁，無法刪除</div>
+      <div class="wp-label">療程主圖</div><div class="wp-row"><div class="wp-thumb xs">${wpImg(t.photo)}</div><span class="wp-hint">請勿上傳術前術後比較照片</span></div>
       <div class="wp-hint sep">依規定不刊登優惠與價格促銷資訊，因此不設價格欄位。</div>
     </div>
-    <aside class="wp-side"><div class="wp-box"><div class="wp-label">發布</div><div class="wp-hint">狀態：<strong>${S.pub.thermage ? '已發布' : '草稿'}</strong></div><div class="wp-hint">可見度：公開</div><div class="wp-row between"><span class="wp-link">預覽</span><span class="wp-btn">更新</span></div></div>
+    <aside class="wp-side"><div class="wp-box"><div class="wp-label">發布</div><div class="wp-hint">狀態：<strong>${S.pub[t.id] ? '已發布' : '草稿'}</strong></div><div class="wp-hint">可見度：公開</div><div class="wp-row between"><span class="wp-link">預覽</span><span class="wp-btn">更新</span></div></div>
       <div class="wp-box"><div class="wp-label">療程分類</div>${Object.entries(CATS).map(([k, v]) => `<div class="wp-hint"><span class="wp-cb ${k === t.cat ? 'on' : ''}"></span>${v}</div>`).join('')}</div>
-      <div class="wp-box"><div class="wp-label">主治醫師</div><div class="wp-input">沈以澄 ▾</div></div></aside></div>`);
+      <div class="wp-box"><div class="wp-label">主治醫師</div><div class="wp-input">${dById(t.doctor).name} ▾</div></div></aside></div>`);
 
-  const a = ARTICLES[1];
-  const s5 = wpFrame('post', '衛教文章', `
+  const a = ARTICLES[0];
+  const s5 = wpFrame('post', '最新消息', `
     <div class="wp-row"><span class="wp-btn">新增文章</span></div>
-    <table class="wp-table"><thead><tr><th>標題</th><th>作者醫師</th><th>日期</th></tr></thead><tbody>${ARTICLES.map(x => `<tr><td><strong>${x.title}</strong><div class="wp-rowact"><span class="wp-link">編輯</span><span class="wp-link danger">刪除</span></div></td><td>${dById(x.author).name}</td><td class="num">${fmtDate(x.date)}</td></tr>`).join('')}</tbody></table>
+    <table class="wp-table"><thead><tr><th>標題</th><th>發布單位</th><th>日期</th></tr></thead><tbody>${ARTICLES.map(x => `<tr><td><strong>${x.title}</strong><div class="wp-rowact"><span class="wp-link">編輯</span><span class="wp-link danger">刪除</span></div></td><td>${byName(x)}</td><td class="num">${fmtDate(x.date)}</td></tr>`).join('')}</tbody></table>
     <div class="wp-edit mt"><div class="wp-fields"><div class="wp-input lg">${a.title}</div>
       <div class="wp-toolbar"><b>B</b><i>I</i><span>H2</span><span>H3</span><span>• 清單</span><span>連結</span><span>${ICON.img}</span></div>
       <div class="wp-input tall doc"><strong>${a.body[0][0]}</strong><br>${a.body[0][1][0]}</div></div>
-    <aside class="wp-side"><div class="wp-box"><div class="wp-label">作者醫師</div><div class="wp-input">${dById(a.author).name} ▾</div></div><div class="wp-box"><div class="wp-label">相關療程</div>${TREATMENTS.slice(0, 3).map(x => `<div class="wp-hint"><span class="wp-cb ${a.treatments.includes(x.id) ? 'on' : ''}"></span>${x.name}</div>`).join('')}</div><div class="wp-box"><div class="wp-label">精選圖片</div><div class="wp-thumb xs">${V.thumb(6, 'media')}</div></div></aside></div>`);
+    <aside class="wp-side"><div class="wp-box"><div class="wp-label">分類</div><div class="wp-input">${a.tag} ▾</div></div><div class="wp-box"><div class="wp-label">相關療程</div>${TREATMENTS.filter(x => ['btx', 'ha', 'caha'].includes(x.id)).map(x => `<div class="wp-hint"><span class="wp-cb ${a.treatments.includes(x.id) ? 'on' : ''}"></span>${x.name}</div>`).join('')}</div><div class="wp-box"><div class="wp-label">精選圖片</div><div class="wp-thumb xs">${wpImg(a.photo)}</div></div></aside></div>`);
 
   const d = DOCTORS[1];
   const s6 = wpFrame('doc', '編輯醫師：' + d.name, `
@@ -650,19 +946,20 @@ function backendHTML() {
       <div class="wp-grid2"><div><div class="wp-label">姓名</div><div class="wp-input">${d.name}</div></div><div><div class="wp-label">職稱</div><div class="wp-input">${d.title}</div></div><div><div class="wp-label">專科別</div><div class="wp-input">${d.spec}</div></div><div><div class="wp-label">專科證書字號</div><div class="wp-input">${d.cert}</div></div></div>
       <div class="wp-label">學經歷 <em>可增減列，可拖曳排序</em></div>${d.edu.slice(0, 3).map(e => `<div class="wp-input rep">${e}<span>−</span></div>`).join('')}<span class="wp-link">＋ 新增一列</span>
       <div class="wp-label">專長</div><div class="wp-input">${d.skills.join('、')}</div>
-    </div><aside class="wp-side"><div class="wp-box"><div class="wp-label">醫師照片</div><div class="wp-thumb">${V.thumb(d.seed, 'portrait')}</div><span class="wp-link">更換照片</span></div><div class="wp-box"><div class="wp-label">顯示順序</div><div class="wp-input">2</div></div></aside></div>`);
+    </div><aside class="wp-side"><div class="wp-box"><div class="wp-label">醫師照片</div><div class="wp-thumb">${wpImg(d.photo)}</div><span class="wp-link">更換照片</span></div><div class="wp-box"><div class="wp-label">顯示順序</div><div class="wp-input">2</div></div></aside></div>`);
 
   const screens = [
     ['更換首頁與內頁圖片', '首頁主視覺與各內頁橫幅都在「首頁設定」裡更換。點「更換圖片」，從媒體庫選一張，按下更新就完成。', s1, ['點「更換圖片」開啟媒體庫', '選擇圖片後自動套用', '替代文字讓搜尋引擎看懂圖片'], '示範互動：試著點「更換圖片」並選一張，再回首頁看看。重新整理後還原。'],
     ['上傳與管理圖片', '所有圖片集中在媒體庫。上傳一次，首頁、療程、文章都能重複選用。', s2, ['拖曳上傳，不需另外裁切工具', '同一張圖可用在多個頁面'], ''],
     ['新增、調整、下架療程', '療程列表一眼看到每個項目的狀態。「轉為草稿」就是下架：前台立刻不顯示，但內容保留，隨時可以重新發布。', s3, ['「新增療程」建立新項目', '「轉為草稿」下架，不會刪除內容', '「移至回收桶」才是刪除，30 天內可復原'], '示範互動：試著把一個療程「轉為草稿」，再到前台療程列表看看。重新整理後還原。'],
     ['療程內容用填表的方式編輯', '每個欄位對應前台的一個區塊，填好就會自動排版。風險、不適合對象、術後照護設為必填，固定聲明由系統帶入。', s4, ['欄位與前台區塊一一對應', '必填欄位沒填無法發布', '用詞檢查提醒可能違規的字詞'], '示範互動：在「一句話簡介」試著輸入療效承諾類的字詞，看看提醒怎麼出現。'],
-    ['新增、編輯、刪除衛教文章', '寫文章就像用 Word：輸入標題與內文，選擇作者醫師與相關療程，文章會自動出現在列表與療程頁。', s5, ['所見即所得的編輯器', '選擇作者醫師，自動連到醫師介紹', '勾選相關療程，自動互相連結'], ''],
+    ['新增、編輯、刪除最新消息', '發公告就像用 Word：輸入標題與內文，選擇分類（門診公告、醫師門診、就醫須知），發布後自動出現在首頁與最新消息列表。', s5, ['所見即所得的編輯器', '選擇分類，前台自動歸類', '勾選相關療程，公告會顯示在療程頁'], ''],
     ['更新醫師資料', '醫師異動、新增學經歷或更換照片，都在醫師頁面填表完成，前台醫師介紹會同步更新。', s6, ['學經歷可增減與排序', '顯示順序決定前台排列'], '']
   ];
   return { toast, screens };
 }
 
+const wpImg = k => `<img src="${IMG(k)}" alt="" loading="lazy">`;
 const HANDOVER = ['網域、主機、後台管理員帳號均以診所名義申請與持有，完工時交付完整帳號資料與操作手冊', '提供到院或線上操作教學，並附錄影與圖文手冊', '版型或項目調整需求，於提出後 14 天內處理完成', '維護方式與費用於報價單說明'];
 
 window.addEventListener('hashchange', () => route());
@@ -682,152 +979,199 @@ function mapSVG() {
   </svg>`;
 }
 
-/* Version A — 質感模板客製 */
-const HERO_LABELS = ['診所接待大廳', '候診休息區', '一對一諮詢室'];
-const ph = (v, label, cls = '') => `<div class="ph v${v % 4} ${cls}" role="img" aria-label="${label}（示意圖）"><span>示意圖｜正式網站替換為診所實拍</span></div>`;
+/* Version A — 質感模板客製 (premium template look: bento hero, arch frames, serif display, warm neutrals) */
+const RMa = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
+const pic = (key, alt, cls = '', pos = '', label = '示意圖') => `<figure class="pic ${cls}"><img src="${IMG(key)}" alt="${alt}（示意圖）" loading="lazy" decoding="async"${pos ? ` style="object-position:${pos}"` : ''}><figcaption>${label}</figcaption></figure>`;
 const L = (view, text, cls = '') => `<a href="#${view}" class="${cls}">${text}</a>`;
-const crumb = (...items) => `<nav class="crumb" aria-label="麵包屑">${L('home', '首頁')}${items.map(([v, t]) => v ? ` / ${L(v, t)}` : ` / <span>${t}</span>`).join('')}</nav>`;
-const banner = (title, sub, crumbs) => `<section class="banner"><div class="wrap">${crumb(...crumbs)}<h1>${title}</h1>${sub ? `<p>${sub}</p>` : ''}</div></section>`;
-const tCard = t => `<a class="card tcard" href="#t-${t.id}" data-cat="${t.cat}">${ph(t.seed, t.name)}<div class="card-b"><span class="tag">${CATS[t.cat]}</span><h3>${t.name}</h3><p class="en">${t.en}</p><p>${t.summary}</p><span class="more">了解更多 →</span></div></a>`;
-const aCard = a => `<a class="card acard" href="#a-${a.id}">${ph(a.seed, a.title)}<div class="card-b"><div class="meta"><span class="tag">${a.tag}</span><time>${fmtDate(a.date)}</time></div><h3>${a.title}</h3><p>${a.excerpt}</p><span class="byline">${dById(a.author).name} 醫師</span></div></a>`;
+const ARROW = '<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>';
+const crumb = (...items) => `<nav class="crumb" aria-label="麵包屑">${L('home', '首頁')}${items.map(([v, t]) => v ? `<span>/</span>${L(v, t)}` : `<span>/</span><span>${t}</span>`).join('')}</nav>`;
+const banner = (key, title, sub, crumbs) => `<section class="banner"><img src="${IMG(BANNERS[key] || 'hero-1')}" alt="" class="banner-bg"><div class="wrap banner-in">${crumb(...crumbs)}<h1>${title}</h1>${sub ? `<p>${sub}</p>` : ''}</div><span class="banner-tag">示意圖</span></section>`;
+const eyebrow = t => `<p class="eyebrow">${t}</p>`;
+const tCard = t => `<a class="card tcard" href="#t-${t.id}" data-cat="${t.cat}">${pic(t.photo, t.name, 'r43', t.pos)}<div class="card-b"><span class="tag">${CATS[t.cat]}</span><h3>${t.name}</h3><p class="en">${t.en}</p><p>${t.summary}</p><span class="more">了解療程 ${ARROW}</span></div></a>`;
+const aCard = a => `<a class="card acard" href="#a-${a.id}">${pic(a.photo, a.title, 'r169')}<div class="card-b"><div class="meta"><span class="tag">${a.tag}</span><time>${fmtDate(a.date)}</time></div><h3>${a.title}</h3><p>${a.excerpt}</p></div></a>`;
 const hoursList = () => `<dl class="hours">${CLINIC.hours.map(([d, h]) => `<div><dt>${d}</dt><dd>${h}</dd></div>`).join('')}</dl>`;
 const ctaCard = () => `<div class="side-card cta"><h3>預約諮詢</h3><p>療程是否適合，需由醫師當面評估。</p><a class="btn" href="#contact">線上預約</a><p class="phone">電話 ${CLINIC.phone}</p></div>`;
+const badge = () => `<div class="badge" aria-hidden="true"><svg viewBox="0 0 120 120"><defs><path id="bp" d="M60 60m-44 0a44 44 0 1 1 88 0a44 44 0 1 1-88 0"/></defs><text><textPath href="#bp">CONSULTATION FIRST · WUYU CLINIC · </textPath></text></svg><span>預約<br>諮詢</span></div>`;
+const ICONS = {
+  doc: '<svg viewBox="0 0 32 32"><circle cx="16" cy="10" r="5"/><path d="M6 28c1-6 5-9 10-9s9 3 10 9"/><path d="M13 19l3 4 3-4"/></svg>',
+  list: '<svg viewBox="0 0 32 32"><rect x="7" y="5" width="18" height="23" rx="2"/><path d="M11 12h10M11 17h10M11 22h6"/></svg>',
+  loop: '<svg viewBox="0 0 32 32"><path d="M25 12a10 10 0 1 0 1 7"/><path d="M26 6v6h-6"/></svg>',
+  shield: '<svg viewBox="0 0 32 32"><path d="M16 4l10 4v7c0 7-5 11-10 13-5-2-10-6-10-13V8z"/><path d="M11 16l4 4 6-7"/></svg>'
+};
 
+let tab = 'light';
 const V = {
-  thumb(i, kind) { return `<div class="ph v${i % 4} mini" aria-hidden="true"></div>`; },
-
   shell() {
     document.getElementById('shell-top').innerHTML = `
-      <div class="demobar"><div class="wrap"><span><b>示範網站</b>｜方案 A・質感模板客製</span><a href="${OTHER_URL}" >查看方案 B・精品客製設計 →</a></div><p class="wrap fic">${CLINIC.fiction}</p></div>
-      <div class="topbar"><div class="wrap"><span>${ICON.pin} ${CLINIC.address}</span><span>門診電話 ${CLINIC.phone}</span></div></div>
+      <div class="demobar"><div class="wrap"><span><b>示範網站</b>｜方案 A・質感模板客製</span><a href="${OTHER_URL}">查看方案 B・精品客製設計 ${ARROW}</a></div><p class="wrap fic">${CLINIC.fiction}</p></div>
+      <div class="topbar"><div class="wrap"><span>${ICON.pin} ${CLINIC.address}</span><span>門診 週一至週五 12:00–21:00｜週六 10:30–18:00</span><span>電話 ${CLINIC.phone}</span></div></div>
       <header class="hdr"><div class="wrap">
-        <a href="#home" class="logo"><span class="logo-zh">${CLINIC.name}</span><span class="logo-en">${CLINIC.en}</span></a>
+        <a href="#home" class="logo"><span class="logo-zh">${CLINIC.name}</span><span class="logo-en">WUYU CLINIC</span></a>
         <button class="burger" type="button" aria-expanded="false" aria-controls="mainnav"><span></span><span></span><span></span><span class="sr-only">選單</span></button>
         <nav id="mainnav" class="nav">${NAV.filter(n => n !== 'contact').map(n => `<a href="#${n}" data-nav="${n}">${PAGE_NAMES[n]}</a>`).join('')}<a href="#contact" data-nav="contact" class="btn sm">預約諮詢</a></nav>
       </div></header>`;
     document.getElementById('shell-bottom').innerHTML = `
-      <footer class="ftr"><div class="wrap ftr-grid">
-        <div><div class="logo light"><span class="logo-zh">${CLINIC.name}</span><span class="logo-en">${CLINIC.en}</span></div><p>${CLINIC.sub}</p></div>
-        <div><h4>網站導覽</h4><ul>${['home', ...NAV].map(n => `<li>${L(n, PAGE_NAMES[n])}</li>`).join('')}<li>${L('backend', '後台操作說明')}</li></ul></div>
-        <div><h4>門診時間</h4>${hoursList()}</div>
-        <div><h4>機構資訊（示意）</h4><ul class="info"><li>${CLINIC.address}</li><li>電話 ${CLINIC.phone}</li><li>負責醫師 ${CLINIC.director}</li><li>診療科別 ${CLINIC.depts}</li><li>開業執照 ${CLINIC.license}</li></ul></div>
-      </div><div class="wrap ftr-note"><p>本網站內容為衛教資訊，${NOTE_EFFECT}</p><p>${CLINIC.fiction}</p></div></footer>`;
+      <footer class="ftr"><div class="wrap">
+        <p class="ftr-word" aria-hidden="true">WUYU CLINIC</p>
+        <div class="ftr-grid">
+          <div><div class="logo light"><span class="logo-zh">${CLINIC.name}</span><span class="logo-en">WUYU CLINIC</span></div><p>${CLINIC.sub}。${CLINIC.tagline}</p></div>
+          <div><h4>網站導覽</h4><ul>${['home', ...NAV].map(n => `<li>${L(n, PAGE_NAMES[n])}</li>`).join('')}<li>${L('backend', '後台操作說明')}</li></ul></div>
+          <div><h4>療程分類</h4><ul>${Object.entries(CATS).map(([k, v]) => `<li><a href="#treatments" data-go-cat="${k}">${v}</a></li>`).join('')}</ul><h4 class="mt">門診時間</h4>${hoursList()}</div>
+          <div><h4>機構資訊（示意）</h4><ul class="info"><li>${CLINIC.address}</li><li>電話 ${CLINIC.phone}</li><li>負責醫師 ${CLINIC.director}</li><li>診療科別 ${CLINIC.depts}</li><li>開業執照 ${CLINIC.license}</li></ul></div>
+        </div>
+        <div class="ftr-note"><p>本網站內容為衛教資訊，${NOTE_EFFECT}${NOTE_DEVICE}</p><p>${CLINIC.fiction}照片取自商用授權圖庫，僅為示意。</p></div>
+      </div></footer>`;
     const b = document.querySelector('.burger'), nav = document.getElementById('mainnav');
     b.addEventListener('click', () => { const o = b.getAttribute('aria-expanded') === 'true'; b.setAttribute('aria-expanded', String(!o)); nav.classList.toggle('open', !o); });
     nav.addEventListener('click', e => { if (e.target.closest('a')) { b.setAttribute('aria-expanded', 'false'); nav.classList.remove('open'); } });
+    document.addEventListener('click', e => { const g = e.target.closest('[data-go-cat]'); if (g) sessionCat = g.dataset.goCat; });
+    const hdr = document.querySelector('.hdr');
+    addEventListener('scroll', () => hdr.classList.toggle('small', scrollY > 140), { passive: true });
   },
 
-  transition(paint) { const app = document.getElementById('app'); app.classList.add('fade'); setTimeout(() => { paint(); app.classList.remove('fade'); }, 150); },
+  transition(paint) { const app = document.getElementById('app'); app.classList.add('fade'); setTimeout(() => { paint(); app.classList.remove('fade'); }, 160); },
 
   home() {
-    const groups = Object.entries(CATS).map(([k, v]) => ({ k, v, items: pubT().filter(t => t.cat === k) })).filter(g => g.items.length);
+    const d = DOCTORS;
+    const cats = Object.keys(CATS);
     return `
     <section class="hero"><div class="wrap hero-grid">
-      <div class="hero-t"><p class="eyebrow">${CLINIC.sub}</p><h1>${CLINIC.tagline}</h1><p>每一項醫學美容治療，都從醫師當面問診開始。我們會說明可行的選項、可能的風險與照護方式，讓你在充分了解後再做決定。</p>
-        <div class="row">${L('treatments', '認識療程', 'btn')}${L('contact', '預約諮詢', 'btn line')}</div></div>
-      <div class="hero-i">${ph(S.hero, HERO_LABELS[S.hero], 'tall')}<span class="ph-cap">${HERO_LABELS[S.hero]}</span></div>
+      <div class="hero-main">
+        <img src="${IMG(HERO_IMGS[S.hero])}" alt="${HERO_LABELS[S.hero]}（示意圖）" class="hero-img">
+        <div class="hero-t">${eyebrow('Dermatology · Plastic Surgery')}<h1>${CLINIC.tagline}</h1><p>每一項醫學美容治療，都從醫師當面問診開始。我們會說明可行的選項、可能的風險與照護方式，讓你在充分了解後再做決定。</p>
+          <div class="row">${L('treatments', '認識療程', 'btn light')}${L('contact', '預約諮詢', 'btn ghost')}</div></div>
+        ${badge()}<span class="pic-tag">示意圖｜${HERO_LABELS[S.hero]}</span>
+      </div>
+      <div class="hero-side">
+        <div class="hcard hours-card"><p class="eyebrow">Opening Hours</p><h2>門診時間</h2>${hoursList()}<a class="lnk" href="#contact">線上預約 ${ARROW}</a></div>
+        <a class="hcard photo-card" href="#doctors">${pic('about-2', '醫師團隊', 'fill')}<div class="pc-t"><p class="eyebrow">Our Physicians</p><h2>醫師團隊</h2><p>整形外科與皮膚科專科醫師</p></div></a>
+      </div>
     </div></section>
-    <section class="sec"><div class="wrap"><div class="sec-h"><h2>療程項目</h2><p>依治療方式分為三大類，點選了解原理、適應症與風險。</p></div>
-      <div class="grid3">${groups.map(g => `<div class="card cat"><span class="tag">${g.v}</span><h3>${g.v}療程</h3><ul>${g.items.map(t => `<li>${L('t-' + t.id, t.name + ' <small>' + t.en + '</small>')}</li>`).join('')}</ul>${L('treatments', '查看全部 →', 'more')}</div>`).join('')}</div></div></section>
-    <section class="sec alt"><div class="wrap"><div class="sec-h"><h2>諮詢流程</h2><p>從預約到回診，每一步都有醫師參與。</p></div>
-      <ol class="steps">${FLOW.slice(0, 4).map(([h, p], i) => `<li><span class="n">${i + 1}</span><h3>${h}</h3><p>${p}</p></li>`).join('')}</ol><p class="center">${L('about', '完整流程與診所介紹 →', 'more')}</p></div></section>
-    <section class="sec"><div class="wrap"><div class="sec-h"><h2>醫師團隊</h2><p>由整形外科與皮膚科專科醫師親自評估與執行。</p></div>
-      <div class="grid3">${DOCTORS.map(d => `<a class="card dcard" href="#doctors">${ph(d.seed, d.name + '醫師照片', 'portrait')}<div class="card-b"><h3>${d.name} <small>${d.title}</small></h3><p class="spec">${d.spec}</p><p>${d.skills.join('、')}</p></div></a>`).join('')}</div></div></section>
-    <section class="sec alt"><div class="wrap"><div class="sec-h row-between"><div><h2>衛教文章</h2><p>由本院醫師撰寫的治療知識與照護說明。</p></div>${L('articles', '所有文章 →', 'more')}</div>
-      <div class="grid3">${ARTICLES.slice(0, 3).map(aCard).join('')}</div></div></section>
-    <section class="infoband"><div class="wrap grid2">
-      <div><h2>門診資訊</h2>${hoursList()}<p>${CLINIC.address}<br>電話 ${CLINIC.phone}</p></div>
-      <div class="cta-box"><h2>預約諮詢</h2><p>送出表單後，診所人員將於門診時間內以電話與你確認時段。</p>${L('contact', '前往預約', 'btn light')}</div>
+    <section class="facts"><div class="wrap"><div class="facts-in">${[[DOCTORS.length, '位專科醫師', '整形外科、皮膚科'], [TREATMENTS.length, '項療程說明', '每項皆列風險與照護'], [4, '大療程分類', '光電、注射、手術、保養'], [FLOW.length, '個諮詢步驟', '同意書可帶回考慮']].map(([n, u, s]) => `<div><p class="fact-n"><span data-count="${n}">${n}</span><small>${u}</small></p><p>${s}</p></div>`).join('')}</div></div></section>
+    <section class="sec feat-sec" data-rv><div class="wrap">
+      <div class="feat4">${[['doc', '醫師當面評估', '每一項治療都從醫師問診開始，不適合的會直接說明。'], ['list', '風險逐項說明', '療程頁列出副作用、不適合對象與照護方式。'], ['loop', '同一位醫師追蹤', '治療與回診由同一位醫師負責。'], ['shield', '藥品醫材具許可證', '使用之藥品與醫材皆具衛生福利部許可證。']].map(([i, h, p]) => `<div class="f4"><span class="ico">${ICONS[i]}</span><h3>${h}</h3><p>${p}</p></div>`).join('')}</div>
+    </div></section>
+    <section class="sec alt" data-rv><div class="wrap split-intro">
+      <div class="stack">${pic('about-0', '診所走廊', 'arch')}${pic('hero-2', '諮詢室', 'r11 over')}</div>
+      <div class="intro-t">${eyebrow('About Wuyu')}<h2>把每一個選項，<br>說清楚再開始。</h2><p>霧嶼診所由整形外科與皮膚科專科醫師共同看診。我們相信醫學美容應從評估開始：了解你的需求、皮膚與組織狀況，再一起討論是否需要治療、適合哪一種方式。</p>
+        <ul class="checks">${ABOUT.values.map(([h, p]) => `<li><b>${h}</b>${p}</li>`).join('')}</ul>${L('about', '認識診所 ' + ARROW, 'btn line')}</div>
+    </div></section>
+    <section class="sec" data-rv><div class="wrap">
+      <div class="sec-h center">${eyebrow('Treatments')}<h2>療程項目</h2><p>依治療方式分為四大類，點選分類查看項目。每個療程頁都列出適應症、風險與照護方式。</p></div>
+      <div class="tx-tabs" role="tablist" aria-label="療程分類">${cats.map(k => `<button type="button" role="tab" data-tab="${k}" aria-selected="${k === tab}">${CATS[k]}<small>${pubT().filter(t => t.cat === k).length}</small></button>`).join('')}</div>
+      ${cats.map(k => { const items = pubT().filter(t => t.cat === k); const p = TREATMENTS.find(t => t.cat === k); return `<div class="tx-panel" role="tabpanel" data-panel="${k}" ${k === tab ? '' : 'hidden'}>
+        ${pic(p.photo, CATS[k], 'r54')}
+        <div class="tx-panel-t"><h3>${CATS[k]}療程</h3><p>${CAT_DESC[k]}</p><ul class="tx-links">${items.map(t => `<li>${L('t-' + t.id, `<span>${t.name}</span><small>${t.en}</small>${ARROW}`)}</li>`).join('')}</ul>${L('treatments', '查看全部療程 ' + ARROW, 'btn line')}</div></div>`; }).join('')}
+    </div></section>
+    <section class="sec alt" data-rv><div class="wrap">
+      <div class="sec-h center">${eyebrow('Process')}<h2>諮詢流程</h2><p>從預約到回診的六個步驟。</p></div>
+      <ol class="steps">${FLOW.map(([h, p], i) => `<li><span class="n">${String(i + 1).padStart(2, '0')}</span><h3>${h}</h3><p>${p}</p></li>`).join('')}</ol>
+    </div></section>
+    <section class="sec" data-rv><div class="wrap">
+      <div class="sec-h row-between"><div>${eyebrow('Physicians')}<h2>醫師團隊</h2><p>由整形外科與皮膚科專科醫師親自評估與執行。</p></div>${L('doctors', '認識醫師 ' + ARROW, 'btn line')}</div>
+      <div class="grid3">${d.map(x => `<a class="dcard" href="#doctors">${pic(x.photo, x.name + '醫師', 'arch', '', '人物示意')}<div class="dcard-b"><h3>${x.name}<small>${x.title}</small></h3><p class="spec">${x.spec}</p><p>${x.skills.slice(0, 3).join('・')}</p></div></a>`).join('')}</div>
+    </div></section>
+    <section class="cta-band" data-rv><img src="${IMG('hero-1')}" alt="" class="cta-bg"><div class="wrap cta-in">${eyebrow('Consultation')}<h2>${CLINIC.tagline}</h2><p>送出表單後，診所人員將於門診時間內以電話與你確認時段。</p>${L('contact', '預約諮詢', 'btn light')}</div><span class="banner-tag">示意圖</span></section>
+    <section class="sec" data-rv><div class="wrap">
+      <div class="sec-h row-between"><div>${eyebrow('News')}<h2>最新消息</h2><p>門診時間異動、醫師門診調整與就醫須知。</p></div>${L('articles', '所有消息 ' + ARROW, 'btn line')}</div>
+      <div class="news-grid">${aCard(ARTICLES[0])}<ul class="news-list">${ARTICLES.slice(1).map(a => `<li><a href="#a-${a.id}"><time><b>${a.date.slice(8)}</b>${a.date.slice(0, 7).replace('-', '.')}</time><span><small class="tag">${a.tag}</small>${a.title}</span>${ARROW}</a></li>`).join('')}</ul></div>
+    </div></section>
+    <section class="sec alt info-sec" data-rv><div class="wrap grid3">
+      <div class="icard"><h3>門診時間</h3>${hoursList()}</div>
+      <div class="icard"><h3>交通資訊</h3><p>${CLINIC.address}</p><ul class="dots">${CLINIC.transit.map(x => `<li>${x}</li>`).join('')}</ul>${mapSVG()}</div>
+      <div class="icard dark"><h3>預約諮詢</h3><p>電話 ${CLINIC.phone}</p><p>線上表單 24 小時受理，於門診時間內回覆。</p>${L('contact', '前往預約', 'btn light')}</div>
     </div></section>`;
   },
 
   treatments() {
-    return banner('療程項目', '以下為本院提供的醫學美容療程。療程是否適合需經醫師評估。', [[null, '療程項目']]) + `
-    <section class="sec"><div class="wrap">
-      <div class="tabs" role="group" aria-label="療程分類"><button type="button" data-filter="all" aria-pressed="true">全部</button>${Object.entries(CATS).map(([k, v]) => `<button type="button" data-filter="${k}" aria-pressed="false">${v}</button>`).join('')}</div>
-      <div class="grid3">${pubT().map(tCard).join('')}</div>
-      ${pubT().length < TREATMENTS.length ? `<p class="hint">有 ${TREATMENTS.length - pubT().length} 個療程目前在後台設為草稿，因此未顯示。${L('backend', '回到後台示意')}</p>` : ''}
-      <p class="fee">${NOTE_FEE}</p></div></section>`;
+    const list = pubT();
+    return banner('treatments', '療程項目', '以下為本院提供的醫學美容療程。療程是否適合需經醫師評估。', [[null, '療程項目']]) + `
+    <div class="pillbar"><div class="wrap"><div class="tabs" role="group" aria-label="療程分類"><button type="button" data-filter="all" aria-pressed="true">全部<small>${list.length}</small></button>${Object.entries(CATS).map(([k, v]) => `<button type="button" data-filter="${k}" aria-pressed="false">${v}<small>${list.filter(t => t.cat === k).length}</small></button>`).join('')}</div></div></div>
+    <section class="sec tight"><div class="wrap">
+      ${Object.entries(CATS).map(([k, v]) => { const items = list.filter(t => t.cat === k); return items.length ? `<div class="cat-group" data-cat="${k}"><div class="cat-h"><h2>${v}</h2><p>${CAT_DESC[k]}</p></div><div class="grid3">${items.map(tCard).join('')}</div></div>` : ''; }).join('')}
+      ${list.length < TREATMENTS.length ? `<p class="hint">有 ${TREATMENTS.length - list.length} 個療程目前在後台設為草稿，因此未顯示。${L('backend', '回到後台示意')}</p>` : ''}
+      <p class="fee">${NOTE_FEE}${NOTE_DEVICE}</p></div></section>`;
   },
 
   treatment(t) {
     const d = dById(t.doctor);
-    const others = pubT().filter(x => x.id !== t.id);
-    return banner(t.name, t.en + '｜' + CATS[t.cat] + '療程', [['treatments', '療程項目'], [null, t.name]]) + `
-    <section class="sec"><div class="wrap layout">
+    const same = pubT().filter(x => x.cat === t.cat && x.id !== t.id);
+    return banner('treatments', t.name, t.en + '｜' + CATS[t.cat] + '療程', [['treatments', '療程項目'], [null, t.name]]) + `
+    <section class="sec tight"><div class="wrap layout">
       <article class="main">
         <p class="lead">${t.summary}</p>
-        ${ph(t.seed, t.name + '療程情境')}
+        ${pic(t.photo, t.name + '療程情境', 'r169', t.pos)}
+        <dl class="factbar">${t.info.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl>
         <h2>療程原理</h2>${t.principle.map(p => `<p>${p}</p>`).join('')}
-        <h2>適應症</h2><ul class="checks">${t.indications.map(i => `<li>${i}</li>`).join('')}</ul>
-        <h2>療程資訊</h2><dl class="infogrid">${t.info.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl>
-        <details open class="acc"><summary><h2>可能的副作用與風險</h2></summary><dl class="risks">${t.risks.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl></details>
+        <h2>適應症</h2><ul class="checks plain">${t.indications.map(i => `<li>${i}</li>`).join('')}</ul>
+        <details open class="acc risk"><summary><h2>可能的副作用與風險</h2></summary><dl class="risks">${t.risks.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl></details>
         <details open class="acc"><summary><h2>不適合對象</h2></summary><ul class="dots">${t.contra.map(i => `<li>${i}</li>`).join('')}</ul></details>
         <details open class="acc"><summary><h2>術後照護</h2></summary><ul class="dots">${t.care.map(i => `<li>${i}</li>`).join('')}</ul></details>
         ${t.extra ? `<p class="extra">${t.extra}</p>` : ''}
-        <div class="notice"><p><strong>${NOTE_EFFECT}</strong></p><p>${NOTE_FEE}</p></div>
-        ${t.articles.length ? `<h2>相關衛教文章</h2><div class="grid2">${t.articles.map(id => aCard(aById(id))).join('')}</div>` : ''}
+        <div class="notice"><p><strong>${NOTE_EFFECT}</strong></p><p>${NOTE_FEE}</p><p>${NOTE_DEVICE}</p></div>
+        ${t.articles.length ? `<h2>相關公告</h2><div class="grid2">${t.articles.map(id => aCard(aById(id))).join('')}</div>` : ''}
       </article>
       <aside class="side">
         ${ctaCard()}
-        <div class="side-card"><h3>主治醫師</h3><a class="doc-mini" href="#doctors">${ph(d.seed, d.name, 'avatar')}<span><b>${d.name} ${d.title}</b><small>${d.spec}</small></span></a></div>
-        <div class="side-card"><h3>其他療程</h3><ul class="links">${others.map(x => `<li>${L('t-' + x.id, x.name)}</li>`).join('')}</ul></div>
+        <div class="side-card"><h3>主治醫師</h3><a class="doc-mini" href="#doctors">${pic(d.photo, d.name, 'avatar', '', '')}<span><b>${d.name} ${d.title}</b><small>${d.spec}</small></span></a></div>
+        ${same.length ? `<div class="side-card"><h3>同類療程</h3><ul class="links">${same.map(x => `<li>${L('t-' + x.id, x.name + ARROW)}</li>`).join('')}</ul></div>` : ''}
         <div class="side-card"><h3>門診時間</h3>${hoursList()}</div>
       </aside></div></section>`;
   },
 
   unpublished(t) {
-    return banner(t.name, '此療程目前未公開', [['treatments', '療程項目'], [null, t.name]]) + `<section class="sec"><div class="wrap narrow"><p>這個療程已在後台轉為草稿，前台暫不顯示。重新發布後就會回到療程列表。</p><p>${L('backend', '回到後台示意', 'btn')}</p></div></section>`;
+    return banner('treatments', t.name, '此療程目前未公開', [['treatments', '療程項目'], [null, t.name]]) + `<section class="sec"><div class="wrap narrow"><p>這個療程已在後台轉為草稿，前台暫不顯示。重新發布後就會回到療程列表。</p><p>${L('backend', '回到後台示意', 'btn')}</p></div></section>`;
   },
 
   doctors() {
-    return banner('醫師團隊', '由整形外科與皮膚科專科醫師親自評估、執行與追蹤。', [[null, '醫師團隊']]) + `
-    <section class="sec"><div class="wrap"><div class="grid3">${DOCTORS.map(d => `
-      <article class="card doc">${ph(d.seed, d.name + '醫師照片', 'portrait')}<div class="card-b">
-        <h2>${d.name} <small>${d.title}</small></h2><p class="spec">${d.spec}</p><p>${d.bio}</p>
-        <h3>專長</h3><ul class="dots">${d.skills.map(s => `<li>${s}</li>`).join('')}</ul>
-        <details class="acc sm"><summary><h3>學經歷與證書</h3></summary><ul class="dots">${d.edu.map(s => `<li>${s}</li>`).join('')}</ul><p class="cert">${d.certs.join('、')}<br>${d.cert}</p></details>
-        <p class="hint">人物為示意</p></div></article>`).join('')}</div></div></section>`;
+    return banner('doctors', '醫師團隊', '由整形外科與皮膚科專科醫師親自評估、執行與追蹤。', [[null, '醫師團隊']]) + `
+    <section class="sec tight"><div class="wrap doc-list">${DOCTORS.map(d => `
+      <article class="doc" id="doc-${d.id}" data-rv>${pic(d.photo, d.name + '醫師', 'arch', '', '人物示意')}<div class="doc-b">
+        ${eyebrow(d.spec)}<h2>${d.name}<small>${d.title}</small></h2><p class="bio">${d.bio}</p>
+        <h3>專長</h3><ul class="chips">${d.skills.map(s => `<li>${s}</li>`).join('')}</ul>
+        <details class="acc sm" open><summary><h3>學經歷與證書</h3></summary><ul class="dots">${d.edu.map(s => `<li>${s}</li>`).join('')}</ul><p class="cert">${d.certs.join('、')}｜${d.cert}</p></details>
+        <p class="hint">人物與照片皆為示意</p></div></article>`).join('')}</div></section>`;
   },
 
   articles() {
-    return banner('衛教文章', '由本院醫師撰寫，說明治療原理、風險與照護方式。', [[null, '衛教文章']]) + `
-    <section class="sec"><div class="wrap layout"><div class="main"><div class="list">${ARTICLES.map(a => `
-      <a class="card row-card" href="#a-${a.id}">${ph(a.seed, a.title)}<div class="card-b"><div class="meta"><span class="tag">${a.tag}</span><time>${fmtDate(a.date)}</time></div><h2>${a.title}</h2><p>${a.excerpt}</p><span class="byline">${dById(a.author).name} 醫師</span></div></a>`).join('')}</div></div>
-      <aside class="side"><div class="side-card"><h3>文章分類</h3><ul class="links">${Object.values(CATS).map(c => `<li><span>${c}</span><small>${ARTICLES.filter(a => a.tag === c).length}</small></li>`).join('')}</ul></div>
-      <div class="side-card"><h3>相關療程</h3><ul class="links">${pubT().map(x => `<li>${L('t-' + x.id, x.name)}</li>`).join('')}</ul></div></aside></div></section>`;
+    return banner('articles', '最新消息', '門診時間異動、醫師門診調整與就醫須知。', [[null, '最新消息']]) + `
+    <section class="sec tight"><div class="wrap layout"><div class="main"><div class="list">${ARTICLES.map(a => `
+      <a class="card row-card" href="#a-${a.id}">${pic(a.photo, a.title)}<div class="card-b"><div class="meta"><span class="tag">${a.tag}</span><time>${fmtDate(a.date)}</time></div><h2>${a.title}</h2><p>${a.excerpt}</p><span class="more">閱讀全文 ${ARROW}</span></div></a>`).join('')}</div></div>
+      <aside class="side"><div class="side-card"><h3>消息分類</h3><ul class="links">${['門診公告', '醫師門診', '就醫須知'].map(c => `<li><span>${c}</span><small>${ARTICLES.filter(a => a.tag === c).length}</small></li>`).join('')}</ul></div>${ctaCard()}</aside></div></section>`;
   },
 
   article(a) {
-    const d = dById(a.author);
-    return banner(a.title, '', [['articles', '衛教文章'], [null, a.tag]]) + `
-    <section class="sec"><div class="wrap layout"><article class="main prose">
-      <div class="meta"><span class="tag">${a.tag}</span><time>${fmtDate(a.date)}</time><a href="#doctors">撰文｜${d.name} 醫師</a></div>
+    const d = a.doctor ? dById(a.doctor) : null;
+    return banner('articles', a.title, '', [['articles', '最新消息'], [null, a.tag]]) + `
+    <section class="sec tight"><div class="wrap layout"><article class="main prose">
+      <div class="meta"><span class="tag">${a.tag}</span><time>${fmtDate(a.date)}</time><span>發布｜${byName(a)}</span></div>
       <p class="lead">${a.excerpt}</p>
+      ${pic(a.photo, a.title, 'r169')}
       ${a.body.map(([h, ps]) => `<h2>${h}</h2>${ps.map(p => `<p>${p}</p>`).join('')}`).join('')}
       <div class="notice"><p>${NOTE_ARTICLE}</p></div>
     </article><aside class="side">
-      <div class="side-card"><h3>撰文醫師</h3><a class="doc-mini" href="#doctors">${ph(d.seed, d.name, 'avatar')}<span><b>${d.name} ${d.title}</b><small>${d.spec}</small></span></a></div>
-      <div class="side-card"><h3>相關療程</h3><ul class="links">${a.treatments.filter(id => S.pub[id]).map(id => `<li>${L('t-' + id, tById(id).name)}</li>`).join('')}</ul></div>
+      ${d ? `<div class="side-card"><h3>相關醫師</h3><a class="doc-mini" href="#doctors">${pic(d.photo, d.name, 'avatar', '', '')}<span><b>${d.name} ${d.title}</b><small>${d.spec}</small></span></a></div>` : ''}
+      ${a.treatments.some(id => S.pub[id]) ? `<div class="side-card"><h3>相關療程</h3><ul class="links">${a.treatments.filter(id => S.pub[id]).map(id => `<li>${L('t-' + id, tById(id).name + ARROW)}</li>`).join('')}</ul></div>` : ''}
       ${ctaCard()}</aside></div></section>`;
   },
 
   about() {
-    return banner('關於診所', CLINIC.sub, [[null, '關於診所']]) + `
-    <section class="sec"><div class="wrap">${ABOUT.values.map(([h, p], i) => `<div class="split ${i % 2 ? 'rev' : ''}">${ph(i + 4, h)}<div><h2>${h}</h2><p>${p}</p></div></div>`).join('')}</div></section>
-    <section class="sec alt"><div class="wrap"><div class="sec-h"><h2>設備與環境</h2><p>${ABOUT.permit}</p></div>
-      <div class="grid4">${ABOUT.facilities.map(([h, p, s]) => `<div class="card">${ph(s, h)}<div class="card-b"><h3>${h}</h3><p>${p}</p></div></div>`).join('')}</div></div></section>
-    <section class="sec"><div class="wrap"><div class="sec-h"><h2>諮詢流程</h2></div><ol class="steps six">${FLOW.map(([h, p], i) => `<li><span class="n">${i + 1}</span><h3>${h}</h3><p>${p}</p></li>`).join('')}</ol></div></section>
-    <section class="sec alt"><div class="wrap grid2"><div><h2>診所資訊</h2><ul class="info dark"><li>${CLINIC.address}</li><li>電話 ${CLINIC.phone}</li><li>負責醫師 ${CLINIC.director}</li><li>診療科別 ${CLINIC.depts}</li><li>開業執照 ${CLINIC.license}</li></ul></div><div><h2>門診時間</h2>${hoursList()}</div></div></section>`;
+    return banner('about', '關於診所', CLINIC.sub, [[null, '關於診所']]) + `
+    <section class="sec"><div class="wrap">${ABOUT.values.map(([h, p], i) => `<div class="split ${i % 2 ? 'rev' : ''}" data-rv>${pic(ABOUT_IMGS[i], h, i % 2 ? 'r43' : 'arch')}<div>${eyebrow('0' + (i + 1))}<h2>${h}</h2><p>${p}</p></div></div>`).join('')}</div></section>
+    <section class="sec alt" data-rv><div class="wrap"><div class="sec-h center">${eyebrow('Facilities')}<h2>設備與環境</h2><p>${ABOUT.permit}</p></div>
+      <div class="grid4">${ABOUT.facilities.map(([h, p, s, k]) => `<div class="fac">${pic(k, h, 'r34')}<h3>${h}</h3><p>${p}</p></div>`).join('')}</div></div></section>
+    <section class="sec" data-rv><div class="wrap"><div class="sec-h center">${eyebrow('Process')}<h2>諮詢流程</h2></div><ol class="steps">${FLOW.map(([h, p], i) => `<li><span class="n">${String(i + 1).padStart(2, '0')}</span><h3>${h}</h3><p>${p}</p></li>`).join('')}</ol></div></section>
+    <section class="sec alt" data-rv><div class="wrap grid2"><div class="icard"><h3>診所資訊</h3><ul class="info dark"><li>${CLINIC.address}</li><li>電話 ${CLINIC.phone}</li><li>負責醫師 ${CLINIC.director}</li><li>診療科別 ${CLINIC.depts}</li><li>開業執照 ${CLINIC.license}</li></ul></div><div class="icard"><h3>門診時間</h3>${hoursList()}</div></div></section>`;
   },
 
   contact() {
-    return banner('預約諮詢', '送出表單後，診所人員將於門診時間內以電話與你確認時段。療程是否適合，需由醫師當面評估。', [[null, '預約諮詢']]) + `
-    <section class="sec"><div class="wrap layout">
+    return banner('contact', '預約諮詢', '送出表單後，診所人員將於門診時間內以電話與你確認時段。療程是否適合，需由醫師當面評估。', [[null, '預約諮詢']]) + `
+    <section class="sec alt tight"><div class="wrap layout">
       <form class="main form" data-demo-form novalidate>
+        <h2>線上預約表單</h2>
         <div class="f2"><label>姓名 <b>必填</b><input id="f-name" required autocomplete="name"></label><label>聯絡電話 <b>必填</b><input id="f-tel" type="tel" required autocomplete="tel"></label></div>
         <label>Email<input id="f-mail" type="email" autocomplete="email"></label>
-        <div class="f2"><label>想諮詢的項目<select id="f-item">${TREATMENTS.map(t => `<option>${t.name}</option>`).join('')}<option>尚未確定，想先諮詢</option></select></label>
+        <div class="f2"><label>想諮詢的項目<select id="f-item">${Object.entries(CATS).map(([k, v]) => `<optgroup label="${v}">${TREATMENTS.filter(t => t.cat === k).map(t => `<option>${t.name}</option>`).join('')}</optgroup>`).join('')}<option>尚未確定，想先諮詢</option></select></label>
         <fieldset><legend>希望時段</legend><div class="radios">${['平日午後', '平日晚間', '週六'].map((x, i) => `<label class="r"><input type="radio" name="slot" id="f-slot${i}" ${i ? '' : 'checked'}>${x}</label>`).join('')}</div></fieldset></div>
         <label>想詢問的事項<textarea id="f-msg" rows="4"></textarea></label>
         <label class="chk"><input type="checkbox" id="f-agree" required>我了解此表單僅為預約諮詢，療程是否適合需由醫師當面評估</label>
@@ -839,17 +1183,34 @@ const V = {
   },
 
   backend({ toast, screens }) {
-    return banner('診所人員可以自己做的事', '正式網站採用 WordPress。以下為後台畫面示意：日常更新都是填表單與按按鈕，不需要程式背景。', [[null, '後台操作說明']]) + `
-    <section class="sec"><div class="wrap">${toast}
+    return banner('backend', '診所人員可以自己做的事', '正式網站採用 WordPress。以下為後台畫面示意：日常更新都是填表單與按按鈕，不需要程式背景。', [[null, '後台操作說明']]) + `
+    <section class="sec tight"><div class="wrap">${toast}
       <nav class="toc" aria-label="本頁內容">${screens.map(([h], i) => `<button type="button" data-jump="bk${i}">${h}</button>`).join('')}</nav>
-      ${screens.map(([h, p, frame, pts, demo], i) => `<section class="bk" id="bk${i}"><div class="bk-t"><span class="n">${i + 1}</span><div><h2>${h}</h2><p>${p}</p><ul class="checks">${pts.map(x => `<li>${x}</li>`).join('')}</ul>${demo ? `<p class="demo-note">${demo}</p>` : ''}</div></div>${frame}</section>`).join('')}
-      <section class="handover"><h2>交付與維護</h2><ul class="checks">${HANDOVER.map(x => `<li>${x}</li>`).join('')}</ul></section>
+      ${screens.map(([h, p, frame, pts, demo], i) => `<section class="bk" id="bk${i}"><div class="bk-t"><span class="n">${String(i + 1).padStart(2, '0')}</span><div><h2>${h}</h2><p>${p}</p><ul class="checks plain">${pts.map(x => `<li>${x}</li>`).join('')}</ul>${demo ? `<p class="demo-note">${demo}</p>` : ''}</div></div>${frame}</section>`).join('')}
+      <section class="handover"><h2>交付與維護</h2><ul class="checks plain">${HANDOVER.map(x => `<li>${x}</li>`).join('')}</ul></section>
     </div></section>`;
   },
 
-  after(r, app) {
-    app.querySelectorAll('[data-jump]').forEach(b => b.addEventListener('click', () => document.getElementById(b.dataset.jump).scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' })));
+  after(r, app, first) {
+    app.querySelectorAll('[data-jump]').forEach(b => b.addEventListener('click', () => document.getElementById(b.dataset.jump).scrollIntoView({ behavior: RMa() ? 'auto' : 'smooth' })));
+    app.querySelectorAll('[data-tab]').forEach(b => b.addEventListener('click', () => {
+      tab = b.dataset.tab;
+      app.querySelectorAll('[data-tab]').forEach(x => x.setAttribute('aria-selected', String(x === b)));
+      app.querySelectorAll('[data-panel]').forEach(p => { p.hidden = p.dataset.panel !== tab; if (!p.hidden && !RMa()) p.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 220 }); });
+    }));
+    if (r.view === 'treatments' && sessionCat) { const b = app.querySelector(`[data-filter="${sessionCat}"]`); sessionCat = null; if (b) b.click(); }
+    if (RMa()) return;
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.remove('rv-pre'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
+      app.querySelectorAll('[data-rv]').forEach(el => { if (el.getBoundingClientRect().top > innerHeight * 0.92) { el.classList.add('rv-pre'); io.observe(el); } });
+    }
+    app.querySelectorAll('[data-count]').forEach(el => {
+      const n = +el.dataset.count, t0 = performance.now();
+      const step = t => { const p = Math.min(1, (t - t0) / 900); el.textContent = Math.round(n * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(step); };
+      requestAnimationFrame(step);
+    });
   }
 };
+let sessionCat = null;
 </script>
 </body></html>

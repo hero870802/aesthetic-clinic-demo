@@ -1,6 +1,6 @@
 <!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>霧嶼診所 方案B</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="霧嶼診所（虛構）官方網站示範：療程介紹、醫師團隊、衛教文章與預約諮詢。">
+<meta name="description" content="霧嶼診所（虛構）官方網站示範：療程介紹、醫師團隊、最新消息與預約諮詢。">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@400;500;600&display=swap">
 <style>/* Shared: WordPress admin mock (fixed WP look in both versions) */
@@ -85,6 +85,9 @@ button.wp-btn:focus-visible,.wp-link.btn:focus-visible,.wp-pick:focus-visible,.w
 .wp-toolbar{display:flex;gap:12px;align-items:center;border:1px solid #8c8f94;border-bottom:0;padding:5px 10px;margin-top:10px;background:#f6f7f7;border-radius:4px 4px 0 0;font-size:12px;color:#3c434a}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
+.wp-thumb img,.wp-pick img{width:100%;height:100%;object-fit:cover;display:block}
+.wp-more{text-align:center;color:#646970;font-size:12px}
+
 /* B: "霧中之嶼" — editorial asymmetric layout on a wide 1320 gutter, vertical section labels, contour-island imagery, hairlines, no radius */
 :root{
   --paper:#EEF0EC; --pearl:#F8F9F6; --pine:#1D2B28; --pine-2:#273834; --celadon:#8DA598; --brass:#A27F3F; --mist:#CFD6D0; --ink-2:#4D5C57; --on-pine:#E4E9E4; --on-pine-2:#A9B8B0;
@@ -165,7 +168,7 @@ p{margin:0}
 .m3{width:80%;height:45%;left:10%;bottom:-15%;background:radial-gradient(closest-side,#F8F9F6,transparent);animation:drift 70s ease-in-out infinite alternate}
 @keyframes drift{from{transform:translateX(-6%)}to{transform:translateX(8%)}}
 .hero-map{position:absolute;right:-6%;top:50%;width:min(68vw,960px);aspect-ratio:9/7;transform:translateY(-50%);opacity:.9}
-.hero-in{position:relative;display:grid;grid-template-columns:auto 1fr;gap:clamp(32px,6vw,96px);align-items:end;padding-block:56px 64px;width:100%}
+.hero-in{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr) minmax(0,400px);gap:clamp(32px,6vw,96px);align-items:end;padding-block:56px 64px;width:100%}
 .hero-v{writing-mode:vertical-rl;font-size:clamp(44px,6.4vw,92px);font-weight:500;letter-spacing:.24em;line-height:1.3;display:flex;flex-direction:column;gap:.1em;align-self:start}
 .hero-v .ln{display:block;overflow:hidden}
 .hero-v .ln>span{display:block;animation:rise .8s var(--ease) both}
@@ -217,9 +220,11 @@ p{margin:0}
 .filters button[aria-pressed="true"]{color:var(--pine);border-color:var(--pine)}
 .fee,.hint{font-size:13.5px;color:var(--ink-2);margin-top:40px}
 /* page head */
-.phead{position:relative;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:32px;align-items:end;padding-block:clamp(56px,8vw,112px) 48px;border-bottom:1px solid var(--pine);margin-bottom:48px}
+.phead{position:relative;display:grid;grid-template-columns:1fr;gap:32px;align-items:end;padding-block:clamp(56px,8vw,112px) 48px;border-bottom:1px solid var(--pine);margin-bottom:48px}
 .phead h1{font-size:clamp(36px,5.4vw,76px);letter-spacing:.14em;margin-top:18px;font-weight:500}
+.phead-l{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:18px 32px;align-items:end}.phead-l .kicker{grid-column:1/-1}.phead-l h1{margin-top:0}
 .phead-r{color:var(--ink-2);max-width:30em}
+.phead.has-img{grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:clamp(32px,5vw,72px)}.phead.has-img .phead-l{grid-template-columns:1fr}.phead-img{aspect-ratio:4/3}
 .phead .vlabel{display:none}
 /* timeline */
 .tl{list-style:none;margin:0;padding:0 0 16px;display:grid;grid-auto-flow:column;grid-auto-columns:minmax(260px,1fr);gap:0;overflow-x:auto;scroll-snap-type:x mandatory;border-top:1px solid var(--pine)}
@@ -240,7 +245,7 @@ p{margin:0}
 .feat-others small{color:var(--ink-2);font-size:13px}
 /* journal */
 .jr{list-style:none;margin:0;padding:0;border-top:1px solid var(--pine)}
-.jr a{display:grid;grid-template-columns:8em minmax(0,1fr) auto;gap:32px;padding-block:28px;border-bottom:1px solid var(--mist);text-decoration:none;align-items:start;position:relative}
+.jr a{display:grid;grid-template-columns:8em minmax(0,1fr) 200px;gap:32px;padding-block:28px;border-bottom:1px solid var(--mist);text-decoration:none;align-items:start;position:relative}
 .jr a::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;background:var(--brass);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
 .jr a:hover::after{transform:scaleX(1)}
 .jr time{display:flex;flex-direction:column;font-family:var(--f-latin);line-height:1}
@@ -409,6 +414,92 @@ fieldset.fl{padding:14px 0}fieldset.fl legend{float:left;padding:0;width:10em}
 /* reveal */
 .rv-pre{opacity:0;transform:translateY(16px)}
 [data-rv]{transition:opacity .5s var(--ease),transform .5s var(--ease)}
+
+/* ===== photo frames (duotone-ish photo + contour overlay) ===== */
+.ph{position:relative;margin:0;overflow:hidden;background:var(--mist);aspect-ratio:4/3;isolation:isolate}
+.ph-in{position:absolute;inset:0;overflow:hidden}
+.ph img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.72) contrast(.96) brightness(1.03) sepia(.08);transform-origin:center;transition:filter .6s var(--ease)}
+.ph::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(141,165,152,.22),rgba(29,43,40,.18));mix-blend-mode:multiply;pointer-events:none}
+.ph>.contour{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.75}
+.ph .c-line{stroke:rgba(248,249,246,.7)}
+.ph figcaption{position:absolute;left:10px;bottom:10px;z-index:2;font-size:11px;line-height:1.4;letter-spacing:.1em;color:var(--pine);background:rgba(248,249,246,.86);padding:2px 8px}
+.ph figcaption:empty{display:none}
+a:hover .ph img{filter:saturate(.95) contrast(1) brightness(1.03)}
+.ph.tall,.ph.portrait{aspect-ratio:4/5}.ph.wide{aspect-ratio:21/8}.ph.r34{aspect-ratio:3/4}
+.ph.mini{width:56px;aspect-ratio:1;border-radius:50%;flex:none}.ph.mini::after{display:none}
+.tx-fig .ph figcaption{left:max(16px,env(safe-area-inset-left,0px))}
+/* hero photo + spotlight */
+.hero-photo{align-self:center;position:relative;z-index:1}
+.hero-photo::before{content:"";position:absolute;inset:-14px 14px 14px -14px;border:1px solid var(--brass);z-index:-1}
+.spot{position:absolute;left:-300px;top:-300px;width:600px;height:600px;border-radius:50%;background:radial-gradient(closest-side,rgba(255,255,255,.85),rgba(255,255,255,0));pointer-events:none;opacity:0;transition:opacity .6s}
+.hero.lit .spot{opacity:1}
+.hero-in{z-index:1}
+.gs .hero-v .ln>span,.gs .hero-side{animation:none}
+.ch-s{display:inline-block;white-space:pre}
+/* home category index */
+.cats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(20px,2.4vw,40px);border-top:1px solid var(--pine);padding-top:32px}
+.cat{display:flex;flex-direction:column;gap:18px}
+.cat-img{display:block}.cat-img .ph{aspect-ratio:4/5}
+.cat-h{display:flex;align-items:baseline;gap:12px;border-bottom:1px solid var(--mist);padding-bottom:12px}
+.cat-n{font-family:var(--f-latin);font-style:italic;color:var(--brass);font-size:18px}
+.cat-h h3{font-size:26px;letter-spacing:.2em}
+.cat-h sup{font-family:var(--f-latin);color:var(--brass);font-size:14px;margin-left:auto}
+.cat-list{list-style:none;margin:0;padding:0}
+.cat-list a{display:grid;grid-template-columns:2.2em minmax(0,1fr) auto;gap:8px;align-items:baseline;padding:9px 0;border-bottom:1px solid var(--mist);text-decoration:none;font-size:15.5px;letter-spacing:.08em;position:relative}
+.cat-list a::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;background:var(--brass);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
+.cat-list a:hover::after{transform:scaleX(1)}
+.cl-n{font-family:var(--f-latin);color:var(--brass);font-size:14px}
+.cl-t{transition:transform .3s var(--ease)}.cat-list a:hover .cl-t{transform:translateX(6px)}
+.cl-go{font-family:var(--f-latin);color:var(--brass);opacity:0;transition:opacity .3s}.cat-list a:hover .cl-go{opacity:1}
+/* treatments page groups */
+.tgroup{margin-bottom:56px}
+.tg-h{display:grid;grid-template-columns:3em auto minmax(0,1fr);gap:16px;align-items:baseline;padding-bottom:16px}
+.tg-h h2{font-size:clamp(28px,3vw,40px);letter-spacing:.24em}
+.tg-h p{color:var(--ink-2);font-size:14.5px;justify-self:end;max-width:30em;text-align:right}
+.idx.big li a{grid-template-columns:4em minmax(0,1fr);grid-template-areas:"n name" "n sum"}
+.preview .pv{overflow:hidden}.preview .pv img{width:100%;height:100%;object-fit:cover;filter:saturate(.72) contrast(.96) brightness(1.03) sepia(.08)}
+.preview>.contour{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.7}.preview .c-line{stroke:rgba(248,249,246,.7)}
+.preview::before{content:"";position:absolute;inset:-14px -14px 14px 14px;border:1px solid var(--brass)}
+.idx-thumb .ph{aspect-ratio:10/7}
+/* journal thumbnails */
+.jr-img{aspect-ratio:3/2;align-self:center}
+.jr-img figcaption{font-size:10px;padding:1px 6px;left:6px;bottom:6px}
+/* featured doctor */
+.feat-img .ph{max-width:520px}
+.feat-others a{flex-direction:row;align-items:center;gap:14px}
+.feat-others a>span{display:flex;flex-direction:column}
+.feat-others b{font-family:var(--f-serif);font-weight:500;font-size:20px;letter-spacing:.18em}
+/* quote */
+.quote{padding-block:clamp(80px,12vw,180px);border-bottom:1px solid var(--mist);text-align:center}
+.q{text-wrap:balance;font-family:var(--f-serif);font-size:clamp(24px,3.4vw,46px);line-height:1.7;letter-spacing:.1em;max-width:20em;margin:0 auto}
+.q-by{margin-top:28px;font-size:13px;letter-spacing:.4em;color:var(--brass)}
+/* article + facilities */
+.art-fig{aspect-ratio:21/8;margin-bottom:56px}
+.fac-i .ph{aspect-ratio:36/44}
+.fac-i figcaption{display:flex;flex-direction:column;gap:4px;font-size:14.5px;color:var(--ink-2)}
+/* capsule: magnetic + border beam */
+@property --a{syntax:'<angle>';initial-value:0deg;inherits:false}
+.capsule{transition:background .3s,color .3s,transform .4s var(--ease)}
+.beam{position:absolute;inset:-1px;border-radius:inherit;padding:1.5px;background:conic-gradient(from var(--a),transparent 0 72%,var(--brass) 86%,#fff 91%,transparent 96%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:beam 4.5s linear infinite;pointer-events:none}
+@keyframes beam{to{--a:360deg}}
+@media (max-width:1100px){.cats{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:48px}}
+@media (max-width:960px){
+  .hero-in{grid-template-columns:1fr}
+  .hero-photo{max-width:440px;width:calc(100% - 14px);margin-left:14px}
+  .phead-l,.phead.has-img{grid-template-columns:1fr}
+  .tg-h{grid-template-columns:2.6em minmax(0,1fr)}.tg-h p{grid-column:1/-1;justify-self:start;text-align:left}
+  .idx.big li a{grid-template-columns:3em minmax(0,1fr) 96px;grid-template-areas:"n name th" "n sum th"}
+  .jr a{grid-template-columns:8em minmax(0,1fr) 140px}
+}
+@media (max-width:640px){
+  .cats{grid-template-columns:1fr 1fr;gap:28px 14px}
+  .cat-h h3{font-size:20px;letter-spacing:.12em}
+  .cat-list a{font-size:14px;grid-template-columns:2em minmax(0,1fr)}.cl-go{display:none}
+  .idx.big li a{grid-template-columns:2.6em minmax(0,1fr) 72px}
+  .jr a{grid-template-columns:4.4em minmax(0,1fr)}.jr-img{display:none}
+  .art-fig,.ph.wide{aspect-ratio:16/10}
+  .feat-others{grid-template-columns:1fr}
+}
 /* responsive */
 @media (max-width:1100px){.vlabel{display:none}.hnav{display:none}}
 @media (max-width:960px){
@@ -420,7 +511,7 @@ fieldset.fl{padding:14px 0}fieldset.fl legend{float:left;padding:0;width:10em}
   .doc.rev .doc-img{order:0}
   .tlist-grid{grid-template-columns:1fr}.preview{display:none}
   .idx.big .idx-thumb{display:block;grid-area:th;width:96px;aspect-ratio:10/7}
-  .idx.big li a{grid-template-columns:3em minmax(0,1fr) 96px;grid-template-areas:"n name th" "n sum th" "n cat th"}
+  .idx.big li a{grid-template-columns:3em minmax(0,1fr) 96px;grid-template-areas:"n name th" "n sum th"}
   .tx-grid{grid-template-columns:1fr}
   .rail{position:sticky;top:calc(68px + env(safe-area-inset-top,0px));z-index:5;background:var(--paper);grid-template-columns:1fr;margin-inline:calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding:0 max(16px,env(safe-area-inset-left,0px));border-bottom:1px solid var(--mist)}
   .rail-line,.rail-doc{display:none}
@@ -461,12 +552,14 @@ fieldset.fl{padding:14px 0}fieldset.fl legend{float:left;padding:0;width:10em}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
   .contour.draw path{stroke-dashoffset:0}
+  .beam{display:none}
   .rv-pre{opacity:1;transform:none}
 }
 </style>
 <div id="shell-top"></div>
 <main id="app" class="app"></main>
 <div id="shell-bottom"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script>const OTHER_URL = "../a/";
 const CLINIC = {
   name: '霧嶼診所', en: 'WUYU CLINIC',
@@ -484,9 +577,11 @@ const CLINIC = {
 
 const NOTE_EFFECT = '實際效果因人而異，需經醫師評估。';
 const NOTE_FEE = '費用依衛生局核定之收費標準收取，於諮詢時由診所人員說明。';
-const NOTE_ARTICLE = '本文為一般衛教資訊，不能取代醫師當面診察。';
+const NOTE_ARTICLE = '如有疑問，歡迎於門診時間來電詢問。';
 
-const CATS = { light: '光電', inject: '注射', surgery: '手術' };
+const CATS = { light: '光電', inject: '注射', surgery: '手術', care: '皮膚保養' };
+const CAT_DESC = { light: '以雷射、脈衝光、電波或超音波等能量作用於皮膚，處理色素、膚質與鬆弛。', inject: '以注射方式放鬆肌肉、補充容積或改善皮膚含水量。', surgery: '在麻醉下進行的整形外科手術，須經完整評估與充分考慮。', care: '清潔、換膚與痤瘡治療等，以皮膚健康與日常照護為主。' };
+const NOTE_DEVICE = '使用之藥品及醫材依醫師評估，詳情請於門診諮詢。';
 
 const TREATMENTS = [
   {
@@ -498,7 +593,7 @@ const TREATMENTS = [
     risks: [['常見', '泛紅、腫脹、熱痛感、短暫麻刺感。'], ['少見', '燙傷、水泡、結痂、色素變化、局部凹陷或表面不平整、疤痕、暫時性感覺異常。']],
     contra: ['裝有心律調節器、植入式電擊器等電子裝置者', '懷孕中', '治療部位有傷口、感染或發炎性皮膚病', '治療部位有金屬植入物或近期注射填充物者（需先告知醫師評估）', '蟹足腫體質者'],
     care: ['當日以溫水清潔，一週內避免三溫暖、泡湯與去角質', '加強保濕與防曬', '出現水泡、持續疼痛或皮膚顏色改變，請儘速回診'],
-    articles: ['rf-mfu']
+    articles: []
   },
   {
     id: 'pico', name: '皮秒雷射', en: 'Picosecond Laser', cat: 'light', seed: 23, doctor: 'lan',
@@ -509,7 +604,7 @@ const TREATMENTS = [
     risks: [['常見', '泛紅、腫脹、點狀出血、結痂。'], ['色素變化', '發炎後色素沉澱（俗稱反黑）在亞洲膚色較常發生，多數於數月內漸淡，少數持續較久。'], ['少見', '色素脫失（反白）、水泡、疤痕、單純疱疹復發。'], ['刺青治療', '可能發生顏料變色或過敏反應。']],
     contra: ['懷孕中', '治療部位近期曝曬或曬黑', '光敏感體質或正在使用光敏感藥物', '治療部位有感染或疱疹發作', '近期服用口服 A 酸者（需告知醫師）', '蟹足腫體質', '未經診斷、疑似惡性的色素病灶（應先由皮膚科診察）'],
     care: ['輕柔清潔，依醫囑塗抹藥膏', '痂皮勿摳抓', '嚴格防曬至少三個月（物理遮蔽加防曬產品）', '一週內暫停酸類、A 醇與去角質產品', '反黑期間不自行使用美白藥品，依回診安排追蹤'],
-    articles: ['pico-care']
+    articles: []
   },
   {
     id: 'ulthera', name: '音波拉提', en: 'Ultherapy · MFU-V', cat: 'light', seed: 37, doctor: 'shen',
@@ -520,7 +615,7 @@ const TREATMENTS = [
     risks: [['常見', '治療中痠痛感、泛紅、腫脹、觸痛、瘀青、短暫麻木或刺痛。'], ['少見', '暫時性神經麻痺（例如嘴角活動不對稱，多於數週內恢復）、條狀紅腫、燙傷、疤痕、局部脂肪減少造成凹陷。']],
     contra: ['治療部位有開放性傷口或嚴重囊腫型痤瘡', '治療部位有金屬植入物或植入式電子裝置', '懷孕中', '凝血功能異常或使用抗凝血藥物者（需評估）', '治療部位曾注射填充物者（需告知醫師）'],
     care: ['加強保濕與防曬', '一週內避免高溫環境與用力按摩', '觸痛屬常見反應，可依醫囑服用止痛藥', '出現表情不對稱、持續麻木或皮膚破損，請儘速回診'],
-    articles: ['rf-mfu']
+    articles: []
   },
   {
     id: 'botox', name: '肉毒桿菌素注射', en: 'Botulinum Toxin Type A', cat: 'inject', seed: 41, doctor: 'shen',
@@ -542,73 +637,192 @@ const TREATMENTS = [
     risks: [['常見', '紅腫、瘀青、觸痛、暫時性硬塊或不平整。'], ['可能發生', '不對稱、表淺注射造成的泛藍（丁達爾現象）、感染、延遲性結節或肉芽腫、過敏。'], ['罕見但嚴重', '血管栓塞。填充物進入或壓迫血管，可能造成皮膚壞死、視力受損甚至失明，極少數有腦中風的報告。鼻部、眉間與額頭屬風險較高的部位。'], ['警訊', '注射後出現劇烈疼痛、皮膚發白或網狀紫斑、視力模糊，須馬上通知診所或前往急診。']],
     contra: ['懷孕或哺乳中', '對玻尿酸或局部麻醉劑過敏', '注射部位有感染或發炎', '自體免疫疾病活動期', '凝血功能異常或使用抗凝血藥物者（需評估）', '近期進行牙科治療或接種疫苗者（需告知醫師）'],
     care: ['當日避免化妝、按壓與揉捏', '一至兩週內避免三溫暖、泡湯與劇烈運動', '可冰敷減輕腫脹', '依安排於兩週後回診', '出現上述警訊不要等待觀察'],
-    articles: ['filler-safety']
+    articles: ['aftercare-contact']
   },
   {
     id: 'motiva', name: '魔滴隆乳', en: 'Motiva Breast Implants', cat: 'surgery', seed: 67, doctor: 'ko',
     summary: '以矽膠乳房植入物進行的隆乳手術，須在全身麻醉下由整形外科專科醫師施行。',
-    principle: ['醫師經乳房下緣、腋下或乳暈切口，將植入物置於乳腺下或胸大肌下（含雙平面）的腔室。', '魔滴為矽膠凝膠填充的植入物，外殼為奈米級細緻表面，凝膠可隨姿勢改變形態。切口、置放層次與尺寸，由醫師依胸廓與組織條件與當事人討論後決定。'],
+    principle: ['醫師經乳房下緣、腋下或乳暈切口，將植入物置於乳腺下或胸大肌下（含雙平面）的腔室。', '植入物為矽膠凝膠填充，表面有光滑面與細緻紋理面等類型。切口、置放層次與尺寸，由醫師依胸廓與組織條件與當事人討論後決定。'],
     indications: ['乳房發育不足', '產後或體重變化後的乳房容積流失', '兩側乳房明顯不對稱'],
     info: [['時間', '手術約 1.5–2.5 小時'], ['麻醉', '全身麻醉，由麻醉科專科醫師執行並全程監測'], ['恢復期', '術後約 1–2 週可恢復一般文書工作；4–6 週內避免上肢重訓與劇烈運動'], ['追蹤', '乳房植入物並非終身使用的裝置，日後可能需要更換或取出；術後需定期回診，並依醫囑安排超音波或磁振造影檢查']],
     risks: [['手術相關', '出血與血腫、感染、血清腫、傷口癒合不良、疤痕增生、麻醉風險。'], ['植入物相關', '莢膜攣縮（變硬、變形、疼痛）、植入物破裂、移位或旋轉、波紋感、兩側不對稱、乳頭或皮膚感覺改變。可能需要再次手術。'], ['BIA-ALCL', '乳房植入物相關間變性大細胞淋巴瘤，屬罕見的淋巴瘤，目前報告多與粗糙面植入物相關。術後多年出現單側腫脹、積液或腫塊，應回診檢查。'], ['其他', '少數人於植入後出現疲倦、關節痛等全身性症狀的報告，因果關係仍在研究中。植入物可能影響乳房攝影判讀，檢查前請告知放射人員。']],
     contra: ['未滿 18 歲', '懷孕或哺乳中', '乳房有未治療的腫瘤或感染', '身體任何部位有活動性感染', '控制不佳的糖尿病、心肺疾病或凝血異常', '無法配合術後追蹤者', '吸菸者須於術前後戒菸'],
     care: ['依醫囑穿著固定胸衣、服用藥物', '傷口保持乾燥', '依指示返診拆線與追蹤', '是否按摩依醫師指示，不自行進行', '出現發燒、單側明顯腫脹、劇痛或傷口滲液，儘速回診'],
     extra: '手術前將提供手術同意書與麻醉同意書，並保留充分的考慮時間。',
-    articles: ['breast-consult']
+    articles: ['aftercare-contact']
   }
 ];
+
+
+const RENAME = { thermage: ['rf', '單極電波', 'Monopolar Radiofrequency', []], pico: ['pico', '皮秒雷射', 'Picosecond Laser', []], ulthera: ['hifu', '聚焦超音波拉提', 'Micro-focused Ultrasound', []], botox: ['btx', '肉毒桿菌素注射', 'Botulinum Toxin Type A', []], filler: ['ha', '玻尿酸填充', 'Hyaluronic Acid Filler', ['aftercare-contact']], motiva: ['implant', '矽膠義乳隆乳', 'Breast Augmentation', ['aftercare-contact']] };
+TREATMENTS.forEach(t => { const r = RENAME[t.id]; t.id = r[0]; t.name = r[1]; t.en = r[2]; t.articles = r[3]; });
+const lst = x => x.split('；');
+const pairs = x => x.split('；').reduce((a, p) => { if (p.includes('｜')) a.push(p.split('｜')); else a[a.length - 1][1] += '；' + p; return a; }, []);
+function T(id, name, en, cat, doctor, summary, P, I, F, R, X, C, extra) {
+  TREATMENTS.push({ id, name, en, cat, doctor, summary, principle: P.split('／'), indications: lst(I), info: pairs(F), risks: R.split('／').map(p => p.split('｜')), contra: lst(X), care: lst(C), extra, articles: [], seed: 100 + TREATMENTS.length * 7 });
+}
+const SURG_EXTRA = '手術前將提供手術同意書與麻醉同意書，並保留充分的考慮時間。';
+T('ipl', '脈衝光', 'Intense Pulsed Light', 'light', 'lan', '以寬頻譜強脈衝光處理表淺色素與微血管擴張的光學治療。',
+  '儀器以濾鏡選取約 500–1200 奈米的寬頻光，由黑色素與血紅素吸收後轉為熱能，使表淺色素結痂脫落、擴張的微血管收縮。／脈衝光不是雷射，作用層次較淺；能量與濾鏡由醫師依膚色與病灶調整。',
+  '曬斑、雀斑等表淺色素斑；臉部泛紅與微血管擴張；膚色不均',
+  '時間｜約 20–30 分鐘；麻醉｜多數不需麻醉，必要時敷表面麻醉藥膏；恢復期｜泛紅多於數小時內消退，斑點處細小結痂約 5–7 日脫落；間隔｜通常需多次治療，每次間隔約 4 週',
+  '常見｜泛紅、灼熱感、斑點暫時變深並結痂。／可能發生｜發炎後色素沉澱、色素脫失、水泡。／少見｜燙傷、疤痕。／眼部｜強光可能傷及眼睛，治療全程須配戴護目裝置。',
+  '懷孕中；治療部位近期曝曬或曬黑；光敏感體質或正在使用光敏感藥物；治療部位有感染或疱疹發作；肝斑（可能加深，須經醫師評估）；未經診斷的色素病灶',
+  '可冰敷舒緩熱感；痂皮待其自然脫落；加強保濕與防曬；一週內暫停酸類與去角質產品');
+T('fractional', '飛梭雷射', 'Fractional Laser', 'light', 'lan', '以陣列式微小光束在皮膚形成柱狀微創區，引發修復與重塑的雷射治療。',
+  '雷射被分成許多微小光束，只作用於部分皮膚，保留周圍正常組織以利癒合。／分為非汽化型（如 1550 奈米，保留表皮）與汽化型（如二氧化碳雷射、鉺雅鉻雷射），作用強度與恢復期不同，由醫師依疤痕型態與膚色選擇。',
+  '痘疤凹洞；毛孔粗大；手術或外傷疤痕；細紋與膚質粗糙',
+  '時間｜雷射約 20–40 分鐘，另需敷表面麻醉藥膏約 40–60 分鐘；麻醉｜表面麻醉；恢復期｜非汽化型紅腫約 3–5 日；汽化型結痂與泛紅約 7–14 日；間隔｜通常需多次治療，每次間隔約 4–8 週',
+  '常見｜紅腫、灼熱感、結痂、脫屑、暫時性粉刺或痘痘增加。／色素變化｜發炎後色素沉澱在亞洲膚色較常發生，多數於數月內漸淡。／少見｜感染（含單純疱疹復發）、持續性紅斑、色素脫失、疤痕。',
+  '懷孕中；近期服用口服 A 酸者（需告知醫師）；蟹足腫體質；治療部位有感染或疱疹發作；治療部位近期曝曬；免疫功能低下或傷口癒合不良者',
+  '依醫囑塗抹修復藥膏，保持傷口濕潤；痂皮勿摳抓；汽化型治療後，傷口癒合前不上妝；嚴格防曬至少三個月；有疱疹病史者請事先告知，依醫囑服用預防藥物');
+T('toning', '淨膚雷射', 'Q-switched Nd:YAG Laser Toning', 'light', 'lan', '以低能量、大光斑的 1064 奈米 Q 開關銣雅鉻雷射進行的多次性色素治療。',
+  '奈秒級脈衝以低能量、大光斑方式掃過治療區，逐步擊碎黑色素顆粒，由身體代謝。／單次能量低，需累積多次治療；治療頻率與總次數由醫師控管，以降低色素脫失的風險。',
+  '膚色不均與暗沉；發炎後色素沉澱；肝斑須經醫師評估，並非人人適合雷射治療',
+  '時間｜約 15–20 分鐘；麻醉｜多數不需麻醉；恢復期｜輕微泛紅多於數小時內消退；間隔｜每次間隔約 2–4 週，次數由醫師評估',
+  '常見｜泛紅、溫熱刺感、暫時性乾燥。／色素變化｜肝斑可能復發或加深；發炎後色素沉澱。／需留意｜點狀色素脫失（俗稱反白），與治療過於頻繁或累積能量過高有關，可能持續很久且不易恢復。／少見｜水泡、點狀出血、蕁麻疹樣反應。',
+  '懷孕中；治療部位近期曝曬或曬黑；光敏感體質或正在使用光敏感藥物；治療部位有感染或發炎；未經診斷的色素病灶；已出現點狀反白者',
+  '加強保濕與防曬；一週內暫停酸類、A 醇與去角質產品；依醫師安排的間隔回診，不自行加密治療；膚色出現白色小點請儘速回診');
+T('hair', '除毛雷射', 'Laser Hair Removal', 'light', 'lan', '以雷射選擇性加熱毛囊中的黑色素，減少毛髮生長的治療。',
+  '常用波長為 755、810 與 1064 奈米。雷射能量被毛幹與毛囊的黑色素吸收後轉為熱能，破壞毛囊的生長構造。／雷射主要對生長期的毛髮起作用，因此需分次治療；白色、金色與細軟毛髮反應較差。治療後毛髮數量減少，但日後仍可能再生。',
+  '腋下、四肢、比基尼線等部位的深色毛髮；反覆發生的毛囊炎或毛髮內生（經醫師評估）',
+  '時間｜腋下約 10–15 分鐘，雙腿約 40–60 分鐘；麻醉｜以冷卻裝置降低熱感，必要時敷表面麻醉藥膏；恢復期｜毛囊周圍紅腫多於數小時至兩日內消退；間隔｜依部位約 4–8 週，需多次治療',
+  '常見｜毛囊周圍紅腫、刺熱感。／可能發生｜灼傷、水泡、色素沉澱或脫失（膚色較深或曬黑者風險較高）、毛囊炎。／少見｜疤痕；治療區周邊毛髮反而增加（反常性多毛），臉頸部較常被報告。／眼部｜治療全程須配戴護目鏡，眼眶周圍不施打。',
+  '懷孕中；治療部位近期曝曬或曬黑；正在使用光敏感藥物；治療部位有傷口、感染或刺青；治療前四週內曾拔毛或蜜蠟除毛（請改用刮除）',
+  '可冰敷舒緩；兩日內避免熱水浴、三溫暖與劇烈運動；加強防曬；毛髮約一至三週自行脫落，不要拔除');
+T('caha', '羥基磷灰石鈣注射', 'Calcium Hydroxylapatite Filler', 'inject', 'shen', '以含羥基磷灰石鈣微粒的凝膠補充容積、修飾輪廓的注射治療。',
+  '凝膠載體提供注射當下的支撐，於數月內被吸收；微粒留在組織中作為支架，引發自體膠原生成，之後逐漸分解為鈣與磷酸根離子代謝。／與玻尿酸不同，目前沒有可將它溶解的酵素，因此注射前的評估與部位選擇格外重要。',
+  '法令紋等中至深層皺摺；臉頰與下顎線的容積流失；手背容積流失；部分用途屬仿單核准適應症以外的使用，醫師會於諮詢時說明',
+  '時間｜約 20–40 分鐘；麻醉｜表面麻醉，可混合局部麻醉劑；恢復期｜腫脹與瘀青多於 3–7 日消退；間隔｜維持時間因人而異，是否補充由醫師評估',
+  '常見｜紅腫、瘀青、觸痛。／可能發生｜結節或硬塊（唇部與眼周風險較高，一般不注射於這些部位）、不對稱、感染。／罕見但嚴重｜血管栓塞，可能造成皮膚壞死、視力受損甚至失明；因無溶解酵素，處置較為困難。／警訊｜注射後出現劇烈疼痛、皮膚發白或網狀紫斑、視力模糊，須馬上通知診所或前往急診。／影像檢查｜微粒可能在 X 光或電腦斷層影像上顯影，檢查時請告知醫療人員。',
+  '懷孕或哺乳中；對產品成分過敏；注射部位有感染或發炎；自體免疫疾病活動期；凝血功能異常或使用抗凝血藥物者（需評估）；蟹足腫體質；治療部位曾注射不明填充物者（需告知醫師）',
+  '當日避免化妝、按壓與揉捏；一至兩週內避免三溫暖、泡湯與劇烈運動；可冰敷減輕腫脹；依安排回診；出現上述警訊不要等待觀察');
+T('plla', '聚左旋乳酸注射', 'Poly-L-lactic Acid', 'inject', 'shen', '注射聚左旋乳酸微粒，逐步引發自體膠原生成以補充容積的治療。',
+  '聚左旋乳酸是可被人體分解的合成聚合物。微粒注入後引起輕度組織反應，膠原於數週至數月間逐漸增生。／注射後數日的澎潤感主要來自稀釋液，會先消退；變化緩慢，通常需分次治療。目前沒有可將它溶解的酵素。',
+  '臉頰、太陽穴等部位的容積流失；較深的皺摺與凹陷',
+  '時間｜約 30–40 分鐘；麻醉｜表面麻醉，稀釋液可含局部麻醉劑；恢復期｜腫脹與瘀青多於 3–7 日消退；間隔｜每次間隔 4–6 週以上，次數由醫師評估',
+  '常見｜紅腫、瘀青、觸痛。／可能發生｜皮下結節或丘疹（可能於數週至數月後才出現，與稀釋方式、注射層次及部位有關）、肉芽腫、不對稱、感染。／罕見但嚴重｜血管栓塞，可能造成皮膚壞死或視力受損。／警訊｜注射後出現劇烈疼痛、皮膚發白或網狀紫斑、視力模糊，須馬上通知診所或前往急診。',
+  '懷孕或哺乳中；對產品成分過敏；注射部位有感染或發炎；蟹足腫體質；自體免疫疾病活動期；凝血功能異常或使用抗凝血藥物者（需評估）；眼周與唇部一般不注射',
+  '是否按摩、頻率與天數依醫師指示；當日避免化妝；一至兩週內避免三溫暖、泡湯與劇烈運動；數週後出現硬塊請回診評估');
+T('skinbooster', '水光注射', 'Intradermal Hyaluronic Acid', 'inject', 'shen', '以多點方式將玻尿酸注入真皮層，補充皮膚含水量的注射治療。',
+  '以手持針具或多針頭負壓注射儀，將低交聯或未交聯的玻尿酸少量、多點注入真皮層，藉其結合水分的特性改善乾燥。／注射內容物須為具衛生福利部許可證的產品，由醫師選擇。',
+  '皮膚乾燥、粗糙；乾燥引起的細紋；臉部、頸部與手背',
+  '時間｜注射約 20–30 分鐘，另需敷表面麻醉藥膏約 30–40 分鐘；麻醉｜表面麻醉；恢復期｜針孔紅點與小丘疹多於 1–3 日消退，瘀青可能持續約一週；間隔｜通常需多次治療，每次間隔約 4 週',
+  '常見｜針孔紅點、小丘疹、瘀青、腫脹。／可能發生｜感染（曾有非結核分枝桿菌感染的報告，多與來源不明的製劑或無菌操作不當有關）、過敏、結節。／罕見｜血管栓塞。',
+  '懷孕或哺乳中；對玻尿酸或局部麻醉劑過敏；治療部位有感染、疱疹或發炎性痤瘡；自體免疫疾病活動期；凝血功能異常或使用抗凝血藥物者（需評估）；蟹足腫體質',
+  '當日不上妝，保持治療部位清潔；三日內避免三溫暖、泳池與劇烈運動；加強保濕與防曬；紅腫熱痛持續加劇或出現膿皰，請儘速回診');
+T('eyelid', '雙眼皮手術', 'Upper Blepharoplasty', 'surgery', 'ko', '以縫線或切開方式形成上眼瞼皺摺的手術。',
+  '縫合法以縫線固定皮膚與深層組織形成皺摺；切開法則切除多餘皮膚與部分脂肪後再固定。／合併提眼瞼肌無力（眼瞼下垂）者，需另行評估是否一併矯正。方式由醫師依眼皮厚度與鬆弛程度與當事人討論後決定。',
+  '單眼皮或皺摺不明顯；上眼皮鬆弛下垂；兩側皺摺不對稱',
+  '時間｜約 40–90 分鐘；麻醉｜局部麻醉，可合併靜脈鎮靜（由麻醉科專科醫師執行）；恢復期｜明顯腫脹與瘀青約 1–2 週；切開法約 5–7 日拆線；外觀穩定需 3–6 個月；追蹤｜拆線後及術後一個月、三個月回診',
+  '常見｜腫脹、瘀青、暫時性乾眼與異物感。／可能發生｜兩側不對稱、皺摺變淺或消失（縫合法較常見）、多重皺摺、疤痕明顯、閉眼不全、感染，可能需要再次手術。／罕見但嚴重｜眼眶內出血壓迫視神經造成視力受損。術後出現劇痛、眼球突出或視力模糊，須立即就醫。',
+  '未滿 18 歲；懷孕中；眼部有感染或發炎；嚴重乾眼症；控制不佳的高血壓、糖尿病或甲狀腺眼病變；凝血功能異常或使用抗凝血藥物者（需評估）',
+  '術後 48 小時內冰敷，之後依醫囑處理；睡眠時墊高頭部；傷口保持乾燥並依醫囑塗藥；兩週內避免隱形眼鏡、眼妝與劇烈運動；術前後戒菸', '手術前將提供手術同意書，並保留充分的考慮時間。');
+T('lowerbleph', '眼袋手術', 'Lower Blepharoplasty', 'surgery', 'ko', '經結膜或睫毛下切口，處理下眼瞼突出脂肪與鬆弛皮膚的手術。',
+  '內開式由下眼瞼結膜切口移除或轉位眶隔脂肪，皮膚表面沒有切口，適合皮膚鬆弛不明顯者。／外開式由睫毛下緣切口進入，可同時處理鬆弛的皮膚與肌肉。方式由醫師依脂肪突出與皮膚鬆弛程度評估。',
+  '下眼瞼脂肪突出；合併皮膚鬆弛與皺摺；淚溝凹陷（可評估脂肪轉位）',
+  '時間｜約 60–120 分鐘；麻醉｜局部麻醉合併靜脈鎮靜或全身麻醉，由麻醉科專科醫師執行；恢復期｜腫脹與瘀青約 1–2 週；外開式約 5–7 日拆線；追蹤｜術後一週、一個月、三個月回診',
+  '常見｜腫脹、瘀青、結膜水腫、暫時性乾眼。／可能發生｜下眼瞼外翻或退縮（外開式較需留意）、凹陷或表面不平整、兩側不對稱、複視（多為暫時性）、疤痕。／罕見但嚴重｜眼眶內出血壓迫視神經造成視力受損。術後出現劇痛、眼球突出或視力模糊，須立即就醫。',
+  '未滿 18 歲；懷孕中；眼部有感染或發炎；嚴重乾眼症；下眼瞼張力明顯不足者（需評估術式）；控制不佳的高血壓或糖尿病；凝血功能異常或使用抗凝血藥物者（需評估）',
+  '術後 48 小時內冰敷；睡眠時墊高頭部；依醫囑使用眼藥水與藥膏；兩週內避免隱形眼鏡、揉眼與劇烈運動；術前後戒菸', SURG_EXTRA);
+T('rhino', '鼻整形手術', 'Rhinoplasty', 'surgery', 'ko', '以自體軟骨或植入物調整鼻樑、鼻尖與鼻翼形態的手術。',
+  '手術可採開放式（鼻小柱切口）或閉鎖式（鼻孔內切口）。鼻樑可使用植入物或自體組織；鼻尖多以耳軟骨、鼻中隔軟骨或肋軟骨塑形。／合併鼻中隔彎曲者可評估同時矯正。材料與術式由醫師依鼻部皮膚厚度、軟骨條件與當事人討論後決定。',
+  '鼻樑低平；鼻尖與鼻翼形態調整；外傷後鼻部變形；鼻中隔彎曲合併外觀問題',
+  '時間｜約 2–4 小時；麻醉｜全身麻醉或靜脈鎮靜，由麻醉科專科醫師執行並全程監測；恢復期｜鼻夾板固定約 7 日；明顯腫脹約 2–3 週；形態穩定需 6–12 個月；追蹤｜術後一週拆線，之後依醫囑定期回診',
+  '手術相關｜出血、感染、麻醉風險、疤痕。／可能發生｜鼻塞、嗅覺暫時改變、鼻尖麻木、不對稱或歪斜；形態與預期有落差時可能需要再次手術。／植入物相關｜感染、位移、外露、莢膜攣縮造成變形，可能需要取出。／少見｜皮膚血液循環不良造成壞死、鼻中隔穿孔；取用肋軟骨者可能有取用處疼痛、氣胸或軟骨日後彎曲。',
+  '未滿 18 歲；懷孕中；鼻部感染或未控制的鼻竇炎；鼻部曾注射不明填充物者（需告知醫師）；控制不佳的慢性疾病或凝血異常；吸菸者須於術前後戒菸',
+  '睡眠時墊高頭部並依醫囑冰敷；不擤鼻涕，打噴嚏時張口；避免碰撞與壓迫鼻部，配戴眼鏡的時機依醫囑；出現發燒、紅腫加劇或鼻尖皮膚顏色改變，儘速回診', SURG_EXTRA);
+T('lipo', '抽脂手術', 'Liposuction', 'surgery', 'ko', '經小切口以抽吸管移除局部皮下脂肪的手術，並非減重方法。',
+  '醫師先注入含局部麻醉劑與血管收縮劑的腫脹液，再以細管抽吸皮下脂肪，可輔以動力或超音波設備。／抽脂量較大時，須由符合資格的專科醫師施行，全身麻醉或靜脈麻醉由麻醉科專科醫師執行。',
+  '飲食與運動後仍局部堆積的皮下脂肪；腹部、腰側、大腿、手臂、下巴等部位',
+  '時間｜約 1–3 小時，依部位與範圍而定；麻醉｜靜脈鎮靜或全身麻醉，由麻醉科專科醫師執行並全程監測；恢復期｜約 1–2 週可恢復一般文書工作；腫脹與瘀青持續數週；外觀穩定需 3–6 個月；追蹤｜術後依醫囑穿著塑身衣約 1–3 個月，並定期回診',
+  '常見｜腫脹、瘀青、痠痛、麻木、暫時性硬塊。／可能發生｜表面凹凸不平、兩側不對稱、皮膚鬆弛、血清腫、色素沉澱、感染。／罕見但嚴重｜脂肪栓塞、深部靜脈栓塞與肺栓塞、局部麻醉劑中毒、體液失衡、腹腔臟器損傷、大量出血，可能危及生命。／警訊｜術後出現呼吸急促、胸痛、意識改變或單側小腿腫痛，須立即就醫。',
+  '未滿 18 歲；懷孕中；以減重為主要目的者；心肺疾病、控制不佳的糖尿病或凝血異常；使用抗凝血藥物者（需評估）；吸菸者須於術前後戒菸',
+  '依醫囑穿著塑身衣；術後儘早下床走動，以降低血栓風險；傷口滲液 1–2 日屬常見情形；四週內避免劇烈運動；出現上述警訊不要等待觀察', SURG_EXTRA);
+T('hydra', '渦流水磨淨膚', 'Hydradermabrasion', 'care', 'lan', '以負壓渦流探頭搭配溶液，進行清潔、溫和去角質與導入的非侵入式皮膚保養。',
+  '探頭以真空負壓貼附皮膚，螺旋流道帶動溶液（常含低濃度水楊酸、乳酸等成分）軟化角質與粉刺並同步吸除，之後導入保濕成分。／過程不破壞皮膚，屬保養性質，可作為其他治療前的清潔準備。',
+  '粉刺與毛孔阻塞；膚質粗糙、出油；乾燥暗沉',
+  '時間｜約 30–45 分鐘；麻醉｜不需麻醉；恢復期｜輕微泛紅多於數小時內消退；間隔｜約 2–4 週，依膚況評估',
+  '常見｜泛紅、緊繃感、短暫刺感。／可能發生｜乾燥脫屑、對溶液成分刺激或過敏、粉刺暫時增加。／少見｜負壓造成瘀點、單純疱疹復發。',
+  '治療部位有傷口、曬傷、感染或疱疹發作；發炎嚴重的痤瘡或酒糟急性期；對水楊酸等成分過敏者（對阿斯匹靈過敏請事先告知）；近期接受汽化雷射或中深層換膚者；懷孕中或服用口服 A 酸者（需告知，由醫師調整溶液成分）',
+  '當日加強保濕；三日內暫停酸類、A 醇與去角質產品；加強防曬；持續紅腫刺痛請回診');
+const PEEL_CARE = '以溫水輕柔清潔；加強保濕；脫屑勿撕除；一週內暫停酸類、A 醇與去角質產品；嚴格防曬';
+T('peel', '果酸換膚', 'Glycolic Acid Peel', 'care', 'lan', '以甘醇酸溶液進行的淺層化學換膚。',
+  '甘醇酸是分子較小的 α-羥基酸，可降低角質細胞間的連結，使老廢角質脫落。／診所使用的濃度高於一般保養品，由醫師依皮膚反應決定濃度與停留時間，再以中和劑終止反應。',
+  '粉刺與輕度痤瘡；表淺色素不均；膚質粗糙；毛孔角化',
+  '時間｜約 15–20 分鐘；麻醉｜不需麻醉；恢復期｜泛紅與刺感多於數小時內消退，之後 2–5 日可能輕微脫屑；間隔｜約 2–4 週，通常需多次',
+  '常見｜刺痛、泛紅、乾燥脫屑。／可能發生｜結痂、發炎後色素沉澱、痘痘短暫增加。／少見｜化學灼傷、疤痕、色素脫失、單純疱疹復發、接觸性皮膚炎。',
+  '治療部位有傷口、濕疹、曬傷或疱疹發作；近期服用口服 A 酸者（需告知醫師）；一週內使用外用 A 酸、去角質或做過除毛者；蟹足腫體質；懷孕或哺乳中（請先告知，由醫師評估）；無法配合防曬者', PEEL_CARE);
+T('mandelic', '杏仁酸換膚', 'Mandelic Acid Peel', 'care', 'lan', '以杏仁酸溶液進行的淺層化學換膚，刺激感相對較低。',
+  '杏仁酸是分子較大、具親脂性的 α-羥基酸，滲透速度較慢，刺激感通常低於甘醇酸。／文獻指出它具輕度抑菌特性，常用於容易長粉刺或較敏感的膚質；濃度與停留時間由醫師決定。',
+  '粉刺與輕度痤瘡；出油與毛孔阻塞；發炎後色素沉澱；較敏感、不耐甘醇酸的膚質（經醫師評估）',
+  '時間｜約 15–20 分鐘；麻醉｜不需麻醉；恢復期｜輕微泛紅多於數小時內消退，脫屑通常不明顯；間隔｜約 2–4 週，通常需多次',
+  '常見｜輕微刺感、泛紅、乾燥。／可能發生｜脫屑、發炎後色素沉澱、痘痘短暫增加。／少見｜化學灼傷、接觸性皮膚炎、單純疱疹復發。',
+  '對杏仁酸過敏；治療部位有傷口、濕疹、曬傷或疱疹發作；近期服用口服 A 酸者（需告知醫師）；一週內使用外用 A 酸或去角質產品者；懷孕或哺乳中（請先告知，由醫師評估）', PEEL_CARE);
+T('acne', '痤瘡治療', 'Acne Treatment', 'care', 'lan', '由皮膚科醫師診斷痤瘡的類型與嚴重度後，安排藥物與處置的門診治療。',
+  '痤瘡（青春痘）與皮脂分泌、毛囊角化異常、痤瘡桿菌及發炎反應有關。／醫師依嚴重度選擇外用藥、口服藥，必要時合併粉刺清除、化學換膚或光電治療。多數治療需持續數週才看得出變化。',
+  '粉刺；發炎性丘疹與膿皰；結節與囊腫型痤瘡；反覆發作、有留疤風險者',
+  '時間｜初診問診與檢查約 20–30 分鐘；療程｜外用與口服藥通常需連續使用 8–12 週後評估；處置｜粉刺清除、病灶內注射等，依醫師評估安排；回診｜約每 2–4 週',
+  '外用藥｜乾燥、脫屑、刺激感，部分藥物會增加光敏感。／口服抗生素｜腸胃不適、光敏感；為降低抗藥性，不宜長期單獨使用。／口服 A 酸｜具致畸胎性，用藥前、用藥期間與停藥後一段時間須嚴格避孕；可能有唇部與眼睛乾燥、肝功能與血脂異常、情緒改變，需定期抽血追蹤。／處置相關｜粉刺清除後紅腫與色素沉澱；病灶內類固醇注射可能造成局部凹陷。',
+  '懷孕、哺乳或計畫懷孕者（口服 A 酸與部分藥物不可使用）；肝腎功能異常者（需評估）；有藥物過敏史者；正在使用其他藥物者（請告知醫師）',
+  '每日以溫和產品清潔兩次；不自行擠壓；使用不易致粉刺的保濕與防曬產品；依醫囑用藥，不自行停藥或加量；出現嚴重不適請儘速回診');
+T('skincare', '皮膚保養諮詢', 'Skin Care Consultation', 'care', 'shen', '由皮膚科醫師檢視皮膚狀況與目前的保養方式，提供日常照護建議的門診。',
+  '醫師透過問診（保養品、用藥與生活習慣）與視診，必要時輔以皮膚鏡檢查，先區分是保養方式的問題還是需要治療的皮膚疾病。／之後說明清潔、保濕與防曬的原則，以及目前保養品是否需要調整。',
+  '皮膚敏感、乾燥或出油；療程前後的保養安排；不確定是否需要治療者',
+  '時間｜約 20–30 分鐘；準備｜請攜帶目前使用的保養品或成分清單，當日儘量不上妝；內容｜問診、視診，必要時皮膚鏡檢查；後續｜若診斷為皮膚疾病，另行說明治療選項',
+  '諮詢本身｜不涉及侵入性處置。／更換保養品｜新產品可能引起刺激或過敏，建議先於小範圍試用。／需要治療時｜相關風險於安排治療前另行說明。',
+  '無特定限制；皮膚有急性感染或嚴重發炎者，將優先安排診療',
+  '依建議逐項調整保養品，不一次全部更換；每日防曬；出現紅、癢、刺痛請停用新產品並回診');
+const ORDER = ['rf', 'pico', 'hifu', 'ipl', 'fractional', 'toning', 'hair', 'btx', 'ha', 'caha', 'plla', 'skinbooster', 'implant', 'eyelid', 'lowerbleph', 'rhino', 'lipo', 'hydra', 'peel', 'mandelic', 'acne', 'skincare'];
+TREATMENTS.sort((a, b) => ORDER.indexOf(a.id) - ORDER.indexOf(b.id));
+/* photos */
+const IMG = k => '../assets/img/' + k + '.jpg';
+const POOL = { light: ['light-0', 'light-1', 'light-2'], inject: ['inject-0', 'inject-1', 'inject-2'], surgery: ['surgery-0', 'surgery-1'], care: ['care-2', 'care-1'] };
+const POS = ['50% 50%', '30% 40%', '70% 60%', '50% 25%', '40% 75%'];
+{ const n = {}; TREATMENTS.forEach(t => { const k = n[t.cat] = (n[t.cat] || 0); n[t.cat]++; t.photo = t.id === 'hair' ? 'hair' : POOL[t.cat][k % POOL[t.cat].length]; t.pos = POS[Math.floor(k / POOL[t.cat].length) % POS.length]; }); }
 
 const DOCTORS = [
   { id: 'ko', name: '柯硯廷', title: '院長', spec: '整形外科專科醫師', certs: ['外科專科醫師', '整形外科專科醫師'], cert: '整外專醫字第 000000 號（示意）',
     edu: ['國立大學醫學系畢業', '醫學中心外科部住院醫師', '醫學中心整形外科總醫師', '醫學中心整形外科主治醫師', '台灣整形外科醫學會會員'],
-    skills: ['乳房整形手術', '眼周手術', '術後疤痕照護'], bio: '負責本院手術項目的術前評估、手術執行與術後追蹤。', seed: 71 },
+    skills: ['乳房整形手術', '眼周手術', '鼻整形手術', '抽脂手術', '術後疤痕照護'], bio: '負責本院手術項目的術前評估、手術執行與術後追蹤。', seed: 71, photo: 'doc-ko' },
   { id: 'shen', name: '沈以澄', title: '醫師', spec: '皮膚科專科醫師', certs: ['皮膚科專科醫師'], cert: '皮專醫字第 000000 號（示意）',
     edu: ['醫學大學醫學系畢業', '醫學中心皮膚部住院醫師、總醫師', '區域醫院皮膚科主治醫師', '臺灣皮膚科醫學會會員'],
-    skills: ['注射治療（肉毒桿菌素、玻尿酸）', '電波與音波治療', '一般皮膚科診療'], bio: '負責注射與緊緻類治療的評估與執行。', seed: 83 },
+    skills: ['注射治療（肉毒桿菌素、玻尿酸）', '電波與音波治療', '一般皮膚科診療'], bio: '負責注射與緊緻類治療的評估與執行。', seed: 83, photo: 'doc-shen' },
   { id: 'lan', name: '藍予禾', title: '醫師', spec: '皮膚科專科醫師', certs: ['皮膚科專科醫師'], cert: '皮專醫字第 000000 號（示意）',
     edu: ['醫學大學醫學系畢業', '醫學中心皮膚部住院醫師', '醫學中心雷射治療門診主治醫師', '臺灣皮膚科醫學會會員'],
-    skills: ['色素性病灶診斷與雷射治療', '痤瘡與痘疤', '雷射術後照護'], bio: '負責色素與膚質相關雷射門診。', seed: 97 }
+    skills: ['色素性病灶診斷與雷射治療', '痤瘡與痘疤', '化學換膚', '雷射術後照護'], bio: '負責色素與膚質相關雷射門診與皮膚保養療程。', seed: 97, photo: 'doc-lan' }
 ];
 
 const ARTICLES = [
-  { id: 'rf-mfu', title: '電波與音波拉提的差別：能量形式與作用深度', author: 'shen', date: '2026-09-18', tag: '光電', treatments: ['thermage', 'ulthera'], seed: 13,
-    excerpt: '兩者都是非侵入式的緊緻治療，但能量形式與作用深度不同，適合評估的狀況也不一樣。',
+  { id: 'lunar-new-year', photo: 'news-0', title: '2027 年春節門診時間公告', by: '霧嶼診所', date: '2026-11-10', tag: '門診公告', treatments: [], seed: 13,
+    excerpt: '春節期間門診時間調整如下。休診期間原有的預約，診所人員將另行聯繫確認。',
     body: [
-      ['兩種能量', ['電波是電流在組織內產生的體積式加熱，熱能分布在一個範圍內；音波則是把超音波聚焦成點狀，在特定深度形成微小的熱凝固點。']],
-      ['作用深度', ['電波主要加熱真皮層與皮下纖維中隔。音波可設定 1.5、3.0、4.5 毫米等深度，能作用到筋膜層（SMAS），治療時並可用超音波影像確認層次。']],
-      ['各自適合評估的狀況', ['皮膚偏薄、以鬆弛與細紋為主，或是以輪廓下垂為主，醫師會依組織厚度與鬆弛型態給出建議。兩者並非互相取代，有時會分次搭配。']],
-      ['共同的限制', ['兩種治療的變化都需要數月才會逐步出現，幅度因人而異。鬆弛程度較嚴重時，非侵入式治療的改變有限，可能需要與醫師討論手術選項。']],
-      ['治療前該告知醫師的事', ['體內是否有植入物或電子裝置、過去的填充物注射史，以及目前使用的藥物，都會影響是否適合治療與能量設定。']]
+      ['休診日期', ['2027 年 2 月 5 日（週五）至 2 月 10 日（週三）休診。']],
+      ['恢復門診', ['2 月 11 日（週四）起恢復正常門診時間。']],
+      ['已預約者', ['休診期間的原有預約，診所人員將於 1 月 29 日前以電話聯繫改期。']],
+      ['休診期間的術後問題', ['請依術後衛教單上的聯絡方式聯繫。如出現劇烈疼痛、發燒、視力模糊等緊急狀況，請直接前往鄰近醫院急診。']]
     ] },
-  { id: 'pico-care', title: '皮秒雷射後的照護：認識發炎後色素沉澱', author: 'lan', date: '2026-10-02', tag: '光電', treatments: ['pico'], seed: 29,
-    excerpt: '反黑是亞洲膚色在雷射後較常見的變化。了解它出現的時間與照護方式，能降低發生的機會。',
+  { id: 'doctor-schedule', photo: 'news-1', title: '沈以澄醫師 12 月門診時段調整', by: '霧嶼診所', doctor: 'shen', date: '2026-11-04', tag: '醫師門診', treatments: ['btx', 'ha'], seed: 29,
+    excerpt: '因參加學術研討會，沈以澄醫師 12 月部分晚診時段暫停。',
     body: [
-      ['術後一週的正常變化', ['治療後數小時至兩日內常見泛紅；除斑部位可能形成細小痂皮，約 5–7 日自然脫落。這段期間請輕柔清潔、依醫囑擦藥。']],
-      ['什麼是反黑', ['皮膚受到刺激發炎後，黑色素細胞增加製造色素，稱為發炎後色素沉澱。亞洲膚色較常發生，通常於術後二至四週出現，多數在數月內漸淡。']],
-      ['降低機會的做法', ['嚴格防曬、不摳痂皮、暫停酸類與 A 醇等刺激性保養，治療前也避免曝曬。']],
-      ['何時該回診', ['出現水泡、滲液、疼痛加劇，或顏色持續加深時，請儘速回診，由醫師判斷是否需要處置。']],
-      ['為什麼治療需要間隔', ['皮膚修復需要時間。過於密集的治療會增加色素變化的風險，因此每次間隔通常為 4–8 週，由醫師依恢復狀況安排。']]
+      ['調整時段', ['2026 年 12 月 9 日（週三）、12 月 10 日（週四）晚診暫停，其他時段照常。']],
+      ['已預約者', ['診所人員將主動聯繫，協助改約至其他時段。']],
+      ['其他醫師門診', ['柯硯廷醫師、藍予禾醫師門診時間不變。']]
     ] },
-  { id: 'filler-safety', title: '玻尿酸注射前應了解的風險：血管栓塞的警訊', author: 'shen', date: '2026-10-23', tag: '注射', treatments: ['filler'], seed: 47,
-    excerpt: '血管栓塞罕見但後果嚴重。認識警訊、知道該如何反應，是注射前應有的準備。',
+  { id: 'first-visit', photo: 'news-2', title: '初診須知：諮詢當天請準備的資料', by: '霧嶼診所', date: '2026-10-20', tag: '就醫須知', treatments: [], seed: 47,
+    excerpt: '初次諮詢前先準備好這些資料，能讓醫師更完整地評估。',
     body: [
-      ['常見且會自行緩解的反應', ['紅腫、瘀青、觸痛與暫時性的硬塊，多數在一至兩週內緩解。']],
-      ['什麼是血管栓塞', ['填充物進入血管或從外側壓迫血管，造成血流受阻。鼻部、眉間與額頭的血管分布較複雜，屬風險較高的部位。']],
-      ['警訊與處置', ['注射後出現劇烈疼痛、皮膚發白或網狀紫斑、視力模糊時，應馬上聯絡施打院所或前往急診。處置包含注射玻尿酸酶等，時間是關鍵。']],
-      ['選擇院所時可確認的事', ['是否由醫師親自注射；產品是否具衛生福利部醫療器材許可證，並可當場核對包裝；院內是否備有玻尿酸酶與緊急處置流程。']],
-      ['注射前應告知的病史與用藥', ['過敏史、自體免疫疾病、抗凝血藥物或保健食品、近期牙科治療或疫苗接種。']]
+      ['請攜帶', ['健保卡或身分證件、目前使用中的藥物與保健食品清單，以及過去在其他院所接受醫學美容治療的紀錄（項目、時間、使用產品）。']],
+      ['當天流程', ['填寫病史問卷後由醫師問診評估，諮詢約 30–40 分鐘。療程是否適合、何時進行，皆於評估後討論，不需當日決定。']],
+      ['未成年者', ['未滿 18 歲者諮詢，須由法定代理人陪同。']],
+      ['取消或改期', ['如需取消或改期，請於前一日門診時間內來電告知。']]
     ] },
-  { id: 'breast-consult', title: '考慮隆乳手術前，諮詢時可以問的七件事', author: 'ko', date: '2026-11-06', tag: '手術', treatments: ['motiva'], seed: 61,
-    excerpt: '手術是需要時間考慮的決定。帶著這份問題清單去諮詢，能幫助你和醫師把細節談清楚。',
+  { id: 'aftercare-contact', photo: 'news-3', title: '治療後有疑問時的聯絡方式', by: '霧嶼診所', date: '2026-09-30', tag: '就醫須知', treatments: ['ha', 'implant'], seed: 61,
+    excerpt: '治療後若有疑問或不適，請依以下方式聯繫；緊急狀況請直接就醫。',
     body: [
-      ['一、執刀與麻醉', ['執刀醫師是否為整形外科專科醫師，麻醉由誰執行、如何監測。']],
-      ['二、手術場所', ['手術室的設備與急救配置，以及術後恢復室的照護安排。']],
-      ['三、切口與置放層次', ['乳房下緣、腋下、乳暈切口與乳腺下、胸大肌下、雙平面各自的考量。']],
-      ['四、植入物如何決定', ['植入物的種類、表面與尺寸，依胸廓與組織條件如何選擇。']],
-      ['五、可能的併發症', ['莢膜攣縮、植入物破裂、BIA-ALCL，以及日後再次手術的可能。']],
-      ['六、術後追蹤', ['回診頻率與超音波或磁振造影檢查的安排。乳房植入物並非終身使用的裝置。']],
-      ['七、生活上的影響', ['對哺乳與乳房攝影檢查的影響，以及檢查前需要告知的事項。']],
-      ['結語', ['帶著問題清單諮詢，把疑問都談清楚，並給自己充分的時間考慮。']]
+      ['門診時間內', ['請撥打診所電話，由護理人員初步了解狀況並安排回診。']],
+      ['非門診時間', ['請參考術後衛教單上的聯絡方式。手術個案另有聯絡專線，由值班人員回覆。']],
+      ['請直接前往急診的狀況', ['注射後出現劇烈疼痛、皮膚發白或網狀紫斑、視力模糊；手術後發燒、單側明顯腫脹或傷口持續出血。']]
     ] }
 ];
 
@@ -627,22 +841,27 @@ const ABOUT = {
     ['把風險講清楚', '每個療程頁都列出副作用、不適合對象與照護方式，諮詢時也會逐項說明。'],
     ['同一位醫師追蹤', '治療與回診由同一位醫師負責，讓評估與追蹤前後一致。']
   ],
-  facilities: [['獨立諮詢室', '一對一問診，保護隱私。', 5], ['光電治療室', '依設備分區設置，治療前後完成清潔。', 17], ['注射治療室', '備有玻尿酸酶與緊急處置流程。', 31], ['手術室與恢復室', '配置生理監視與急救設備。', 43]],
+  facilities: [['獨立諮詢室', '一對一問診，保護隱私。', 5, 'hero-2'], ['光電治療室', '依設備分區設置，治療前後完成清潔。', 17, 'light-1'], ['注射治療室', '備有玻尿酸酶與緊急處置流程。', 31, 'care-2'], ['手術室與恢復室', '配置生理監視與急救設備。', 43, 'surgery-1']],
   permit: '使用之藥品與醫療器材皆具衛生福利部許可證，字號於正式網站填入。'
 };
 
+const HERO_IMGS = ['hero-0', 'hero-1', 'hero-2'];
+const HERO_LABELS = ['診所接待大廳', '候診休息空間', '一對一諮詢室'];
+const ABOUT_IMGS = ['about-0', 'about-1', 'about-2'];
+const BANNERS = { treatments: 'light-0', doctors: 'about-2', articles: 'banner-news', about: 'hero-1', contact: 'hero-0', backend: 'hero-2' };
 const BANNED = ['最','保證','永久','零風險','無風險','無痛','不痛','無副作用','百分之百','100%','根治','徹底','完全','立即見效','馬上見效','一次見效','有效率','成功率','零恢復期','免開刀','第一','唯一','首選','首創','獨家','領先','頂尖','頂級','權威','名醫','專家','大師','神醫','推薦','口碑','人氣','熱門','明星','網紅','完美','神奇','奇蹟','回春','逆齡','凍齡','童顏','女神','見證','心得','術前術後','前後對比','優惠','折扣','特價','免費','限時','限量','體驗價','專案價','團購','買一送一'];
 
 const tById = id => TREATMENTS.find(t => t.id === id);
 const dById = id => DOCTORS.find(d => d.id === id);
 const aById = id => ARTICLES.find(a => a.id === id);
+const byName = a => a.by;
 const fmtDate = d => d.replace(/-/g, '.');
 
 /* Shared router, state and backend mock. Each version defines window.V (renderer). */
 const S = { pub: Object.fromEntries(TREATMENTS.map(t => [t.id, true])), hero: 0, picker: false, toast: '' };
 const pubT = () => TREATMENTS.filter(t => S.pub[t.id]);
 const ROUTES = ['home', 'treatments', 'doctors', 'articles', 'about', 'contact', 'backend'];
-const PAGE_NAMES = { home: '首頁', treatments: '療程項目', doctors: '醫師團隊', articles: '衛教文章', about: '關於診所', contact: '預約諮詢', backend: '後台操作說明' };
+const PAGE_NAMES = { home: '首頁', treatments: '療程項目', doctors: '醫師團隊', articles: '最新消息', about: '關於診所', contact: '預約諮詢', backend: '後台操作說明' };
 const NAV = ['treatments', 'doctors', 'articles', 'about', 'contact'];
 
 function parseRoute() {
@@ -734,7 +953,7 @@ const ICON = {
 };
 
 function wpFrame(active, title, body, url) {
-  const menu = [['dash', '控制台'], ['treat', '療程'], ['doc', '醫師'], ['post', '衛教文章'], ['media', '媒體庫'], ['home', '首頁設定'], ['form', '聯絡表單紀錄']];
+  const menu = [['dash', '控制台'], ['treat', '療程'], ['doc', '醫師'], ['post', '最新消息'], ['media', '媒體庫'], ['home', '首頁設定'], ['form', '聯絡表單紀錄']];
   return `<div class="wp-scroll"><div class="wp" role="img" aria-label="WordPress 後台示意畫面：${title}">
     <div class="wp-bar"><span class="wp-logo">W</span><span>${CLINIC.name}（示意）</span><span class="wp-bar-r">嗨，診所管理員</span></div>
     <div class="wp-body">
@@ -746,8 +965,8 @@ function wpFrame(active, title, body, url) {
 function backendHTML() {
   const toast = S.toast ? `<div class="wp-toast" role="status">${S.toast}</div>` : '';
   S.toast = '';
-  const heroThumb = V.thumb(S.hero, 'hero');
-  const pickers = [0, 1, 2].map(i => `<button type="button" class="wp-pick ${i === S.hero ? 'sel' : ''}" data-pick="${i}" aria-label="選用圖片 ${i + 1}">${V.thumb(i, 'hero')}<span>hero-${['entrance', 'lounge', 'consult'][i]}.jpg</span></button>`).join('');
+  const heroThumb = wpImg(HERO_IMGS[S.hero]);
+  const pickers = [0, 1, 2].map(i => `<button type="button" class="wp-pick ${i === S.hero ? 'sel' : ''}" data-pick="${i}" aria-label="選用圖片 ${i + 1}">${wpImg(HERO_IMGS[i])}<span>${HERO_IMGS[i]}.jpg</span></button>`).join('');
 
   const s1 = wpFrame('home', '首頁設定', `
     <div class="wp-card">
@@ -759,21 +978,21 @@ function backendHTML() {
       ${S.picker ? `<div class="wp-picker"><div class="wp-label sm">從媒體庫選擇圖片</div><div class="wp-pickgrid">${pickers}</div></div>` : ''}
     </div>
     <div class="wp-card"><div class="wp-label">各內頁橫幅</div>
-      <div class="wp-banners">${['療程項目', '醫師團隊', '衛教文章', '關於診所'].map((l, i) => `<div><div class="wp-thumb sm">${V.thumb(i + 3, 'banner')}</div><span>${l}</span><span class="wp-link">更換</span></div>`).join('')}</div>
+      <div class="wp-banners">${['療程項目', '醫師團隊', '最新消息', '關於診所'].map((l, i) => `<div><div class="wp-thumb sm">${wpImg([BANNERS.treatments, BANNERS.doctors, BANNERS.articles, BANNERS.about][i])}</div><span>${l}</span><span class="wp-link">更換</span></div>`).join('')}</div>
     </div>`);
 
   const s2 = wpFrame('media', '媒體庫', `
     <div class="wp-drop">${ICON.img}<span>將檔案拖曳到這裡，或 <u>選擇檔案</u> 上傳</span></div>
-    <div class="wp-media">${[0, 1, 2, 3, 4, 5, 6, 7].map(i => `<div class="wp-thumb ${i === 1 ? 'sel' : ''}">${V.thumb(i, 'media')}</div>`).join('')}</div>
+    <div class="wp-media">${['hero-0', 'light-0', 'inject-1', 'care-1', 'surgery-1', 'news-0', 'about-0', 'hero-2'].map((k, i) => `<div class="wp-thumb ${i === 1 ? 'sel' : ''}">${wpImg(k)}</div>`).join('')}</div>
     <div class="wp-row end"><span class="wp-hint">已選取 1 張</span><span class="wp-btn">選用這張圖片</span></div>`);
 
-  const rows = TREATMENTS.map(t => `<tr class="${S.pub[t.id] ? '' : 'draft'}"><td><strong>${t.name}</strong><div class="wp-rowact"><span class="wp-link">編輯</span><span class="wp-link">快速編輯</span><button type="button" class="wp-link btn" data-toggle-pub="${t.id}">${S.pub[t.id] ? '轉為草稿（下架）' : '重新發布'}</button><span class="wp-link danger">移至回收桶</span></div></td><td>${CATS[t.cat]}</td><td><span class="wp-status ${S.pub[t.id] ? 'pub' : 'dr'}">${S.pub[t.id] ? '已發布' : '草稿'}</span></td><td class="num">2026.11.0${(t.seed % 9) + 1}</td></tr>`).join('');
+  const rows = TREATMENTS.slice(0, 8).map(t => `<tr class="${S.pub[t.id] ? '' : 'draft'}"><td><strong>${t.name}</strong><div class="wp-rowact"><span class="wp-link">編輯</span><span class="wp-link">快速編輯</span><button type="button" class="wp-link btn" data-toggle-pub="${t.id}">${S.pub[t.id] ? '轉為草稿（下架）' : '重新發布'}</button><span class="wp-link danger">移至回收桶</span></div></td><td>${CATS[t.cat]}</td><td><span class="wp-status ${S.pub[t.id] ? 'pub' : 'dr'}">${S.pub[t.id] ? '已發布' : '草稿'}</span></td><td class="num">2026.11.0${(t.seed % 9) + 1}</td></tr>`).join('') + `<tr><td colspan="4" class="wp-more">…共 ${TREATMENTS.length} 項，第 1 頁／共 3 頁</td></tr>`;
   const s3 = wpFrame('treat', '療程', `
     <div class="wp-row"><span class="wp-btn">新增療程</span><span class="wp-hint">全部 (${TREATMENTS.length})｜已發布 (${pubT().length})｜草稿 (${TREATMENTS.length - pubT().length})</span></div>
     <table class="wp-table"><thead><tr><th>名稱</th><th>分類</th><th>狀態</th><th>修改日期</th></tr></thead><tbody>${rows}</tbody></table>`);
 
   const t = TREATMENTS[0];
-  const s4 = wpFrame('treat', '編輯療程：鳳凰電波', `
+  const s4 = wpFrame('treat', '編輯療程：' + t.name, `
     <div class="wp-notice">發布前自動檢查：內容含有不建議使用的詞語時，會以底色標示並提醒修改。</div>
     <div class="wp-edit"><div class="wp-fields">
       <div class="wp-input lg">${t.name}</div>
@@ -786,23 +1005,23 @@ function backendHTML() {
       ${t.indications.map(i => `<div class="wp-input rep">${i}<span>−</span></div>`).join('')}<span class="wp-link">＋ 新增一列</span>
       <div class="wp-label">療程資訊</div><div class="wp-grid4">${t.info.map(([k, v]) => `<div><span class="wp-hint">${k}</span><div class="wp-input">${v.slice(0, 14)}…</div></div>`).join('')}</div>
       <div class="wp-label">可能的副作用與風險 <b class="req">必填</b></div><div class="wp-input tall">${t.risks[0][1]}</div><div class="wp-hint">未填寫無法發布</div>
-      <div class="wp-label">不適合對象 <b class="req">必填</b>　術後照護 <b class="req">必填</b></div><div class="wp-input">已填寫 5 項／3 項</div>
-      <div class="wp-label">固定聲明 ${ICON.lock}</div><div class="wp-input locked">${ICON.lock} ${NOTE_EFFECT}</div><div class="wp-hint">由系統自動帶入每個療程頁，無法刪除</div>
-      <div class="wp-label">療程主圖</div><div class="wp-row"><div class="wp-thumb xs">${V.thumb(5, 'media')}</div><span class="wp-hint">請勿上傳術前術後比較照片</span></div>
+      <div class="wp-label">不適合對象 <b class="req">必填</b>　術後照護 <b class="req">必填</b></div><div class="wp-input">已填寫 ${t.contra.length} 項／${t.care.length} 項</div>
+      <div class="wp-label">固定聲明 ${ICON.lock}</div><div class="wp-input locked">${ICON.lock} ${NOTE_EFFECT}${NOTE_DEVICE}</div><div class="wp-hint">由系統自動帶入每個療程頁，無法刪除</div>
+      <div class="wp-label">療程主圖</div><div class="wp-row"><div class="wp-thumb xs">${wpImg(t.photo)}</div><span class="wp-hint">請勿上傳術前術後比較照片</span></div>
       <div class="wp-hint sep">依規定不刊登優惠與價格促銷資訊，因此不設價格欄位。</div>
     </div>
-    <aside class="wp-side"><div class="wp-box"><div class="wp-label">發布</div><div class="wp-hint">狀態：<strong>${S.pub.thermage ? '已發布' : '草稿'}</strong></div><div class="wp-hint">可見度：公開</div><div class="wp-row between"><span class="wp-link">預覽</span><span class="wp-btn">更新</span></div></div>
+    <aside class="wp-side"><div class="wp-box"><div class="wp-label">發布</div><div class="wp-hint">狀態：<strong>${S.pub[t.id] ? '已發布' : '草稿'}</strong></div><div class="wp-hint">可見度：公開</div><div class="wp-row between"><span class="wp-link">預覽</span><span class="wp-btn">更新</span></div></div>
       <div class="wp-box"><div class="wp-label">療程分類</div>${Object.entries(CATS).map(([k, v]) => `<div class="wp-hint"><span class="wp-cb ${k === t.cat ? 'on' : ''}"></span>${v}</div>`).join('')}</div>
-      <div class="wp-box"><div class="wp-label">主治醫師</div><div class="wp-input">沈以澄 ▾</div></div></aside></div>`);
+      <div class="wp-box"><div class="wp-label">主治醫師</div><div class="wp-input">${dById(t.doctor).name} ▾</div></div></aside></div>`);
 
-  const a = ARTICLES[1];
-  const s5 = wpFrame('post', '衛教文章', `
+  const a = ARTICLES[0];
+  const s5 = wpFrame('post', '最新消息', `
     <div class="wp-row"><span class="wp-btn">新增文章</span></div>
-    <table class="wp-table"><thead><tr><th>標題</th><th>作者醫師</th><th>日期</th></tr></thead><tbody>${ARTICLES.map(x => `<tr><td><strong>${x.title}</strong><div class="wp-rowact"><span class="wp-link">編輯</span><span class="wp-link danger">刪除</span></div></td><td>${dById(x.author).name}</td><td class="num">${fmtDate(x.date)}</td></tr>`).join('')}</tbody></table>
+    <table class="wp-table"><thead><tr><th>標題</th><th>發布單位</th><th>日期</th></tr></thead><tbody>${ARTICLES.map(x => `<tr><td><strong>${x.title}</strong><div class="wp-rowact"><span class="wp-link">編輯</span><span class="wp-link danger">刪除</span></div></td><td>${byName(x)}</td><td class="num">${fmtDate(x.date)}</td></tr>`).join('')}</tbody></table>
     <div class="wp-edit mt"><div class="wp-fields"><div class="wp-input lg">${a.title}</div>
       <div class="wp-toolbar"><b>B</b><i>I</i><span>H2</span><span>H3</span><span>• 清單</span><span>連結</span><span>${ICON.img}</span></div>
       <div class="wp-input tall doc"><strong>${a.body[0][0]}</strong><br>${a.body[0][1][0]}</div></div>
-    <aside class="wp-side"><div class="wp-box"><div class="wp-label">作者醫師</div><div class="wp-input">${dById(a.author).name} ▾</div></div><div class="wp-box"><div class="wp-label">相關療程</div>${TREATMENTS.slice(0, 3).map(x => `<div class="wp-hint"><span class="wp-cb ${a.treatments.includes(x.id) ? 'on' : ''}"></span>${x.name}</div>`).join('')}</div><div class="wp-box"><div class="wp-label">精選圖片</div><div class="wp-thumb xs">${V.thumb(6, 'media')}</div></div></aside></div>`);
+    <aside class="wp-side"><div class="wp-box"><div class="wp-label">分類</div><div class="wp-input">${a.tag} ▾</div></div><div class="wp-box"><div class="wp-label">相關療程</div>${TREATMENTS.filter(x => ['btx', 'ha', 'caha'].includes(x.id)).map(x => `<div class="wp-hint"><span class="wp-cb ${a.treatments.includes(x.id) ? 'on' : ''}"></span>${x.name}</div>`).join('')}</div><div class="wp-box"><div class="wp-label">精選圖片</div><div class="wp-thumb xs">${wpImg(a.photo)}</div></div></aside></div>`);
 
   const d = DOCTORS[1];
   const s6 = wpFrame('doc', '編輯醫師：' + d.name, `
@@ -810,19 +1029,20 @@ function backendHTML() {
       <div class="wp-grid2"><div><div class="wp-label">姓名</div><div class="wp-input">${d.name}</div></div><div><div class="wp-label">職稱</div><div class="wp-input">${d.title}</div></div><div><div class="wp-label">專科別</div><div class="wp-input">${d.spec}</div></div><div><div class="wp-label">專科證書字號</div><div class="wp-input">${d.cert}</div></div></div>
       <div class="wp-label">學經歷 <em>可增減列，可拖曳排序</em></div>${d.edu.slice(0, 3).map(e => `<div class="wp-input rep">${e}<span>−</span></div>`).join('')}<span class="wp-link">＋ 新增一列</span>
       <div class="wp-label">專長</div><div class="wp-input">${d.skills.join('、')}</div>
-    </div><aside class="wp-side"><div class="wp-box"><div class="wp-label">醫師照片</div><div class="wp-thumb">${V.thumb(d.seed, 'portrait')}</div><span class="wp-link">更換照片</span></div><div class="wp-box"><div class="wp-label">顯示順序</div><div class="wp-input">2</div></div></aside></div>`);
+    </div><aside class="wp-side"><div class="wp-box"><div class="wp-label">醫師照片</div><div class="wp-thumb">${wpImg(d.photo)}</div><span class="wp-link">更換照片</span></div><div class="wp-box"><div class="wp-label">顯示順序</div><div class="wp-input">2</div></div></aside></div>`);
 
   const screens = [
     ['更換首頁與內頁圖片', '首頁主視覺與各內頁橫幅都在「首頁設定」裡更換。點「更換圖片」，從媒體庫選一張，按下更新就完成。', s1, ['點「更換圖片」開啟媒體庫', '選擇圖片後自動套用', '替代文字讓搜尋引擎看懂圖片'], '示範互動：試著點「更換圖片」並選一張，再回首頁看看。重新整理後還原。'],
     ['上傳與管理圖片', '所有圖片集中在媒體庫。上傳一次，首頁、療程、文章都能重複選用。', s2, ['拖曳上傳，不需另外裁切工具', '同一張圖可用在多個頁面'], ''],
     ['新增、調整、下架療程', '療程列表一眼看到每個項目的狀態。「轉為草稿」就是下架：前台立刻不顯示，但內容保留，隨時可以重新發布。', s3, ['「新增療程」建立新項目', '「轉為草稿」下架，不會刪除內容', '「移至回收桶」才是刪除，30 天內可復原'], '示範互動：試著把一個療程「轉為草稿」，再到前台療程列表看看。重新整理後還原。'],
     ['療程內容用填表的方式編輯', '每個欄位對應前台的一個區塊，填好就會自動排版。風險、不適合對象、術後照護設為必填，固定聲明由系統帶入。', s4, ['欄位與前台區塊一一對應', '必填欄位沒填無法發布', '用詞檢查提醒可能違規的字詞'], '示範互動：在「一句話簡介」試著輸入療效承諾類的字詞，看看提醒怎麼出現。'],
-    ['新增、編輯、刪除衛教文章', '寫文章就像用 Word：輸入標題與內文，選擇作者醫師與相關療程，文章會自動出現在列表與療程頁。', s5, ['所見即所得的編輯器', '選擇作者醫師，自動連到醫師介紹', '勾選相關療程，自動互相連結'], ''],
+    ['新增、編輯、刪除最新消息', '發公告就像用 Word：輸入標題與內文，選擇分類（門診公告、醫師門診、就醫須知），發布後自動出現在首頁與最新消息列表。', s5, ['所見即所得的編輯器', '選擇分類，前台自動歸類', '勾選相關療程，公告會顯示在療程頁'], ''],
     ['更新醫師資料', '醫師異動、新增學經歷或更換照片，都在醫師頁面填表完成，前台醫師介紹會同步更新。', s6, ['學經歷可增減與排序', '顯示順序決定前台排列'], '']
   ];
   return { toast, screens };
 }
 
+const wpImg = k => `<img src="${IMG(k)}" alt="" loading="lazy">`;
 const HANDOVER = ['網域、主機、後台管理員帳號均以診所名義申請與持有，完工時交付完整帳號資料與操作手冊', '提供到院或線上操作教學，並附錄影與圖文手冊', '版型或項目調整需求，於提出後 14 天內處理完成', '維護方式與費用於報價單說明'];
 
 window.addEventListener('hashchange', () => route());
@@ -864,17 +1084,17 @@ function contour(seed, { w = 400, h = 300, n = 11, draw = false, bg = true, labe
   }
   return `<svg class="contour ${draw ? 'draw' : ''}" viewBox="0 0 ${w} ${h}" preserveAspectRatio="xMidYMid slice" ${label ? `role="img" aria-label="${label}（示意圖）"` : 'aria-hidden="true"'}>${bg ? `<rect width="${w}" height="${h}" class="c-bg"/>` : ''}${paths}</svg>`;
 }
-const fig = (seed, label, cls = '', o = {}) => `<figure class="fig ${cls}">${contour(seed, { label, ...o })}<figcaption>示意圖｜正式網站替換為診所實拍</figcaption></figure>`;
+/* photo frame: muted duotone photo + brand contour overlay + 示意 label (bottom-left) */
+const ph = (key, alt, cls = '', o = {}) => `<figure class="ph ${cls}"><div class="ph-in"><img src="${IMG(key)}" alt="${alt}（示意圖）" loading="${o.eager ? 'eager' : 'lazy'}" decoding="async"${o.pos ? ` style="object-position:${o.pos}"` : ''}></div>${o.seed != null ? contour(o.seed, { w: 400, h: 500, n: o.n || 7, bg: false }) : ''}<figcaption>${o.label ?? '示意圖'}</figcaption></figure>`;
 const L = (view, text, cls = '') => `<a href="#${view}" class="${cls}">${text}</a>`;
 const num = i => String(i + 1).padStart(2, '0');
 const vlabel = (zh, en) => `<div class="vlabel" aria-hidden="true"><span class="zh">${zh}</span><span class="en">${en}</span></div>`;
-const HERO_SEEDS = [7, 19, 33];
-const pageHead = (zh, en, title, intro) => `<header class="phead"><div class="phead-l"><p class="kicker"><span>${en}</span></p><h1>${title}</h1></div>${intro ? `<p class="phead-r">${intro}</p>` : ''}${vlabel(zh, '')}</header>`;
+const pageHead = (zh, en, title, intro, key) => `<header class="phead${key ? ' has-img' : ''}"><div class="phead-l"><p class="kicker"><span>${en}</span></p><h1 data-split>${title}</h1>${intro ? `<p class="phead-r">${intro}</p>` : ''}</div>${key ? ph(key, title, 'phead-img', { seed: zh.charCodeAt(0) % 97 }) : ''}</header>`;
 const hoursDL = () => `<dl class="hrs">${CLINIC.hours.map(([d, h]) => `<div><dt>${d}</dt><dd>${h}</dd></div>`).join('')}</dl>`;
-
+const gnum = t => num(pubT().indexOf(t));
+let sessionCat = null;
+const HERO_SEEDS = [7, 19, 33];
 const V = {
-  thumb(i, kind) { const s = kind === 'hero' ? HERO_SEEDS[i] : kind === 'portrait' ? i : i * 13 + 5; return contour(s, { w: 320, h: kind === 'portrait' ? 340 : 180, n: kind === 'hero' ? 10 : 8 }); },
-
   shell() {
     document.getElementById('shell-top').innerHTML = `
       <div class="demobar"><div class="gut"><span><b>示範網站</b>｜方案 B・精品客製設計</span><a href="${OTHER_URL}" >查看方案 A・質感模板客製</a></div><p class="gut fic">${CLINIC.fiction}</p></div>
@@ -889,7 +1109,7 @@ const V = {
         <div class="ov-foot"><span>${CLINIC.address}</span><span>${CLINIC.phone}</span></div>
       </div></div>
       <div id="wipe" aria-hidden="true"></div>
-      <a href="#contact" class="capsule" data-capsule>預約諮詢<span aria-hidden="true">→</span></a>`;
+      <a href="#contact" class="capsule" data-capsule><i class="beam" aria-hidden="true"></i>預約諮詢<span aria-hidden="true">→</span></a>`;
     document.getElementById('shell-bottom').innerHTML = `
       <footer class="ftr"><div class="gut">
         <div class="ftr-top"><div class="ftr-brand"><span class="ftr-zh">霧嶼診所</span><span class="ftr-tag">${CLINIC.tagline}</span></div>
@@ -898,7 +1118,7 @@ const V = {
           <div><h4>機構資訊　示意</h4><dl class="kv"><div><dt>地址</dt><dd>${CLINIC.address}</dd></div><div><dt>電話</dt><dd>${CLINIC.phone}</dd></div><div><dt>負責醫師</dt><dd>${CLINIC.director}</dd></div><div><dt>診療科別</dt><dd>${CLINIC.depts}</dd></div><div><dt>開業執照</dt><dd>${CLINIC.license}</dd></div></dl></div>
           <div><h4>門診時間</h4>${hoursDL()}</div>
         </div>
-        <div class="ftr-note"><p>本網站內容為衛教資訊，${NOTE_EFFECT}</p><p>${CLINIC.fiction}</p></div>
+        <div class="ftr-note"><p>本網站內容為衛教資訊，${NOTE_EFFECT}${NOTE_DEVICE}</p><p>${CLINIC.fiction}照片取自商用授權圖庫，僅為示意。</p></div>
       </div></footer>`;
     const btn = document.querySelector('.menu-btn'), ov = document.getElementById('overlay');
     const set = o => {
@@ -909,6 +1129,13 @@ const V = {
     btn.addEventListener('click', () => set(true));
     ov.querySelector('.ov-close').addEventListener('click', () => set(false));
     ov.addEventListener('click', e => { if (e.target.closest('a')) { btn.setAttribute('aria-expanded', 'false'); ov.hidden = true; document.body.classList.remove('lock'); } });
+    document.addEventListener('click', e => { const g = e.target.closest('[data-go-cat]'); if (g) sessionCat = g.dataset.goCat; const d = e.target.closest('[data-doc]'); if (d) sessionDoc = d.dataset.doc; });
+    // magnetic capsule (pointer devices only)
+    const cap = document.querySelector('[data-capsule]');
+    if (matchMedia('(hover:hover) and (pointer:fine)').matches && !RM()) {
+      cap.addEventListener('pointermove', e => { const b = cap.getBoundingClientRect(); cap.style.transform = `translate(${(e.clientX - b.left - b.width / 2) * 0.25}px,${(e.clientY - b.top - b.height / 2) * 0.35}px)`; });
+      cap.addEventListener('pointerleave', () => { cap.style.transform = ''; });
+    }
     document.addEventListener('keydown', e => { if (e.key === 'Escape' && !ov.hidden) set(false); });
   },
 
@@ -924,45 +1151,51 @@ const V = {
   },
 
   home() {
-    const d = DOCTORS[0];
+    const d = DOCTORS[0], list = pubT();
     return `
-    <section class="hero">
+    <section class="hero" data-spot>
       <div class="mist" aria-hidden="true"><i class="m1"></i><i class="m2"></i><i class="m3"></i></div>
-      <div class="hero-map" role="img" aria-label="品牌等高線圖（主視覺示意）">${contour(HERO_SEEDS[S.hero], { w: 900, h: 700, n: 14, draw: true, bg: false })}</div>
+      <div class="spot" aria-hidden="true"></div>
+      <div class="hero-map" aria-hidden="true">${contour(HERO_SEEDS[S.hero], { w: 900, h: 700, n: 14, draw: true, bg: false })}</div>
       <div class="gut hero-in">
-        <h1 class="hero-v" aria-label="${CLINIC.tagline}"><span class="ln"><span>先評估，</span></span><span class="ln"><span>再決定。</span></span></h1>
+        <h1 class="hero-v" aria-label="${CLINIC.tagline}"><span class="ln"><span data-chars>先評估，</span></span><span class="ln"><span data-chars>再決定。</span></span></h1>
         <div class="hero-side">
           <p class="hero-en">Wuyu <i>Clinic</i></p>
           <p class="hero-p">${CLINIC.sub}。每一項治療都從醫師當面問診開始，選項、風險與照護方式，都在你決定之前說清楚。</p>
           <div class="hero-cta">${L('treatments', '療程索引', 'lnk')}${L('contact', '預約諮詢', 'lnk')}</div>
         </div>
-        <p class="hero-cap">主視覺示意｜正式網站替換為診所實拍或品牌影像</p>
+        <div class="hero-photo">${ph(HERO_IMGS[S.hero], HERO_LABELS[S.hero], 'tall', { eager: true, seed: HERO_SEEDS[S.hero], n: 9, label: '示意圖｜' + HERO_LABELS[S.hero] })}</div>
       </div>
     </section>
     <section class="blk" data-rv>${vlabel('療程', 'Treatments')}<div class="gut blk-in">
-      <div class="blk-h"><h2>療程索引</h2><p>依治療方式分為光電、注射與手術。每個療程頁都把風險與不適合對象，放在與適應症同等的位置。</p></div>
-      <ol class="idx compact">${pubT().map((t, i) => `<li><a href="#t-${t.id}"><span class="idx-n">${num(i)}</span><span class="idx-name">${t.name}<i>${t.en}</i></span><span class="idx-cat">${CATS[t.cat]}</span><span class="idx-go" aria-hidden="true">→</span></a></li>`).join('')}</ol>
+      <div class="blk-h"><h2 data-split>療程索引</h2><p>依治療方式分為光電、注射、手術與皮膚保養，共 ${list.length} 項。每個療程頁都把風險與不適合對象，放在與適應症同等的位置。</p></div>
+      <div class="cats">${Object.entries(CATS).map(([k, v], ci) => { const items = list.filter(t => t.cat === k); return `<div class="cat" data-stagger>
+        <a href="#treatments" data-go-cat="${k}" class="cat-img" aria-label="${v}療程">${ph(POOL[k][0], v + '療程', '', { seed: 300 + ci * 17, n: 6 })}</a>
+        <div class="cat-h"><span class="cat-n">${num(ci)}</span><h3>${v}</h3><sup>${items.length}</sup></div>
+        <ol class="cat-list">${items.map(t => `<li><a href="#t-${t.id}"><span class="cl-n">${gnum(t)}</span><span class="cl-t">${t.name}</span><span class="cl-go" aria-hidden="true">→</span></a></li>`).join('')}</ol></div>`; }).join('')}</div>
+      <p class="more-row">${L('treatments', '完整療程索引', 'lnk')}</p>
     </div></section>
     <section class="blk tone" data-rv>${vlabel('流程', 'Process')}<div class="gut blk-in">
-      <div class="blk-h"><h2>從諮詢到回診</h2><p>六個步驟，每一步都有醫師參與。可左右滑動瀏覽。</p></div>
-      <ol class="tl" tabindex="0" aria-label="諮詢流程">${FLOW.map(([h, p], i) => `<li><span class="tl-n">${num(i)}</span><h3>${h}</h3><p>${p}</p></li>`).join('')}</ol>
+      <div class="blk-h"><h2 data-split>從諮詢到回診</h2><p>從預約到回診的六個步驟，同意書可帶回考慮。可左右滑動瀏覽。</p></div>
+      <ol class="tl" tabindex="0" aria-label="諮詢流程">${FLOW.map(([h, p], i) => `<li data-stagger><span class="tl-n">${num(i)}</span><h3>${h}</h3><p>${p}</p></li>`).join('')}</ol>
     </div></section>
     <section class="blk" data-rv>${vlabel('醫師', 'Physicians')}<div class="gut blk-in feat">
-      <div class="feat-img">${fig(d.seed, d.name + '醫師照片', 'portrait', { w: 480, h: 560, n: 12 })}</div>
-      <div class="feat-t"><p class="kicker"><span>${d.spec}</span></p><h2 class="feat-name">${d.name}<small>${d.title}</small></h2><p>${d.bio}</p>
+      <div class="feat-img">${ph(d.photo, d.name + '醫師', 'portrait', { seed: d.seed, label: '人物示意' })}</div>
+      <div class="feat-t"><p class="kicker"><span>${d.spec}</span></p><h2 class="feat-name" data-split>${d.name}<small>${d.title}</small></h2><p>${d.bio}</p>
         <ul class="feat-skill">${d.skills.map(s => `<li>${s}</li>`).join('')}</ul>
-        <div class="feat-others">${DOCTORS.slice(1).map(x => `<a href="#doctors"><span>${x.name}</span><small>${x.spec}</small></a>`).join('')}</div>
+        <div class="feat-others">${DOCTORS.slice(1).map(x => `<a href="#doctors" data-doc="${x.id}">${ph(x.photo, x.name + '醫師', 'mini', { label: '' })}<span><b>${x.name}</b><small>${x.spec}</small></span></a>`).join('')}</div>
         ${L('doctors', '醫師團隊', 'lnk')}</div>
     </div></section>
-    <section class="blk" data-rv>${vlabel('衛教', 'Journal')}<div class="gut blk-in">
-      <div class="blk-h"><h2>衛教文章</h2><p>由本院醫師撰寫，說明原理、風險與照護。</p></div>
-      ${this._journal(ARTICLES.slice(0, 3))}<p class="more-row">${L('articles', '所有文章', 'lnk')}</p>
+    <section class="quote" data-rv><div class="gut"><p class="q" data-words>醫學美容從評估開始。了解你的需求、皮膚與組織狀況，再一起討論是否需要治療。</p><p class="q-by">霧嶼診所　看診原則</p></div></section>
+    <section class="blk" data-rv>${vlabel('消息', 'News')}<div class="gut blk-in">
+      <div class="blk-h"><h2 data-split>最新消息</h2><p>門診時間異動、醫師門診調整與就醫須知。</p></div>
+      ${this._journal(ARTICLES.slice(0, 3))}<p class="more-row">${L('articles', '所有消息', 'lnk')}</p>
     </div></section>
     ${this._visit()}`;
   },
 
   _journal(list) {
-    return `<ol class="jr">${list.map(a => `<li><a href="#a-${a.id}"><time><span class="jr-d">${a.date.slice(8)}</span><span class="jr-m">${a.date.slice(0, 7).replace('-', '.')}</span></time><span class="jr-t"><span class="jr-tag">${a.tag}</span><span class="jr-h">${a.title}</span><span class="jr-ex">${a.excerpt}</span></span><span class="jr-a">${dById(a.author).name} 醫師</span></a></li>`).join('')}</ol>`;
+    return `<ol class="jr">${list.map(a => `<li data-stagger><a href="#a-${a.id}"><time><span class="jr-d">${a.date.slice(8)}</span><span class="jr-m">${a.date.slice(0, 7).replace('-', '.')}</span></time><span class="jr-t"><span class="jr-tag">${a.tag}</span><span class="jr-h">${a.title}</span><span class="jr-ex">${a.excerpt}</span></span>${ph(a.photo, a.title, 'jr-img')}</a></li>`).join('')}</ol>`;
   },
 
   _visit() {
@@ -973,30 +1206,33 @@ const V = {
   },
 
   treatments() {
-    const list = pubT();
+    const list = pubT(), first = list[0];
     return `<div class="gut">${pageHead('療程', 'Treatment Index', '療程索引', '以下為本院提供的醫學美容療程。療程是否適合，需經醫師評估。')}</div>
     <section class="gut tlist">
       <div class="filters" role="group" aria-label="療程分類"><button type="button" data-filter="all" aria-pressed="true">全部 <sup>${list.length}</sup></button>${Object.entries(CATS).map(([k, v]) => `<button type="button" data-filter="${k}" aria-pressed="false">${v} <sup>${list.filter(t => t.cat === k).length}</sup></button>`).join('')}</div>
       <div class="tlist-grid">
-        <ol class="idx big">${list.map((t, i) => `<li data-cat="${t.cat}"><a href="#t-${t.id}" data-seed="${t.seed}" data-name="${t.name}"><span class="idx-n">${num(i)}</span><span class="idx-name">${t.name}<i>${t.en}</i></span><span class="idx-sum">${t.summary}</span><span class="idx-cat">${CATS[t.cat]}</span><span class="idx-thumb">${contour(t.seed, { w: 200, h: 140, n: 7 })}</span></a></li>`).join('')}</ol>
-        <div class="preview" aria-hidden="true"><div class="pv a on">${contour(list[0] ? list[0].seed : 1, { w: 480, h: 600, n: 13 })}</div><div class="pv b"></div><p class="pv-cap"><span class="pv-name">${list[0] ? list[0].name : ''}</span>示意圖｜正式網站替換為診所實拍</p></div>
+        <div class="tgroups">${Object.entries(CATS).map(([k, v], ci) => { const items = list.filter(t => t.cat === k); return items.length ? `<div class="tgroup" data-cat="${k}">
+          <div class="tg-h"><span class="cat-n">${num(ci)}</span><h2>${v}</h2><p>${CAT_DESC[k]}</p></div>
+          <ol class="idx big">${items.map(t => `<li data-stagger><a href="#t-${t.id}" data-photo="${t.photo}" data-pos="${t.pos}" data-name="${t.name}"><span class="idx-n">${gnum(t)}</span><span class="idx-name">${t.name}<i>${t.en}</i></span><span class="idx-sum">${t.summary}</span><span class="idx-thumb">${ph(t.photo, t.name, '', { pos: t.pos, label: '' })}</span></a></li>`).join('')}</ol></div>` : ''; }).join('')}</div>
+        <div class="preview" aria-hidden="true">${first ? `<div class="pv a on"><img src="${IMG(first.photo)}" alt="" style="object-position:${first.pos}"></div><div class="pv b"><img alt=""></div>${contour(500, { w: 480, h: 600, n: 9, bg: false })}<p class="pv-cap"><span class="pv-name">${first.name}</span>示意圖</p>` : ''}</div>
       </div>
       ${list.length < TREATMENTS.length ? `<p class="hint">有 ${TREATMENTS.length - list.length} 個療程目前在後台設為草稿，因此未顯示。${L('backend', '回到後台示意')}</p>` : ''}
-      <p class="fee">${NOTE_FEE}</p>
+      <p class="fee">${NOTE_FEE}${NOTE_DEVICE}</p>
     </section>`;
   },
 
   treatment(t) {
-    const d = dById(t.doctor), i = TREATMENTS.indexOf(t);
+    const d = dById(t.doctor);
     const chapters = [['principle', '原理'], ['ind', '適應症'], ['info', '療程資訊'], ['before', '治療前須知'], ['care', '術後照護']];
-    const next = pubT()[(pubT().indexOf(t) + 1) % pubT().length];
+    const same = pubT().filter(x => x.cat === t.cat);
+    const next = same.length > 1 ? same[(same.indexOf(t) + 1) % same.length] : null;
     return `<article class="tx">
-      <header class="gut tx-head"><p class="kicker"><span>${L('treatments', '療程索引')}　/　${CATS[t.cat]}　/　${num(i)}</span></p>
-        <h1>${t.name}</h1><p class="tx-en">${t.en}</p><p class="tx-sum">${t.summary}</p></header>
-      <div class="tx-fig">${fig(t.seed, t.name + '療程情境', 'wide', { w: 1400, h: 520, n: 16, draw: true })}</div>
+      <header class="gut tx-head"><p class="kicker"><span>${L('treatments', '療程索引')}　/　${CATS[t.cat]}　/　${gnum(t)}</span></p>
+        <h1 data-split>${t.name}</h1><p class="tx-en">${t.en}</p><p class="tx-sum">${t.summary}</p></header>
+      <div class="tx-fig">${ph(t.photo, t.name + '療程情境', 'wide', { pos: t.pos, seed: t.seed, n: 12, eager: true })}</div>
       <div class="gut tx-grid">
         <nav class="rail" aria-label="章節"><div class="rail-line"><i></i></div><ol>${chapters.map(([id, l], k) => `<li><button type="button" data-ch="${id}"><span>${num(k)}</span>${l}</button></li>`).join('')}</ol>
-          <div class="rail-doc"><span class="kicker"><span>主治醫師</span></span><a href="#doctors">${d.name} ${d.title}</a><small>${d.spec}</small></div></nav>
+          <div class="rail-doc"><span class="kicker"><span>主治醫師</span></span><a href="#doctors" data-doc="${d.id}">${d.name} ${d.title}</a><small>${d.spec}</small></div></nav>
         <div class="tx-body">
           <section id="ch-principle" class="ch" data-rv><h2><span>01</span>原理</h2>${t.principle.map(p => `<p>${p}</p>`).join('')}</section>
           <section id="ch-ind" class="ch" data-rv><h2><span>02</span>適應症</h2><ul class="ln-list">${t.indications.map(x => `<li>${x}</li>`).join('')}</ul></section>
@@ -1006,9 +1242,9 @@ const V = {
             <div><h3>不適合對象</h3><ul class="ln-list light">${t.contra.map(x => `<li>${x}</li>`).join('')}</ul></div></div>
             ${t.extra ? `<p class="dark-extra">${t.extra}</p>` : ''}</section>
           <section id="ch-care" class="ch" data-rv><h2><span>05</span>術後照護</h2><ul class="ln-list">${t.care.map(x => `<li>${x}</li>`).join('')}</ul></section>
-          <div class="statement"><p>${NOTE_EFFECT}</p><p>${NOTE_FEE}</p></div>
-          ${t.articles.length ? `<div class="ch"><h2 class="sm">延伸閱讀</h2>${this._journal(t.articles.map(aById))}</div>` : ''}
-          <div class="tx-end">${L('contact', '預約諮詢', 'lnk')}${next && next !== t ? `<a class="tx-next" href="#t-${next.id}"><small>下一個療程</small><span>${next.name}</span></a>` : ''}</div>
+          <div class="statement"><p>${NOTE_EFFECT}</p><p>${NOTE_FEE}</p><p>${NOTE_DEVICE}</p></div>
+          ${t.articles.length ? `<div class="ch"><h2 class="sm">相關公告</h2>${this._journal(t.articles.map(aById))}</div>` : ''}
+          <div class="tx-end">${L('contact', '預約諮詢', 'lnk')}${next ? `<a class="tx-next" href="#t-${next.id}"><small>同類下一個療程　${CATS[t.cat]}</small><span>${next.name}</span></a>` : ''}</div>
         </div>
       </div></article>`;
   },
@@ -1018,9 +1254,9 @@ const V = {
   },
 
   doctors() {
-    return `<div class="gut">${pageHead('醫師', 'Physicians', '醫師團隊', '由整形外科與皮膚科專科醫師親自評估、執行與追蹤。人物為示意。')}</div>
-    ${DOCTORS.map((d, i) => `<section class="doc ${i % 2 ? 'rev' : ''}" data-rv><div class="gut doc-in">
-      <div class="doc-img">${fig(d.seed, d.name + '醫師照片', 'portrait', { w: 480, h: 600, n: 12 })}</div>
+    return `<div class="gut">${pageHead('醫師', 'Physicians', '醫師團隊', '由整形外科與皮膚科專科醫師親自評估、執行與追蹤。人物與照片皆為示意。')}</div>
+    ${DOCTORS.map((d, i) => `<section class="doc ${i % 2 ? 'rev' : ''}" id="doc-${d.id}" data-rv><div class="gut doc-in">
+      <div class="doc-img">${ph(d.photo, d.name + '醫師', 'portrait', { seed: d.seed, label: '人物示意' })}</div>
       <div class="doc-t"><h2 class="doc-name"><span class="v">${d.name}</span></h2>
         <div class="doc-body"><p class="kicker"><span>${num(i)}　${d.title}・${d.spec}</span></p><p class="doc-bio">${d.bio}</p>
         <h3>專長</h3><ul class="feat-skill">${d.skills.map(s => `<li>${s}</li>`).join('')}</ul>
@@ -1029,26 +1265,27 @@ const V = {
   },
 
   articles() {
-    return `<div class="gut">${pageHead('衛教', 'Journal', '衛教文章', '由本院醫師撰寫，說明治療原理、風險與照護方式。')}<section class="jr-page">${this._journal(ARTICLES)}</section></div>`;
+    return `<div class="gut">${pageHead('消息', 'News', '最新消息', '門診時間異動、醫師門診調整與就醫須知。')}<section class="jr-page">${this._journal(ARTICLES)}</section></div>`;
   },
 
   article(a) {
-    const d = dById(a.author);
+    const d = a.doctor ? dById(a.doctor) : null;
     return `<article class="gut art">
-      <header class="art-head"><p class="kicker"><span>${L('articles', '衛教文章')}　/　${a.tag}</span></p><h1>${a.title}</h1><p class="art-lead">${a.excerpt}</p></header>
+      <header class="art-head"><p class="kicker"><span>${L('articles', '最新消息')}　/　${a.tag}</span></p><h1 data-split>${a.title}</h1><p class="art-lead">${a.excerpt}</p></header>
+      ${ph(a.photo, a.title, 'art-fig', { seed: a.seed, n: 8 })}
       <div class="art-grid">
-        <aside class="margin"><dl><div><dt>撰文</dt><dd><a href="#doctors">${d.name} 醫師</a><small>${d.spec}</small></dd></div><div><dt>日期</dt><dd class="num">${fmtDate(a.date)}</dd></div><div><dt>相關療程</dt><dd>${a.treatments.filter(id => S.pub[id]).map(id => L('t-' + id, tById(id).name)).join('<br>')}</dd></div></dl></aside>
+        <aside class="margin"><dl><div><dt>發布</dt><dd>${byName(a)}</dd></div><div><dt>日期</dt><dd class="num">${fmtDate(a.date)}</dd></div>${d ? `<div><dt>相關醫師</dt><dd><a href="#doctors" data-doc="${d.id}">${d.name} 醫師</a><small>${d.spec}</small></dd></div>` : ''}${a.treatments.some(id => S.pub[id]) ? `<div><dt>相關療程</dt><dd>${a.treatments.filter(id => S.pub[id]).map(id => L('t-' + id, tById(id).name)).join('<br>')}</dd></div>` : ''}</dl></aside>
         <div class="art-body">${a.body.map(([h, ps]) => `<h2>${h}</h2>${ps.map(p => `<p>${p}</p>`).join('')}`).join('')}<p class="art-note">${NOTE_ARTICLE}</p></div>
       </div></article>`;
   },
 
   about() {
-    return `<div class="gut">${pageHead('診所', 'About', '關於霧嶼', CLINIC.sub)}</div>
-    <section class="gut vals">${ABOUT.values.map(([h, p], i) => `<div class="val" data-rv><span class="val-n">${num(i)}</span><h2>${h}</h2><p>${p}</p></div>`).join('')}</section>
-    <section class="blk tone" data-rv>${vlabel('環境', 'Facilities')}<div class="gut blk-in"><div class="blk-h"><h2>設備與環境</h2><p>${ABOUT.permit}</p></div>
-      <div class="fac">${ABOUT.facilities.map(([h, p, s]) => `<figure class="fac-i">${contour(s, { w: 360, h: 440, n: 10, label: h })}<figcaption><b>${h}</b>${p}<small>示意圖｜正式網站替換為診所實拍</small></figcaption></figure>`).join('')}</div></div></section>
-    <section class="blk" data-rv>${vlabel('流程', 'Process')}<div class="gut blk-in"><div class="blk-h"><h2>諮詢流程</h2><p>同意書可帶回考慮，不需當日決定。</p></div>
-      <ol class="vt">${FLOW.map(([h, p], i) => `<li><span class="vt-n">${num(i)}</span><div><h3>${h}</h3><p>${p}</p></div></li>`).join('')}</ol></div></section>
+    return `<div class="gut">${pageHead('診所', 'About', '關於霧嶼', CLINIC.sub, 'about-0')}</div>
+    <section class="gut vals">${ABOUT.values.map(([h, p], i) => `<div class="val" data-stagger><span class="val-n">${num(i)}</span><h2>${h}</h2><p>${p}</p></div>`).join('')}</section>
+    <section class="blk tone" data-rv>${vlabel('環境', 'Facilities')}<div class="gut blk-in"><div class="blk-h"><h2 data-split>設備與環境</h2><p>${ABOUT.permit}</p></div>
+      <div class="fac">${ABOUT.facilities.map(([h, p, s, k]) => `<figure class="fac-i" data-stagger>${ph(k, h, 'r34', { seed: s, n: 6 })}<figcaption><b>${h}</b>${p}</figcaption></figure>`).join('')}</div></div></section>
+    <section class="blk" data-rv>${vlabel('流程', 'Process')}<div class="gut blk-in"><div class="blk-h"><h2 data-split>諮詢流程</h2><p>同意書可帶回考慮，不需當日決定。</p></div>
+      <ol class="vt">${FLOW.map(([h, p], i) => `<li data-stagger><span class="vt-n">${num(i)}</span><div><h3>${h}</h3><p>${p}</p></div></li>`).join('')}</ol></div></section>
     ${this._visit()}`;
   },
 
@@ -1059,7 +1296,7 @@ const V = {
         <label class="fl"><span>姓名<b>必填</b></span><input id="f-name" required autocomplete="name" placeholder="請輸入姓名"></label>
         <label class="fl"><span>聯絡電話<b>必填</b></span><input id="f-tel" type="tel" required autocomplete="tel" placeholder="09xx-xxx-xxx"></label>
         <label class="fl"><span>Email</span><input id="f-mail" type="email" autocomplete="email" placeholder="選填"></label>
-        <label class="fl"><span>想諮詢的項目</span><select id="f-item">${TREATMENTS.map(t => `<option>${t.name}</option>`).join('')}<option>尚未確定，想先諮詢</option></select></label>
+        <label class="fl"><span>想諮詢的項目</span><select id="f-item">${Object.entries(CATS).map(([k, v]) => `<optgroup label="${v}">${TREATMENTS.filter(t => t.cat === k).map(t => `<option>${t.name}</option>`).join('')}</optgroup>`).join('')}<option>尚未確定，想先諮詢</option></select></label>
         <fieldset class="fl"><legend>希望時段</legend><div class="chips">${['平日午後', '平日晚間', '週六'].map((x, i) => `<label><input type="radio" name="slot" id="f-slot${i}" ${i ? '' : 'checked'}><span>${x}</span></label>`).join('')}</div></fieldset>
         <label class="fl"><span>想詢問的事項</span><textarea id="f-msg" rows="3" placeholder="例如：過去的治療經驗、目前用藥"></textarea></label>
         <label class="agree"><input type="checkbox" id="f-agree" required><span>我了解此表單僅為預約諮詢，療程是否適合需由醫師當面評估</span></label>
@@ -1076,25 +1313,22 @@ const V = {
     <section class="gut bk-wrap">${toast}
       <ol class="bk-toc">${screens.map(([h], i) => `<li><button type="button" data-jump="bk${i}"><span>${num(i)}</span>${h}</button></li>`).join('')}</ol>
       ${screens.map(([h, p, frame, pts, demo], i) => `<section class="bk" id="bk${i}"><div class="bk-t"><span class="bk-n">${num(i)}</span><h2>${h}</h2><p>${p}</p><ul class="ln-list">${pts.map(x => `<li>${x}</li>`).join('')}</ul>${demo ? `<p class="demo-note">${demo}</p>` : ''}</div><div class="bk-f">${frame}</div></section>`).join('')}
-      <section class="handover"><h2>交付與維護</h2><ul class="ln-list light">${HANDOVER.map(x => `<li>${x}</li>`).join('')}<li>首頁各區塊可由後台調整順序與顯示（方案 B）</li></ul></section>
+      <section class="handover"><h2>交付與維護</h2><ul class="ln-list light">${HANDOVER.map(x => `<li>${x}</li>`).join('')}<li>首頁各區塊可由後台調整順序與顯示（方案 B）</li><li>動態效果以 GSAP 與 CSS 製作，可直接整合進 WordPress 佈景主題</li></ul></section>
     </section>`;
   },
 
   after(r, app) {
     document.querySelector('[data-capsule]').hidden = r.view === 'contact';
     app.querySelectorAll('[data-jump]').forEach(b => b.addEventListener('click', () => document.getElementById(b.dataset.jump).scrollIntoView({ behavior: RM() ? 'auto' : 'smooth' })));
-    // reveal on scroll (only elements below the fold start hidden; everything else is visible at rest)
-    if (!RM() && 'IntersectionObserver' in window) {
-      const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.remove('rv-pre'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
-      app.querySelectorAll('[data-rv]').forEach(el => { if (el.getBoundingClientRect().top > innerHeight * 0.95) { el.classList.add('rv-pre'); io.observe(el); } });
-    }
-    // treatment index hover preview
+    if (r.view === 'treatments' && sessionCat) { const b = app.querySelector(`[data-filter="${sessionCat}"]`); sessionCat = null; if (b) b.click(); }
+    if (r.view === 'doctors' && sessionDoc) { const el = document.getElementById('doc-' + sessionDoc); sessionDoc = null; if (el) setTimeout(() => el.scrollIntoView({ block: 'start' }), 30); }
+    // treatment index hover preview (photo crossfade)
     const pv = app.querySelector('.preview');
     if (pv) {
       let front = pv.querySelector('.pv.a'), back = pv.querySelector('.pv.b'), cur = null;
       app.querySelectorAll('.idx.big a').forEach(a => a.addEventListener('mouseenter', () => {
-        if (cur === a.dataset.seed) return; cur = a.dataset.seed;
-        back.innerHTML = contour(+a.dataset.seed, { w: 480, h: 600, n: 13 });
+        if (cur === a) return; cur = a;
+        const img = back.querySelector('img'); img.src = IMG(a.dataset.photo); img.style.objectPosition = a.dataset.pos;
         back.classList.add('on'); front.classList.remove('on'); [front, back] = [back, front];
         pv.querySelector('.pv-name').textContent = a.dataset.name;
       }));
@@ -1114,7 +1348,90 @@ const V = {
       };
       addEventListener('scroll', onScroll, { passive: true }); onScroll();
     }
+    if (RM()) return;
+    if (window.gsap && window.ScrollTrigger) motion(app); else if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.remove('rv-pre'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
+      app.querySelectorAll('[data-rv]').forEach(el => { if (el.getBoundingClientRect().top > innerHeight * 0.95) { el.classList.add('rv-pre'); io.observe(el); } });
+    }
   }
 };
+let sessionDoc = null;
+
+/* ---------- Motion layer (GSAP 3 + ScrollTrigger). Everything is visible without it. ---------- */
+const below = el => el.getBoundingClientRect().top > innerHeight * 0.92;
+function splitChars(el) {
+  if (el.dataset.done) return [...el.querySelectorAll('.ch-s')];
+  el.dataset.done = 1;
+  const walk = node => [...node.childNodes].forEach(n => {
+    if (n.nodeType === 3) { const f = document.createDocumentFragment(); [...n.textContent].forEach(c => { const s = document.createElement('span'); s.className = 'ch-s'; s.textContent = c; f.appendChild(s); }); n.replaceWith(f); }
+    else if (n.nodeType === 1 && n.tagName !== 'SMALL') walk(n);
+  });
+  walk(el); return [...el.querySelectorAll('.ch-s')];
+}
+function motion(app) {
+  const g = window.gsap, ST = window.ScrollTrigger;
+  g.registerPlugin(ST);
+  ST.getAll().forEach(t => t.kill());
+  document.documentElement.classList.add('gs');
+  // 1. hero: per-character blur-in (Magic UI "blur fade" style)
+  app.querySelectorAll('.hero-v [data-chars]').forEach((el, i) => {
+    const cs = splitChars(el);
+    g.fromTo(cs, { opacity: 0, filter: 'blur(14px)', yPercent: 30 }, { opacity: 1, filter: 'blur(0px)', yPercent: 0, duration: 1.1, ease: 'power3.out', stagger: 0.07, delay: 0.15 + i * 0.32, clearProps: 'filter' });
+  });
+  const side = app.querySelector('.hero-side');
+  if (side) g.fromTo(side.children, { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.9, ease: 'power2.out', stagger: 0.1, delay: 0.7 });
+  const hp = app.querySelector('.hero-photo .ph');
+  if (hp) {
+    g.fromTo(hp, { clipPath: 'inset(100% 0 0 0)' }, { clipPath: 'inset(0% 0 0 0)', duration: 1.4, ease: 'expo.inOut', delay: 0.2 });
+    g.fromTo(hp.querySelector('img'), { scale: 1.25 }, { scale: 1, duration: 2, ease: 'expo.out', delay: 0.2 });
+  }
+  // 2. hero parallax: contour map drifts, photo lifts while scrolling away
+  const hero = app.querySelector('.hero');
+  if (hero) {
+    g.to('.hero-map', { yPercent: -18, rotate: -3, ease: 'none', scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: true } });
+    g.to('.hero-photo', { yPercent: -10, ease: 'none', scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: true } });
+    // 3. mist spotlight follows the pointer (Aceternity "spotlight" idea)
+    const spot = hero.querySelector('.spot');
+    const qx = g.quickTo(spot, 'x', { duration: 0.8, ease: 'power3' }), qy = g.quickTo(spot, 'y', { duration: 0.8, ease: 'power3' });
+    hero.addEventListener('pointermove', e => { const b = hero.getBoundingClientRect(); qx(e.clientX - b.left); qy(e.clientY - b.top); hero.classList.add('lit'); });
+    hero.addEventListener('pointerleave', () => hero.classList.remove('lit'));
+  }
+  // 4. headings: blur-in on scroll (per char)
+  app.querySelectorAll('[data-split]').forEach(el => {
+    const cs = splitChars(el), from = { opacity: 0, filter: 'blur(10px)', y: 14 };
+    const to = { opacity: 1, filter: 'blur(0px)', y: 0, duration: 0.9, ease: 'power3.out', stagger: 0.035, clearProps: 'filter' };
+    if (below(el)) { g.set(cs, from); g.to(cs, { ...to, scrollTrigger: { trigger: el, start: 'top 88%', once: true } }); }
+    else g.fromTo(cs, from, { ...to, delay: 0.1 });
+  });
+  // 5. quote: words light up while scrolling (React Bits "scroll reveal")
+  app.querySelectorAll('[data-words]').forEach(el => {
+    const cs = splitChars(el);
+    g.fromTo(cs, { opacity: 0.16 }, { opacity: 1, stagger: 0.04, ease: 'none', scrollTrigger: { trigger: el, start: 'top 80%', end: 'bottom 45%', scrub: true } });
+  });
+  // 6. photos: clip reveal + inner parallax
+  app.querySelectorAll('.ph:not(.mini):not(.jr-img)').forEach(f => {
+    if (f.closest('.hero-photo') || f.closest('.idx-thumb')) return;
+    const img = f.querySelector('img');
+    if (below(f)) g.fromTo(f, { clipPath: 'inset(0 0 100% 0)' }, { clipPath: 'inset(0 0 0% 0)', duration: 1.2, ease: 'expo.out', scrollTrigger: { trigger: f, start: 'top 88%', once: true } });
+    g.fromTo(img, { yPercent: -6, scale: 1.14 }, { yPercent: 6, scale: 1.14, ease: 'none', scrollTrigger: { trigger: f, start: 'top bottom', end: 'bottom top', scrub: true } });
+  });
+  // 7. contour overlays draw themselves in
+  app.querySelectorAll('.ph .contour path').forEach(p => { p.style.strokeDasharray = 1; });
+  app.querySelectorAll('.ph .contour').forEach(svg => {
+    g.fromTo(svg.querySelectorAll('path'), { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 2.2, ease: 'power2.inOut', stagger: 0.08, scrollTrigger: { trigger: svg, start: 'top 90%', once: true } });
+  });
+  // 8. lists / cards: batch stagger in
+  const items = [...app.querySelectorAll('[data-stagger]')].filter(below);
+  if (items.length) {
+    g.set(items, { opacity: 0, y: 26 });
+    ST.batch(items, { start: 'top 92%', once: true, onEnter: b => g.to(b, { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', stagger: 0.07 }) });
+  }
+  // 9. sections without their own motion: soft rise
+  app.querySelectorAll('[data-rv]').forEach(el => {
+    if (!below(el) || el.querySelector('[data-stagger]')) return;
+    g.fromTo(el, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 1, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 90%', once: true } });
+  });
+  ST.refresh();
+}
 </script>
 </body></html>

@@ -4,15 +4,16 @@ src = D / 'src'
 r = lambda n: (src / n).read_text()
 urls = json.loads((D / 'urls.json').read_text()) if (D / 'urls.json').exists() else {}
 FONTS = {
-  'a': 'https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap',
+  'a': 'https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Marcellus&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@500;600&display=swap',
   'b': 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@400;500;600&display=swap',
 }
 TITLE = {'a': '霧嶼診所 方案A', 'b': '霧嶼診所 方案B'}
 for v in ['a', 'b']:
     other = urls.get('b' if v == 'a' else 'a', '#home')
+    GS = '<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>\n' if v == 'b' else ''
     html = f'''<title>{TITLE[v]}</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="霧嶼診所（虛構）官方網站示範：療程介紹、醫師團隊、衛教文章與預約諮詢。">
+<meta name="description" content="霧嶼診所（虛構）官方網站示範：療程介紹、醫師團隊、最新消息與預約諮詢。">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="{FONTS[v]}">
 <style>{r('core.css')}
@@ -20,7 +21,7 @@ for v in ['a', 'b']:
 <div id="shell-top"></div>
 <main id="app" class="app"></main>
 <div id="shell-bottom"></div>
-<script>const OTHER_URL = {json.dumps(other)};
+{GS}<script>const OTHER_URL = {json.dumps(other)};
 {r('data.js')}
 {r('core.js')}
 {r(v + '.js')}</script>
