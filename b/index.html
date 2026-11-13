@@ -846,7 +846,7 @@ const FLOW = [
 
 const ABOUT = {
   values: [
-    ['先評估，再決定', '每一項治療都從醫師問診開始。評估後不適合的，會直接說明原因。'],
+    ['問診在治療之前', '評估後若不建議治療，會直接說明原因與其他選擇。'],
     ['把風險講清楚', '每個療程頁都列出副作用、不適合對象與照護方式，諮詢時也會逐項說明。'],
     ['同一位醫師追蹤', '治療與回診由同一位醫師負責，讓評估與追蹤前後一致。']
   ],
@@ -1143,13 +1143,13 @@ const V = {
       <a href="#contact" class="capsule" data-capsule><i class="beam" aria-hidden="true"></i>預約諮詢<span aria-hidden="true">→</span></a>`;
     document.getElementById('shell-bottom').innerHTML = `
       <footer class="ftr"><div class="gut">
-        <div class="ftr-top"><div class="ftr-brand"><span class="ftr-zh">霧嶼診所</span><span class="ftr-tag">${CLINIC.tagline}</span></div>
+        <div class="ftr-top"><div class="ftr-brand"><span class="ftr-zh">霧嶼診所</span><span class="ftr-tag">皮膚科・整形外科｜台北大安</span></div>
           <ul class="ftr-nav">${['home', ...NAV, 'backend'].map(n => `<li>${L(n, PAGE_NAMES[n])}</li>`).join('')}</ul></div>
         <div class="ftr-grid">
           <div><h4>機構資訊　示意</h4><dl class="kv"><div><dt>地址</dt><dd>${CLINIC.address}</dd></div><div><dt>電話</dt><dd>${CLINIC.phone}</dd></div><div><dt>負責醫師</dt><dd>${CLINIC.director}</dd></div><div><dt>診療科別</dt><dd>${CLINIC.depts}</dd></div><div><dt>開業執照</dt><dd>${CLINIC.license}</dd></div></dl></div>
           <div><h4>門診時間</h4>${hoursDL()}</div>
         </div>
-        <div class="ftr-note"><p>本網站內容為衛教資訊，${NOTE_EFFECT}${NOTE_DEVICE}</p><p>${CLINIC.fiction}照片取自商用授權圖庫，僅為示意。</p></div>
+        <div class="ftr-note"><p>本網站內容為衛教資訊，${NOTE_EFFECT}</p><p>網站照片取自商用授權圖庫，僅為示意。</p></div>
       </div></footer>`;
     const btn = document.querySelector('.menu-btn'), ov = document.getElementById('overlay');
     const set = o => {
@@ -1321,7 +1321,7 @@ const V = {
   },
 
   contact() {
-    return `<div class="gut">${pageHead('預約', 'Consultation', '預約諮詢', '送出表單後，診所人員將於門診時間內以電話與你確認時段。療程是否適合，需由醫師當面評估。')}</div>
+    return `<div class="gut">${pageHead('預約', 'Consultation', '預約諮詢', '送出表單後，診所人員將於門診時間內以電話與你確認時段。')}</div>
     <section class="gut ct">
       <form class="ct-form" data-demo-form novalidate>
         <label class="fl"><span>姓名<b>必填</b></span><input id="f-name" required autocomplete="name" placeholder="請輸入姓名"></label>

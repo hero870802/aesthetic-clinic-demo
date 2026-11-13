@@ -9,7 +9,7 @@ const eyebrow = t => `<p class="eyebrow">${t}</p>`;
 const tCard = t => `<a class="card tcard" href="#t-${t.id}" data-cat="${t.cat}">${pic(t.photo, t.name, 'r43', t.pos)}<div class="card-b"><span class="tag">${CATS[t.cat]}</span><h3>${t.name}</h3><p class="en">${t.en}</p><p>${t.summary}</p><span class="more">了解療程 ${ARROW}</span></div></a>`;
 const aCard = a => `<a class="card acard" href="#a-${a.id}">${pic(a.photo, a.title, 'r169')}<div class="card-b"><div class="meta"><span class="tag">${a.tag}</span><time>${fmtDate(a.date)}</time></div><h3>${a.title}</h3><p>${a.excerpt}</p></div></a>`;
 const hoursList = () => `<dl class="hours">${CLINIC.hours.map(([d, h]) => `<div><dt>${d}</dt><dd>${h}</dd></div>`).join('')}</dl>`;
-const ctaCard = () => `<div class="side-card cta"><h3>預約諮詢</h3><p>療程是否適合，需由醫師當面評估。</p><a class="btn" href="#contact">線上預約</a><p class="phone">電話 ${CLINIC.phone}</p></div>`;
+const ctaCard = () => `<div class="side-card cta"><h3>預約諮詢</h3><p>線上表單 24 小時受理，於門診時間回覆。</p><a class="btn" href="#contact">線上預約</a><p class="phone">電話 ${CLINIC.phone}</p></div>`;
 const badge = () => `<div class="badge" aria-hidden="true"><svg viewBox="0 0 120 120"><defs><path id="bp" d="M60 60m-44 0a44 44 0 1 1 88 0a44 44 0 1 1-88 0"/></defs><text><textPath href="#bp">CONSULTATION FIRST · WUYU CLINIC · </textPath></text></svg><span>預約<br>諮詢</span></div>`;
 const ICONS = {
   doc: '<svg viewBox="0 0 32 32"><circle cx="16" cy="10" r="5"/><path d="M6 28c1-6 5-9 10-9s9 3 10 9"/><path d="M13 19l3 4 3-4"/></svg>',
@@ -33,12 +33,12 @@ const V = {
       <footer class="ftr"><div class="wrap">
         <p class="ftr-word" aria-hidden="true">WUYU CLINIC</p>
         <div class="ftr-grid">
-          <div><div class="logo light"><span class="logo-zh">${CLINIC.name}</span><span class="logo-en">WUYU CLINIC</span></div><p>${CLINIC.sub}。${CLINIC.tagline}</p></div>
+          <div><div class="logo light"><span class="logo-zh">${CLINIC.name}</span><span class="logo-en">WUYU CLINIC</span></div><p>${CLINIC.sub}。</p></div>
           <div><h4>網站導覽</h4><ul>${['home', ...NAV].map(n => `<li>${L(n, PAGE_NAMES[n])}</li>`).join('')}<li>${L('backend', '後台操作說明')}</li></ul></div>
           <div><h4>療程分類</h4><ul>${Object.entries(CATS).map(([k, v]) => `<li><a href="#treatments" data-go-cat="${k}">${v}</a></li>`).join('')}</ul><h4 class="mt">門診時間</h4>${hoursList()}</div>
           <div><h4>機構資訊（示意）</h4><ul class="info"><li>${CLINIC.address}</li><li>電話 ${CLINIC.phone}</li><li>負責醫師 ${CLINIC.director}</li><li>診療科別 ${CLINIC.depts}</li><li>開業執照 ${CLINIC.license}</li></ul></div>
         </div>
-        <div class="ftr-note"><p>本網站內容為衛教資訊，${NOTE_EFFECT}${NOTE_DEVICE}</p><p>${CLINIC.fiction}照片取自商用授權圖庫，僅為示意。</p></div>
+        <div class="ftr-note"><p>本網站內容為衛教資訊，${NOTE_EFFECT}</p><p>網站照片取自商用授權圖庫，僅為示意。</p></div>
       </div></footer>`;
     const b = document.querySelector('.burger'), nav = document.getElementById('mainnav');
     b.addEventListener('click', () => { const o = b.getAttribute('aria-expanded') === 'true'; b.setAttribute('aria-expanded', String(!o)); nav.classList.toggle('open', !o); });
@@ -57,7 +57,7 @@ const V = {
     <section class="hero"><div class="wrap hero-grid">
       <div class="hero-main" data-hero-video>
         <img src="${IMG(HERO_IMGS[S.hero])}" alt="${HERO_LABELS[S.hero]}（示意圖）" class="hero-img">
-        <div class="hero-t">${eyebrow('Dermatology · Plastic Surgery')}<h1>${CLINIC.tagline}</h1><p>每一項醫學美容治療，都從醫師當面問診開始。我們會說明可行的選項、可能的風險與照護方式，讓你在充分了解後再做決定。</p>
+        <div class="hero-t">${eyebrow('Dermatology · Plastic Surgery')}<h1>${CLINIC.tagline}</h1><p>由整形外科與皮膚科專科醫師共同看診。治療前，我們會說明可行的選項、可能的風險與照護方式，讓你有時間考慮。</p>
           <div class="row">${L('treatments', '認識療程', 'btn light')}${L('contact', '預約諮詢', 'btn ghost')}</div></div>
         ${badge()}<span class="pic-tag" data-vid-label>示意圖｜${HERO_LABELS[S.hero]}</span>
       </div>
@@ -68,7 +68,7 @@ const V = {
     </div></section>
     <section class="facts"><div class="wrap"><div class="facts-in">${[[DOCTORS.length, '位專科醫師', '整形外科、皮膚科'], [TREATMENTS.length, '項療程說明', '每項皆列風險與照護'], [4, '大療程分類', '光電、注射、手術、保養'], [FLOW.length, '個諮詢步驟', '同意書可帶回考慮']].map(([n, u, s]) => `<div><p class="fact-n"><span data-count="${n}">${n}</span><small>${u}</small></p><p>${s}</p></div>`).join('')}</div></div></section>
     <section class="sec feat-sec" data-rv><div class="wrap">
-      <div class="feat4">${[['doc', '醫師當面評估', '每一項治療都從醫師問診開始，不適合的會直接說明。'], ['list', '風險逐項說明', '療程頁列出副作用、不適合對象與照護方式。'], ['loop', '同一位醫師追蹤', '治療與回診由同一位醫師負責。'], ['shield', '藥品醫材具許可證', '使用之藥品與醫材皆具衛生福利部許可證。']].map(([i, h, p]) => `<div class="f4"><span class="ico">${ICONS[i]}</span><h3>${h}</h3><p>${p}</p></div>`).join('')}</div>
+      <div class="feat4">${[['doc', '專科醫師看診', '由醫師親自問診與檢查，不建議的治療會直接告知。'], ['list', '風險逐項說明', '療程頁列出副作用、不適合對象與照護方式。'], ['loop', '回診時間依療程安排', '治療後依需要安排回診，有疑問可隨時來電。'], ['shield', '藥品醫材具許可證', '使用之藥品與醫材皆具衛生福利部許可證。']].map(([i, h, p]) => `<div class="f4"><span class="ico">${ICONS[i]}</span><h3>${h}</h3><p>${p}</p></div>`).join('')}</div>
     </div></section>
     <section class="sec alt" data-rv><div class="wrap split-intro">
       <div class="stack">${pic('about-0', '診所走廊', 'arch')}${pic('hero-2', '諮詢室', 'r11 over')}</div>
@@ -90,13 +90,12 @@ const V = {
       <div class="sec-h row-between"><div>${eyebrow('Physicians')}<h2>醫師團隊</h2><p>由整形外科與皮膚科專科醫師親自評估與執行。</p></div>${L('doctors', '認識醫師 ' + ARROW, 'btn line')}</div>
       <div class="grid3">${d.map(x => `<a class="dcard" href="#doctors">${pic(x.photo, x.name + '醫師', 'arch', '', '人物示意')}<div class="dcard-b"><h3>${x.name}<small>${x.title}</small></h3><p class="spec">${x.spec}</p><p>${x.skills.slice(0, 3).join('・')}</p></div></a>`).join('')}</div>
     </div></section>
-    <section class="cta-band" data-rv><img src="${IMG('hero-1')}" alt="" class="cta-bg"><div class="wrap cta-in">${eyebrow('Consultation')}<h2>${CLINIC.tagline}</h2><p>送出表單後，診所人員將於門診時間內以電話與你確認時段。</p>${L('contact', '預約諮詢', 'btn light')}</div><span class="banner-tag">示意圖</span></section>
+    <section class="cta-band" data-rv><img src="${IMG('hero-1')}" alt="" class="cta-bg"><div class="wrap cta-in">${eyebrow('Consultation')}<h2>從一次面對面的諮詢開始</h2><p>可以先帶著問題來，不需要當天決定。</p>${L('contact', '預約諮詢', 'btn light')}</div><span class="banner-tag">示意圖</span></section>
     <section class="sec" data-rv><div class="wrap">
       <div class="sec-h row-between"><div>${eyebrow('News')}<h2>最新消息</h2><p>門診時間異動、醫師門診調整與就醫須知。</p></div>${L('articles', '所有消息 ' + ARROW, 'btn line')}</div>
       <div class="news-grid">${aCard(ARTICLES[0])}<ul class="news-list">${ARTICLES.slice(1).map(a => `<li><a href="#a-${a.id}"><time><b>${a.date.slice(8)}</b>${a.date.slice(0, 7).replace('-', '.')}</time><span><small class="tag">${a.tag}</small>${a.title}</span>${ARROW}</a></li>`).join('')}</ul></div>
     </div></section>
-    <section class="sec alt info-sec" data-rv><div class="wrap grid3">
-      <div class="icard"><h3>門診時間</h3>${hoursList()}</div>
+    <section class="sec alt info-sec" data-rv><div class="wrap grid2">
       <div class="icard"><h3>交通資訊</h3><p>${CLINIC.address}</p><ul class="dots">${CLINIC.transit.map(x => `<li>${x}</li>`).join('')}</ul>${mapSVG()}</div>
       <div class="icard dark"><h3>預約諮詢</h3><p>電話 ${CLINIC.phone}</p><p>線上表單 24 小時受理，於門診時間內回覆。</p>${L('contact', '前往預約', 'btn light')}</div>
     </div></section>`;
@@ -184,7 +183,7 @@ const V = {
   },
 
   contact() {
-    return banner('contact', '預約諮詢', '送出表單後，診所人員將於門診時間內以電話與你確認時段。療程是否適合，需由醫師當面評估。', [[null, '預約諮詢']]) + `
+    return banner('contact', '預約諮詢', '送出表單後，診所人員將於門診時間內以電話與你確認時段。', [[null, '預約諮詢']]) + `
     <section class="sec alt tight"><div class="wrap layout">
       <form class="main form" data-demo-form novalidate>
         <h2>線上預約表單</h2>
