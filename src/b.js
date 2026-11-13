@@ -94,10 +94,10 @@ const V = {
       <div class="spot" aria-hidden="true"></div>
       <div class="hero-map" aria-hidden="true">${contour(HERO_SEEDS[S.hero], { w: 900, h: 700, n: 14, draw: true, bg: false })}</div>
       <div class="gut hero-in">
-        <h1 class="hero-v" aria-label="${CLINIC.tagline}"><span class="ln"><span data-chars>先評估，</span></span><span class="ln"><span data-chars>再決定。</span></span></h1>
+        <h1 class="hero-v" aria-label="${CLINIC.tagline}"><span class="ln"><span data-chars>在所有改變發生之前</span></span><span class="ln"><span data-chars>先聽醫師</span></span><span class="ln"><span data-chars>把話說清楚</span></span></h1>
         <div class="hero-side">
           <p class="hero-en">Wuyu <i>Clinic</i></p>
-          <p class="hero-p">${CLINIC.sub}。每一項治療都從醫師當面問診開始，選項、風險與照護方式，都在你決定之前說清楚。</p>
+          <p class="hero-p">${CLINIC.sub}。治療前，醫師會逐項說明可行的選項、可能的風險與照護方式。</p>
           <div class="hero-cta">${L('treatments', '療程索引', 'lnk')}${L('contact', '預約諮詢', 'lnk')}</div>
         </div>
         <div class="hero-photo" data-hero-video>${ph(HERO_IMGS[S.hero], HERO_LABELS[S.hero], 'tall', { eager: true, vid: true, seed: HERO_SEEDS[S.hero], n: 9, label: '示意圖｜' + HERO_LABELS[S.hero] })}</div>

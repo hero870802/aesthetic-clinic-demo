@@ -162,9 +162,9 @@ a:hover .pic img,.card:hover .pic img{transform:scale(1.04)}
 .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;animation:kb 18s ease-out both}
 .hero-main::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(23,36,42,.78) 0%,rgba(23,36,42,.45) 50%,rgba(23,36,42,.05) 100%),linear-gradient(0deg,rgba(23,36,42,.45),transparent 50%)}
 @keyframes kb{from{transform:scale(1.08)}to{transform:scale(1)}}
-.hero-t{padding:56px 56px 72px;max-width:640px;color:#fff;display:flex;flex-direction:column;gap:20px}
+.hero-t{padding:56px 56px 72px;max-width:740px;color:#fff;display:flex;flex-direction:column;gap:20px}
 .hero-t .eyebrow{color:var(--accent-soft)}
-.hero h1{font-weight:300;font-size:clamp(36px,5vw,62px);letter-spacing:.1em;line-height:1.25}
+.hero h1{font-weight:300;font-size:clamp(28px,3.3vw,46px);letter-spacing:.06em;line-height:1.25}
 .hero-t>p:not(.eyebrow){color:rgba(255,255,255,.86);max-width:30em}
 .hero-t>*{animation:up .9s cubic-bezier(.2,.7,.2,1) both}.hero-t>:nth-child(2){animation-delay:.1s}.hero-t>:nth-child(3){animation-delay:.2s}.hero-t>:nth-child(4){animation-delay:.3s}
 @keyframes up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
@@ -448,7 +448,7 @@ fieldset{border:0;padding:0;margin:0;min-width:0}legend{font-weight:600;font-siz
   .hero-main{min-height:560px;border-radius:20px}
   .hero-main::before{background:linear-gradient(0deg,rgba(23,36,42,.86) 0%,rgba(23,36,42,.5) 60%,rgba(23,36,42,.2) 100%)}
   .hero-t{padding:28px 22px 64px}
-  .hero h1{font-size:34px;letter-spacing:.06em}
+  .hero h1{font-size:27px;letter-spacing:.04em}
   .badge{width:92px;height:92px;right:14px;top:14px;bottom:auto}.badge span{font-size:12px}.badge text{font-size:9.6px}
   .hero-side{grid-template-columns:1fr}
   .hcard{border-radius:20px;padding:26px}
@@ -480,7 +480,10 @@ fieldset{border:0;padding:0;margin:0;min-width:0}legend{font-weight:600;font-siz
 }
 
 .hero-main .hero-vid{z-index:-2}.hero-main .vid-btn{right:16px;top:16px;border-radius:999px}
-@media (max-width:640px){.hero-main .vid-btn{right:auto;top:auto;left:16px;bottom:44px}}
+@media (max-width:640px){.hero-main .vid-btn{right:auto;left:16px;top:16px}}
+
+.hero h1 .nb{white-space:nowrap}
+@media (max-width:420px){.hero h1{font-size:24px}}
 </style>
 <div id="shell-top"></div>
 <main id="app" class="app"></main>
@@ -488,7 +491,7 @@ fieldset{border:0;padding:0;margin:0;min-width:0}legend{font-weight:600;font-siz
 <script>const OTHER_URL = "../b/";
 const CLINIC = {
   name: '霧嶼診所', en: 'WUYU CLINIC',
-  tagline: '先評估，再決定。',
+  tagline: '在所有改變發生之前，先聽醫師把話說清楚。',
   sub: '皮膚專科與整形外科的醫學美容諮詢',
   address: '台北市大安區澄嶼街 28 號 3 樓（虛構地址）',
   phone: '02-0000-0000',
@@ -1068,7 +1071,7 @@ const V = {
     <section class="hero"><div class="wrap hero-grid">
       <div class="hero-main" data-hero-video>
         <img src="${IMG(HERO_IMGS[S.hero])}" alt="${HERO_LABELS[S.hero]}（示意圖）" class="hero-img">
-        <div class="hero-t">${eyebrow('Dermatology · Plastic Surgery')}<h1>${CLINIC.tagline}</h1><p>由整形外科與皮膚科專科醫師共同看診。治療前，我們會說明可行的選項、可能的風險與照護方式，讓你有時間考慮。</p>
+        <div class="hero-t">${eyebrow('Dermatology · Plastic Surgery')}<h1><span class="nb">在所有改變發生之前，</span><br><span class="nb">先聽醫師把話說清楚。</span></h1><p>由整形外科與皮膚科專科醫師共同看診。治療前，我們會說明可行的選項、可能的風險與照護方式，讓你有時間考慮。</p>
           <div class="row">${L('treatments', '認識療程', 'btn light')}${L('contact', '預約諮詢', 'btn ghost')}</div></div>
         ${badge()}<span class="pic-tag" data-vid-label>示意圖｜${HERO_LABELS[S.hero]}</span>
       </div>

@@ -1,6 +1,6 @@
 const CLINIC = {
   name: '霧嶼診所', en: 'WUYU CLINIC',
-  tagline: '先評估，再決定。',
+  tagline: '在所有改變發生之前，先聽醫師把話說清楚。',
   sub: '皮膚專科與整形外科的醫學美容諮詢',
   address: '台北市大安區澄嶼街 28 號 3 樓（虛構地址）',
   phone: '02-0000-0000',

@@ -67,9 +67,9 @@ a:hover .pic img,.card:hover .pic img{transform:scale(1.04)}
 .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;animation:kb 18s ease-out both}
 .hero-main::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(23,36,42,.78) 0%,rgba(23,36,42,.45) 50%,rgba(23,36,42,.05) 100%),linear-gradient(0deg,rgba(23,36,42,.45),transparent 50%)}
 @keyframes kb{from{transform:scale(1.08)}to{transform:scale(1)}}
-.hero-t{padding:56px 56px 72px;max-width:640px;color:#fff;display:flex;flex-direction:column;gap:20px}
+.hero-t{padding:56px 56px 72px;max-width:740px;color:#fff;display:flex;flex-direction:column;gap:20px}
 .hero-t .eyebrow{color:var(--accent-soft)}
-.hero h1{font-weight:300;font-size:clamp(36px,5vw,62px);letter-spacing:.1em;line-height:1.25}
+.hero h1{font-weight:300;font-size:clamp(28px,3.3vw,46px);letter-spacing:.06em;line-height:1.25}
 .hero-t>p:not(.eyebrow){color:rgba(255,255,255,.86);max-width:30em}
 .hero-t>*{animation:up .9s cubic-bezier(.2,.7,.2,1) both}.hero-t>:nth-child(2){animation-delay:.1s}.hero-t>:nth-child(3){animation-delay:.2s}.hero-t>:nth-child(4){animation-delay:.3s}
 @keyframes up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
@@ -353,7 +353,7 @@ fieldset{border:0;padding:0;margin:0;min-width:0}legend{font-weight:600;font-siz
   .hero-main{min-height:560px;border-radius:20px}
   .hero-main::before{background:linear-gradient(0deg,rgba(23,36,42,.86) 0%,rgba(23,36,42,.5) 60%,rgba(23,36,42,.2) 100%)}
   .hero-t{padding:28px 22px 64px}
-  .hero h1{font-size:34px;letter-spacing:.06em}
+  .hero h1{font-size:27px;letter-spacing:.04em}
   .badge{width:92px;height:92px;right:14px;top:14px;bottom:auto}.badge span{font-size:12px}.badge text{font-size:9.6px}
   .hero-side{grid-template-columns:1fr}
   .hcard{border-radius:20px;padding:26px}
@@ -385,4 +385,7 @@ fieldset{border:0;padding:0;margin:0;min-width:0}legend{font-weight:600;font-siz
 }
 
 .hero-main .hero-vid{z-index:-2}.hero-main .vid-btn{right:16px;top:16px;border-radius:999px}
-@media (max-width:640px){.hero-main .vid-btn{right:auto;top:auto;left:16px;bottom:44px}}
+@media (max-width:640px){.hero-main .vid-btn{right:auto;left:16px;top:16px}}
+
+.hero h1 .nb{white-space:nowrap}
+@media (max-width:420px){.hero h1{font-size:24px}}

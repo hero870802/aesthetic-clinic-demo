@@ -175,10 +175,10 @@ p{margin:0}
 @keyframes drift{from{transform:translateX(-6%)}to{transform:translateX(8%)}}
 .hero-map{position:absolute;right:-6%;top:50%;width:min(68vw,960px);aspect-ratio:9/7;transform:translateY(-50%);opacity:.9}
 .hero-in{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr) minmax(0,400px);gap:clamp(32px,6vw,96px);align-items:end;padding-block:56px 64px;width:100%}
-.hero-v{font-weight:200;writing-mode:vertical-rl;font-size:clamp(44px,6.4vw,92px);letter-spacing:.24em;line-height:1.3;display:flex;flex-direction:column;gap:.1em;align-self:start}
+.hero-v{font-weight:200;writing-mode:vertical-rl;font-size:clamp(30px,3.5vw,50px);letter-spacing:.2em;line-height:1.6;display:flex;flex-direction:column;gap:.35em;align-self:start}
 .hero-v .ln{display:block;overflow:hidden}
 .hero-v .ln>span{display:block;animation:rise .8s var(--ease) both}
-.hero-v .ln:nth-child(2)>span{animation-delay:.14s;margin-top:1.4em}
+.hero-v .ln:nth-child(2)>span{animation-delay:.14s;margin-top:3.2em}.hero-v .ln:nth-child(3)>span{animation-delay:.28s;margin-top:5em}
 @keyframes rise{from{clip-path:inset(0 0 100% 0);transform:translateY(-12%)}to{clip-path:inset(0 0 0 0);transform:none}}
 .hero-side{max-width:420px;display:flex;flex-direction:column;gap:20px;padding-bottom:8px;animation:fadeup .9s .35s var(--ease) both}
 @keyframes fadeup{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
@@ -534,8 +534,8 @@ a:hover .ph img{filter:saturate(.95) contrast(1) brightness(1.03)}
 @media (max-width:640px){
   body{font-size:15.5px}
   .logo-en{display:none}
-  .hero-v{writing-mode:horizontal-tb;flex-direction:column;font-size:44px;letter-spacing:.16em}
-  .hero-v .ln:nth-child(2)>span{margin-top:0;margin-left:1.2em}
+  .hero-v{writing-mode:horizontal-tb;flex-direction:column;font-size:26px;letter-spacing:.12em;gap:.1em}
+  .hero-v .ln:nth-child(2)>span,.hero-v .ln:nth-child(3)>span{margin-top:0;margin-left:0}
   .idx li a{grid-template-columns:2.6em minmax(0,1fr) 1.4em;gap:12px}
   .idx.compact .idx-cat{display:none}
   .idx.big li a{grid-template-columns:2.6em minmax(0,1fr) 72px;column-gap:14px}
@@ -572,7 +572,7 @@ a:hover .ph img{filter:saturate(.95) contrast(1) brightness(1.03)}
 <script>const OTHER_URL = "../a/";
 const CLINIC = {
   name: '霧嶼診所', en: 'WUYU CLINIC',
-  tagline: '先評估，再決定。',
+  tagline: '在所有改變發生之前，先聽醫師把話說清楚。',
   sub: '皮膚專科與整形外科的醫學美容諮詢',
   address: '台北市大安區澄嶼街 28 號 3 樓（虛構地址）',
   phone: '02-0000-0000',
@@ -1189,10 +1189,10 @@ const V = {
       <div class="spot" aria-hidden="true"></div>
       <div class="hero-map" aria-hidden="true">${contour(HERO_SEEDS[S.hero], { w: 900, h: 700, n: 14, draw: true, bg: false })}</div>
       <div class="gut hero-in">
-        <h1 class="hero-v" aria-label="${CLINIC.tagline}"><span class="ln"><span data-chars>先評估，</span></span><span class="ln"><span data-chars>再決定。</span></span></h1>
+        <h1 class="hero-v" aria-label="${CLINIC.tagline}"><span class="ln"><span data-chars>在所有改變發生之前</span></span><span class="ln"><span data-chars>先聽醫師</span></span><span class="ln"><span data-chars>把話說清楚</span></span></h1>
         <div class="hero-side">
           <p class="hero-en">Wuyu <i>Clinic</i></p>
-          <p class="hero-p">${CLINIC.sub}。每一項治療都從醫師當面問診開始，選項、風險與照護方式，都在你決定之前說清楚。</p>
+          <p class="hero-p">${CLINIC.sub}。治療前，醫師會逐項說明可行的選項、可能的風險與照護方式。</p>
           <div class="hero-cta">${L('treatments', '療程索引', 'lnk')}${L('contact', '預約諮詢', 'lnk')}</div>
         </div>
         <div class="hero-photo" data-hero-video>${ph(HERO_IMGS[S.hero], HERO_LABELS[S.hero], 'tall', { eager: true, vid: true, seed: HERO_SEEDS[S.hero], n: 9, label: '示意圖｜' + HERO_LABELS[S.hero] })}</div>

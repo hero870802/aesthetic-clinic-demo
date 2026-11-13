@@ -57,7 +57,7 @@ const V = {
     <section class="hero"><div class="wrap hero-grid">
       <div class="hero-main" data-hero-video>
         <img src="${IMG(HERO_IMGS[S.hero])}" alt="${HERO_LABELS[S.hero]}（示意圖）" class="hero-img">
-        <div class="hero-t">${eyebrow('Dermatology · Plastic Surgery')}<h1>${CLINIC.tagline}</h1><p>由整形外科與皮膚科專科醫師共同看診。治療前，我們會說明可行的選項、可能的風險與照護方式，讓你有時間考慮。</p>
+        <div class="hero-t">${eyebrow('Dermatology · Plastic Surgery')}<h1><span class="nb">在所有改變發生之前，</span><br><span class="nb">先聽醫師把話說清楚。</span></h1><p>由整形外科與皮膚科專科醫師共同看診。治療前，我們會說明可行的選項、可能的風險與照護方式，讓你有時間考慮。</p>
           <div class="row">${L('treatments', '認識療程', 'btn light')}${L('contact', '預約諮詢', 'btn ghost')}</div></div>
         ${badge()}<span class="pic-tag" data-vid-label>示意圖｜${HERO_LABELS[S.hero]}</span>
       </div>
